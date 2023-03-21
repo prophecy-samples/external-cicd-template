@@ -12,7 +12,7 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2023-03-20 19:43:43'
-    modifiedAt: '2023-03-21 00:50:27'
+    modifiedAt: '2023-03-21 16:56:02'
     datasets:
       inputs: []
       outputs:
@@ -27,7 +27,7 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2023-03-20 21:10:10'
-    modifiedAt: '2023-03-21 00:56:27'
+    modifiedAt: '2023-03-21 17:06:49'
     datasets:
       inputs:
       - datasets/Products_Raw
@@ -41,7 +41,7 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2023-03-20 21:19:31'
-    modifiedAt: '2023-03-21 00:53:37'
+    modifiedAt: '2023-03-21 16:56:58'
     datasets:
       inputs:
       - datasets/Carts_Raw
@@ -55,7 +55,7 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2023-03-20 22:10:51'
-    modifiedAt: '2023-03-21 00:54:21'
+    modifiedAt: '2023-03-21 17:06:23'
     datasets:
       inputs:
       - datasets/Users_Raw
@@ -68,7 +68,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 20:33:34'
-    modifiedAt: '2023-03-21 00:50:27'
+    modifiedAt: '2023-03-21 16:51:41'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -83,7 +83,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 20:34:33'
-    modifiedAt: '2023-03-21 00:50:27'
+    modifiedAt: '2023-03-21 16:51:41'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -98,7 +98,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 20:37:04'
-    modifiedAt: '2023-03-21 00:50:27'
+    modifiedAt: '2023-03-21 16:51:41'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -113,7 +113,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 21:17:33'
-    modifiedAt: '2023-03-21 00:56:27'
+    modifiedAt: '2023-03-21 17:06:49'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -128,7 +128,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 22:08:52'
-    modifiedAt: '2023-03-21 00:53:37'
+    modifiedAt: '2023-03-21 16:44:28'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -143,7 +143,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 22:27:28'
-    modifiedAt: '2023-03-21 00:54:21'
+    modifiedAt: '2023-03-21 17:06:23'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -159,6 +159,6 @@ libraries: []
 subgraphs: {}
 sqlModels: {}
 sqlPipeline: null
-dependencies: '[]'
+dependencies: []
 projectDependencies: {}
 pipelineConfigurations: {}

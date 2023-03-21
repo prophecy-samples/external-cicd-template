@@ -8,6 +8,6 @@ from products_rawbronze.udfs.UDFs import *
 def Products_Bronze(spark: SparkSession, in0: DataFrame):
     in0.write\
         .format("delta")\
-        .option("path", "dbfs:/FileStore/Prophecy/hello_cicd/bronze/products")\
+        .option("path", f"dbfs:/FileStore/Prophecy/hello_cicd/{Config.env}/bronze/products")\
         .mode("append")\
-        .saveAsTable(f"hello_cicd.products_bronze")
+        .saveAsTable(f"hello_cicd.{f"{Config.env}_Products_bronze"}")

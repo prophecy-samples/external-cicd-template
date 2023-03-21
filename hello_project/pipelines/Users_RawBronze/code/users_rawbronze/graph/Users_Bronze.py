@@ -8,6 +8,6 @@ from users_rawbronze.udfs.UDFs import *
 def Users_Bronze(spark: SparkSession, in0: DataFrame):
     in0.write\
         .format("delta")\
-        .option("path", "dbfs:/FileStore/Prophecy/hello_cicd/bronze/users")\
+        .option("path", f"dbfs:/FileStore/Prophecy/hello_cicd/{Config.env}/bronze/users")\
         .mode("append")\
-        .saveAsTable(f"hello_cicd.Users_Bronze")
+        .saveAsTable(f"hello_cicd.{f"{Config.env}_Users_Bronze"}")

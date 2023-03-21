@@ -17,7 +17,7 @@ def Fetch_Data(spark: SparkSession) -> (DataFrame, DataFrame, DataFrame):
 
     user_df = spark.read\
                   .json(spark.sparkContext.parallelize(user_data), samplingRatio = 1.0)\
-                  .withColumn("ts", current_timestamp())
+                  .withColumn("ingest_time", current_timestamp())
     product_data = requests.get("https://dummyjson.com/products?limit=1000").json()["products"]
 
     for p in product_data:
@@ -27,7 +27,7 @@ def Fetch_Data(spark: SparkSession) -> (DataFrame, DataFrame, DataFrame):
 
     products_df = spark.read\
                       .json(spark.sparkContext.parallelize(product_data), samplingRatio = 1.0)\
-                      .withColumn("ts", current_timestamp())
+                      .withColumn("ingest_time", current_timestamp())
     carts_data = requests.get("https://dummyjson.com/carts?limit=1000").json()["carts"]
 
     for c in carts_data:
@@ -37,6 +37,6 @@ def Fetch_Data(spark: SparkSession) -> (DataFrame, DataFrame, DataFrame):
 
     carts_df = spark.read\
                    .json(spark.sparkContext.parallelize(carts_data), samplingRatio = 1.0)\
-                   .withColumn("ts", current_timestamp())
+                   .withColumn("ingest_time", current_timestamp())
 
     return (user_df, products_df, carts_df)

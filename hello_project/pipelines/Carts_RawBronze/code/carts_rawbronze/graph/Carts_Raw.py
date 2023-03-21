@@ -15,7 +15,7 @@ def Carts_Raw(spark: SparkSession) -> DataFrame:
               StructField("discountPercentage", DoubleType(), True), StructField("discountedPrice", LongType(), True), StructField("id", LongType(), True), StructField("price", DoubleType(), True), StructField("quantity", LongType(), True), StructField("title", StringType(), True), StructField("total", LongType(), True)
           ]), 
             True
-          ), True), StructField("total", LongType(), True), StructField("totalProducts", LongType(), True), StructField("totalQuantity", LongType(), True), StructField("userId", LongType(), True), StructField("ts", TimestampType(), False)
+          ), True), StructField("total", LongType(), True), StructField("totalProducts", LongType(), True), StructField("totalQuantity", LongType(), True), StructField("userId", LongType(), True), StructField("ingest_time", TimestampType(), False)
         ])
         )\
-        .load("dbfs:/FileStore/Prophecy/hello_cicd/raw/carts.json")
+        .load(f"dbfs:/FileStore/Prophecy/hello_cicd/{Config.env}/raw/carts.json")

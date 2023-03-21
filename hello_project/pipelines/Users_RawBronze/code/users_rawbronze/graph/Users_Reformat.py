@@ -34,5 +34,6 @@ def Users_Reformat(spark: SparkSession, in0: DataFrame) -> DataFrame:
         col("userAgent"), 
         col("username"), 
         col("weight").cast(DoubleType()).alias("weight"), 
-        col("ts")
+        col("ingest_time"), 
+        lit("").alias("env")
     )

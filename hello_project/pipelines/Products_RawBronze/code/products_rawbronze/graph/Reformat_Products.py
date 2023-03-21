@@ -18,5 +18,6 @@ def Reformat_Products(spark: SparkSession, in0: DataFrame) -> DataFrame:
         col("stock").cast(LongType()).alias("stock"), 
         col("thumbnail"), 
         col("title"), 
-        col("ts")
+        col("ingest_time"), 
+        lit("").alias("env")
     )

@@ -14,5 +14,6 @@ def Carts_Reformat(spark: SparkSession, in0: DataFrame) -> DataFrame:
         col("totalProducts").cast(LongType()).alias("totalProducts"), 
         col("totalQuantity").cast(LongType()).alias("totalQuantity"), 
         col("userId").cast(LongType()).alias("userId"), 
-        col("ts")
+        col("ingest_time"), 
+        lit("").alias("env")
     )

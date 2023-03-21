@@ -16,7 +16,14 @@
     "configuration" : {
       "common" : {
         "type" : "record",
-        "fields" : [ ]
+        "fields" : [ {
+          "name" : "env",
+          "kind" : {
+            "type" : "string",
+            "value" : "unspecified"
+          },
+          "optional" : false
+        } ]
       },
       "oldCommon" : {
         "type" : "record",
@@ -24,7 +31,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "default",
+      "selected" : "prod",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -573,7 +580,7 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "ts",
+              "name" : "ingest_time",
               "type" : "timestamp",
               "nullable" : false,
               "metadata" : {
@@ -693,7 +700,7 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "ts",
+              "name" : "ingest_time",
               "type" : "timestamp",
               "nullable" : false,
               "metadata" : {
@@ -843,7 +850,7 @@
                 "tags" : [ ]
               }
             }, {
-              "name" : "ts",
+              "name" : "ingest_time",
               "type" : "timestamp",
               "nullable" : false,
               "metadata" : {
@@ -859,7 +866,7 @@
         "isCustomOutputSchema" : true
       },
       "properties" : {
-        "script" : "import requests\nfrom pyspark.sql.functions import current_timestamp\n\nuser_data = requests.get(\"https://dummyjson.com/users?limit=1000\").json()[\"users\"]\nfor u in user_data:\n    for (k, v) in u.items():\n        if not isinstance(v, dict) and not isinstance(v, list):\n            u[k] = str(v)\n\nuser_df = spark.read.json(spark.sparkContext.parallelize(user_data), samplingRatio=1.0).withColumn(\"ts\", current_timestamp())\n\nproduct_data = requests.get(\"https://dummyjson.com/products?limit=1000\").json()[\"products\"]\nfor p in product_data:\n    for (k, v) in p.items():\n        if not isinstance(v, dict) and not isinstance(v, list):\n            p[k] = str(v)\nproducts_df = spark.read.json(spark.sparkContext.parallelize(product_data), samplingRatio=1.0).withColumn(\"ts\", current_timestamp())\n\ncarts_data = requests.get(\"https://dummyjson.com/carts?limit=1000\").json()[\"carts\"]\nfor c in carts_data:\n    for p in c[\"products\"]:\n        p[\"price\"] = float(p[\"price\"])\n        p[\"discountPercentage\"] = float(p[\"discountPercentage\"])\ncarts_df = spark.read.json(spark.sparkContext.parallelize(carts_data), samplingRatio=1.0).withColumn(\"ts\", current_timestamp())",
+        "script" : "import requests\nfrom pyspark.sql.functions import current_timestamp\n\nuser_data = requests.get(\"https://dummyjson.com/users?limit=1000\").json()[\"users\"]\nfor u in user_data:\n    for (k, v) in u.items():\n        if not isinstance(v, dict) and not isinstance(v, list):\n            u[k] = str(v)\n\nuser_df = spark.read.json(spark.sparkContext.parallelize(user_data), samplingRatio=1.0).withColumn(\"ingest_time\", current_timestamp())\n\nproduct_data = requests.get(\"https://dummyjson.com/products?limit=1000\").json()[\"products\"]\nfor p in product_data:\n    for (k, v) in p.items():\n        if not isinstance(v, dict) and not isinstance(v, list):\n            p[k] = str(v)\nproducts_df = spark.read.json(spark.sparkContext.parallelize(product_data), samplingRatio=1.0).withColumn(\"ingest_time\", current_timestamp())\n\ncarts_data = requests.get(\"https://dummyjson.com/carts?limit=1000\").json()[\"carts\"]\nfor c in carts_data:\n    for p in c[\"products\"]:\n        p[\"price\"] = float(p[\"price\"])\n        p[\"discountPercentage\"] = float(p[\"discountPercentage\"])\ncarts_df = spark.read.json(spark.sparkContext.parallelize(carts_data), samplingRatio=1.0).withColumn(\"ingest_time\", current_timestamp())",
         "scriptMethodHeader" : "def Script(spark: SparkSession) -> (DataFrame, DataFrame, DataFrame):",
         "scriptMethodFooter" : "    return (user_df, products_df, carts_df)"
       }

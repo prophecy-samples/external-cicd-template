@@ -16,7 +16,14 @@
     "configuration" : {
       "common" : {
         "type" : "record",
-        "fields" : [ ]
+        "fields" : [ {
+          "name" : "env",
+          "kind" : {
+            "type" : "string",
+            "value" : "unspecified"
+          },
+          "optional" : false
+        } ]
       },
       "oldCommon" : {
         "type" : "record",
@@ -24,7 +31,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "default",
+      "selected" : "prod",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -163,16 +170,23 @@
           },
           "description" : ""
         }, {
-          "target" : "ts",
+          "target" : "ingest_time",
           "expression" : {
             "format" : "sql",
-            "expression" : "ts"
+            "expression" : "ingest_time"
+          },
+          "description" : ""
+        }, {
+          "target" : "env",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "'${env}'"
           },
           "description" : ""
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##userId", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##total", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##products", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##discountedTotal", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##id", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalProducts", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##ts", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalQuantity" ]
+        "columnsSelector" : [ "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##userId", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##total", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##products", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##ingest_time", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##discountedTotal", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##id", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalProducts", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalQuantity" ]
       }
     },
     "5ATiuuDrDwnKPM82QFsbu$$sCb1TKmwyd_r1tgZzbjm8" : {

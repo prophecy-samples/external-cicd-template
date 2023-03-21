@@ -16,7 +16,14 @@
     "configuration" : {
       "common" : {
         "type" : "record",
-        "fields" : [ ]
+        "fields" : [ {
+          "name" : "env",
+          "kind" : {
+            "type" : "string",
+            "value" : "unspecified"
+          },
+          "optional" : false
+        } ]
       },
       "oldCommon" : {
         "type" : "record",
@@ -24,7 +31,7 @@
       },
       "fabrics" : { },
       "instances" : { },
-      "selected" : "default",
+      "selected" : "prod",
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
@@ -303,16 +310,23 @@
           },
           "description" : ""
         }, {
-          "target" : "ts",
+          "target" : "ingest_time",
           "expression" : {
             "format" : "sql",
-            "expression" : "ts"
+            "expression" : "ingest_time"
+          },
+          "description" : ""
+        }, {
+          "target" : "env",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "'${env}'"
           },
           "description" : ""
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##address", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ip", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##userAgent", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##domain", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##height", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##macAddress", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##lastName", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##firstName", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ssn", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##password", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##bloodGroup", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##email", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##maidenName", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##username", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##gender", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##university", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##eyeColor", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ein", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##weight", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ts", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##company", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##age", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##image", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##hair", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##phone", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##id", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##birthDate", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##bank" ]
+        "columnsSelector" : [ "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##address", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ip", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##userAgent", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##domain", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##height", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##macAddress", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##lastName", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##firstName", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ssn", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##password", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##bloodGroup", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##email", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##maidenName", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##username", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ingest_time", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##gender", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##university", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##eyeColor", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ein", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##weight", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##company", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##age", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##image", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##hair", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##phone", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##id", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##birthDate", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##bank" ]
       }
     },
     "sNFZpb4T6eyOvRjNqlhMS$$6SnVsk6Ry4uxAw4CTBSeX" : {

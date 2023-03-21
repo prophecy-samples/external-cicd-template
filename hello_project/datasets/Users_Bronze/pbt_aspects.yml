@@ -380,8 +380,15 @@ schema:
       description: ''
       mappings: []
       tags: []
-  - name: ts
+  - name: ingest_time
     type: timestamp
+    nullable: false
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: env
+    type: string
     nullable: false
     metadata:
       description: ''
