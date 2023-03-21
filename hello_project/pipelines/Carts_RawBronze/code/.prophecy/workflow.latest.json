@@ -1,0 +1,212 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "1726",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "carts_rawbronze"
+  },
+  "connections" : [ {
+    "id" : "k-1ofCbwtdbyNjjqLJ90P$$5t0W4ny8sOhsvRWObFjzZ",
+    "source" : "Jmhn0qyuaTJZDkRh71TOD$$uSh6fg9SnQmWT9QKEXaHS",
+    "sourcePort" : "ydc854BK2WBBUfVRIarrn$$rClF5AbcZNEMFlkS83yuJ",
+    "target" : "GbnpfhktTYn5p9tDdub8I$$XSJgbeE609t1DlAto3W0L",
+    "targetPort" : "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy"
+  }, {
+    "id" : "PDQ7z0JcRa6MqEKlbo2cE$$NfPVSIIccPxS42oRoCKKk",
+    "source" : "GbnpfhktTYn5p9tDdub8I$$XSJgbeE609t1DlAto3W0L",
+    "sourcePort" : "hnsmeeHcrAyAm7_smm_5H$$RpzSp5ZdIappfV2LIGHM1",
+    "target" : "5ATiuuDrDwnKPM82QFsbu$$sCb1TKmwyd_r1tgZzbjm8",
+    "targetPort" : "u3UBZJMLPidrBjJkwn9Y2$$e8IywzkymW4a0gFPj14UQ"
+  } ],
+  "processes" : {
+    "Jmhn0qyuaTJZDkRh71TOD$$uSh6fg9SnQmWT9QKEXaHS" : {
+      "id" : "Jmhn0qyuaTJZDkRh71TOD$$uSh6fg9SnQmWT9QKEXaHS",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Carts_Raw",
+        "slug" : "Carts_Raw",
+        "x" : 280,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ydc854BK2WBBUfVRIarrn$$rClF5AbcZNEMFlkS83yuJ",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/Carts_Raw"
+      }
+    },
+    "GbnpfhktTYn5p9tDdub8I$$XSJgbeE609t1DlAto3W0L" : {
+      "id" : "GbnpfhktTYn5p9tDdub8I$$XSJgbeE609t1DlAto3W0L",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Carts_Reformat",
+        "slug" : "Carts_Reformat",
+        "x" : 440,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "hnsmeeHcrAyAm7_smm_5H$$RpzSp5ZdIappfV2LIGHM1",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "python",
+        "expressions" : [ {
+          "target" : "discountedTotal",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(discountedTotal as double)"
+          },
+          "description" : ""
+        }, {
+          "target" : "id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(id as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "products",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "products"
+          },
+          "description" : ""
+        }, {
+          "target" : "total",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(total as double)"
+          },
+          "description" : ""
+        }, {
+          "target" : "totalProducts",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(totalProducts as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "totalQuantity",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(totalQuantity as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "userId",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(userId as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "ts",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ts"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##userId", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##total", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##products", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##discountedTotal", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##id", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalProducts", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##ts", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalQuantity" ]
+      }
+    },
+    "5ATiuuDrDwnKPM82QFsbu$$sCb1TKmwyd_r1tgZzbjm8" : {
+      "id" : "5ATiuuDrDwnKPM82QFsbu$$sCb1TKmwyd_r1tgZzbjm8",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "Carts_Bronze",
+        "slug" : "Carts_Bronze",
+        "x" : 620,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "u3UBZJMLPidrBjJkwn9Y2$$e8IywzkymW4a0gFPj14UQ",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/Carts_Bronze"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}

@@ -1,0 +1,114 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: discountedTotal
+    type: double
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: id
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: products
+    type:
+      type: array
+      elementType:
+        type: struct
+        fields:
+        - name: discountPercentage
+          type: double
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: discountedPrice
+          type: long
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: id
+          type: long
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: price
+          type: double
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: quantity
+          type: long
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: title
+          type: string
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+        - name: total
+          type: long
+          nullable: true
+          metadata:
+            description: ''
+            mappings: []
+            tags: []
+      containsNull: true
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: total
+    type: double
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: totalProducts
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: totalQuantity
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: userId
+    type: long
+    nullable: true
+    metadata:
+      description: ''
+      mappings: []
+      tags: []
+  - name: ts
+    type: timestamp
+    nullable: false
+    metadata:
+      description: ''
+      mappings: []
+      tags: []

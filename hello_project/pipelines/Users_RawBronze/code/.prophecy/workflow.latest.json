@@ -1,0 +1,352 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "1726",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "users_rawbronze"
+  },
+  "connections" : [ {
+    "id" : "JlPUUqIsFEYtNUwb4Za0U$$-kaaos_MnEwHP5rhXHGkA",
+    "source" : "k0BbQBWrYE_YKpaYjB51P$$wCQ19GwwqVpfk1VNwDca2",
+    "sourcePort" : "89CZSl1p4zTBAUB1rdtW4$$2q88V1T69Hb7uuIVhfzPj",
+    "target" : "w-GMJTVxJBWEvzBIlZC6o$$dur8AegD8gpg0TJMiqrFt",
+    "targetPort" : "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf"
+  }, {
+    "id" : "csWt-u-53eAFLSBhtbpnI$$4sVSSj_-xrnLtDXZUbwe9",
+    "source" : "w-GMJTVxJBWEvzBIlZC6o$$dur8AegD8gpg0TJMiqrFt",
+    "sourcePort" : "CZU73vb34dXMg5gWARzfP$$Heuj819QHqvsqPzvhEof0",
+    "target" : "sNFZpb4T6eyOvRjNqlhMS$$6SnVsk6Ry4uxAw4CTBSeX",
+    "targetPort" : "mcNY9ieM7SzX0S12Wx1TR$$9xP8gq20nZ02BWbSMGDY5"
+  } ],
+  "processes" : {
+    "k0BbQBWrYE_YKpaYjB51P$$wCQ19GwwqVpfk1VNwDca2" : {
+      "id" : "k0BbQBWrYE_YKpaYjB51P$$wCQ19GwwqVpfk1VNwDca2",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Users_Raw",
+        "slug" : "Users_Raw",
+        "x" : 260,
+        "y" : 340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "89CZSl1p4zTBAUB1rdtW4$$2q88V1T69Hb7uuIVhfzPj",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/Users_Raw"
+      }
+    },
+    "w-GMJTVxJBWEvzBIlZC6o$$dur8AegD8gpg0TJMiqrFt" : {
+      "id" : "w-GMJTVxJBWEvzBIlZC6o$$dur8AegD8gpg0TJMiqrFt",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Users_Reformat",
+        "slug" : "Users_Reformat",
+        "x" : 460,
+        "y" : 340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "CZU73vb34dXMg5gWARzfP$$Heuj819QHqvsqPzvhEof0",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "python",
+        "expressions" : [ {
+          "target" : "address",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "address"
+          },
+          "description" : ""
+        }, {
+          "target" : "age",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(age as integer)"
+          },
+          "description" : ""
+        }, {
+          "target" : "bank",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "bank"
+          },
+          "description" : ""
+        }, {
+          "target" : "birthDate",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "to_date(birthDate)"
+          },
+          "description" : ""
+        }, {
+          "target" : "bloodGroup",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "bloodGroup"
+          },
+          "description" : ""
+        }, {
+          "target" : "company",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "company"
+          },
+          "description" : ""
+        }, {
+          "target" : "domain",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "domain"
+          },
+          "description" : ""
+        }, {
+          "target" : "ein",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ein"
+          },
+          "description" : ""
+        }, {
+          "target" : "email",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "email"
+          },
+          "description" : ""
+        }, {
+          "target" : "eyeColor",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "eyeColor"
+          },
+          "description" : ""
+        }, {
+          "target" : "firstName",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "firstName"
+          },
+          "description" : ""
+        }, {
+          "target" : "gender",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "gender"
+          },
+          "description" : ""
+        }, {
+          "target" : "hair",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "hair"
+          },
+          "description" : ""
+        }, {
+          "target" : "height",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(height as float)"
+          },
+          "description" : ""
+        }, {
+          "target" : "id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(id as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "image",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "image"
+          },
+          "description" : ""
+        }, {
+          "target" : "ip",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ip"
+          },
+          "description" : ""
+        }, {
+          "target" : "lastName",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "lastName"
+          },
+          "description" : ""
+        }, {
+          "target" : "macAddress",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "macAddress"
+          },
+          "description" : ""
+        }, {
+          "target" : "maidenName",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "maidenName"
+          },
+          "description" : ""
+        }, {
+          "target" : "password",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "password"
+          },
+          "description" : ""
+        }, {
+          "target" : "phone",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "phone"
+          },
+          "description" : ""
+        }, {
+          "target" : "ssn",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ssn"
+          },
+          "description" : ""
+        }, {
+          "target" : "university",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "university"
+          },
+          "description" : ""
+        }, {
+          "target" : "userAgent",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "userAgent"
+          },
+          "description" : ""
+        }, {
+          "target" : "username",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "username"
+          },
+          "description" : ""
+        }, {
+          "target" : "weight",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(weight as double)"
+          },
+          "description" : ""
+        }, {
+          "target" : "ts",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ts"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##address", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ip", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##userAgent", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##domain", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##height", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##macAddress", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##lastName", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##firstName", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ssn", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##password", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##bloodGroup", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##email", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##maidenName", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##username", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##gender", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##university", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##eyeColor", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ein", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##weight", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ts", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##company", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##age", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##image", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##hair", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##phone", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##id", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##birthDate", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##bank" ]
+      }
+    },
+    "sNFZpb4T6eyOvRjNqlhMS$$6SnVsk6Ry4uxAw4CTBSeX" : {
+      "id" : "sNFZpb4T6eyOvRjNqlhMS$$6SnVsk6Ry4uxAw4CTBSeX",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "Users_Bronze",
+        "slug" : "Users_Bronze",
+        "x" : 640,
+        "y" : 340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "mcNY9ieM7SzX0S12Wx1TR$$9xP8gq20nZ02BWbSMGDY5",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/Users_Bronze"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}
