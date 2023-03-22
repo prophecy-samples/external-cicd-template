@@ -38,7 +38,7 @@ jobs:
         run: pbt build --path ${{ env.PROJECT_PATH }}
   test:
     runs-on: ubuntu-latest
-    depends-on: build
+    needs: build
     steps:
       - name: Run PBT test
         run: pbt test --path ${{ env.PROJECT_PATH }}

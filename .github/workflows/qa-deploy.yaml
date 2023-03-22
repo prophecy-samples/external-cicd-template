@@ -41,14 +41,14 @@ jobs:
         run: pbt build --path ${{ env.PROJECT_PATH }}
   deploy:
     runs-on: ubuntu-latest
-    depends-on: build
+    needs: build
     steps:
       - name: Run PBT Deploy
         run: pbt deploy --path ${{ env.PROJECT_PATH }}
   # If you wanted to start a QA-specific job, you could do it here
   #run:
   #  runs-on: ubuntu-latest
-  #  depends-on: deploy
+  #  needs: deploy
   #  steps:
   #    - name: Run QA job
   #      run: databricks runs submit ...
