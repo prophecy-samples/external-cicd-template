@@ -76,7 +76,7 @@
       "metadata" : {
         "label" : "Fetch_Data",
         "slug" : "Fetch_Data",
-        "x" : 160,
+        "x" : 140,
         "y" : 140,
         "phase" : 0,
         "cache" : false,
