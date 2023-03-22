@@ -12,7 +12,7 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2023-03-20 19:43:43'
-    modifiedAt: '2023-03-21 22:46:48'
+    modifiedAt: '2023-03-22 20:46:39'
     datasets:
       inputs: []
       outputs:
@@ -62,27 +62,13 @@ pipelines:
       outputs:
       - datasets/Users_Bronze
     dependencies: {}
-  pipelines/Users_BronzeSilver:
-    name: Users_BronzeSilver
-    description: 'Bronze to Silver SDC2 Pipeline for Users '
-    author: scott+data_eng@prophecy.io
-    mode: batch
-    language: python
-    createdAt: '2023-03-21 17:11:11'
-    modifiedAt: '2023-03-22 01:03:31'
-    datasets:
-      inputs:
-      - datasets/Users_Bronze
-      outputs:
-      - datasets/Users_Silver
-    dependencies: {}
 datasets:
   datasets/Users_Raw:
     name: Users_Raw
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 20:33:34'
-    modifiedAt: '2023-03-21 22:46:48'
+    modifiedAt: '2023-03-22 20:46:25'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -97,7 +83,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 20:34:33'
-    modifiedAt: '2023-03-21 16:51:41'
+    modifiedAt: '2023-03-22 20:46:32'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -112,7 +98,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 20:37:04'
-    modifiedAt: '2023-03-21 16:51:41'
+    modifiedAt: '2023-03-22 20:46:39'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -167,21 +153,6 @@ datasets:
         author: scott+data_eng@prophecy.io
         createdAt: '2023-03-20 22:27:28'
         modifiedAt: '2023-03-20 22:27:28'
-  datasets/Users_Silver:
-    name: Users_Silver
-    description: ''
-    author: scott+data_eng@prophecy.io
-    createdAt: '2023-03-21 23:42:40'
-    modifiedAt: '2023-03-21 23:42:40'
-    mode: batch
-    physicalDatasets:
-      HelloDev:
-        fabricId: 1726
-        datasetType: Database
-        description: ''
-        author: scott+data_eng@prophecy.io
-        createdAt: '2023-03-21 23:42:40'
-        modifiedAt: '2023-03-21 23:42:40'
 templates: {}
 jobs: {}
 libraries: []
