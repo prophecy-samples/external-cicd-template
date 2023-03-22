@@ -1,0 +1,45 @@
+on:
+  pull_request:
+    branches:
+      - 'main'
+
+concurrency: 
+  group: dev-pr-push-test
+  cancel-in-progress: true
+
+env:
+  PROJECT_PATH: hello_project
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PACKAGE_MANAGER: pip3
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      # Install all python dependencies 
+      # prophecy-libs not included here because prophecy-build-tool 
+      # takes care of it by reading each pipeline's setup.py
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          pip3 install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
+      # Make sure you set the path to match the Project directory
+      - name: Run PBT build
+        run: pbt build --path ${{ env.PROJECT_PATH }}
+      # Same as above, make the path match the Project directory
+  test:
+    runs-on: ubuntu-latest
+    depends-on: build
+    steps:
+      - name: Run PBT test
+        run: pbt test --path ${{ env.PROJECT_PATH }}
