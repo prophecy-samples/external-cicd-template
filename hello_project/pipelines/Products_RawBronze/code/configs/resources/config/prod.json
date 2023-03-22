@@ -1,0 +1,4 @@
+{
+  "env" : "prod",
+  "table_name" : "Products_Bronze_prod"
+}

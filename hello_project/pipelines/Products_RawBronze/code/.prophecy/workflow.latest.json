@@ -1,0 +1,261 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "1726",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "env",
+          "kind" : {
+            "type" : "string",
+            "value" : "unspecified"
+          },
+          "optional" : false
+        }, {
+          "name" : "table_name",
+          "kind" : {
+            "type" : "string",
+            "value" : " "
+          },
+          "optional" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "qa",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "products_rawbronze"
+  },
+  "connections" : [ {
+    "id" : "uU7foogoFtzcAa9R5PheF$$S470yAdwtRP3nNn0OVunl",
+    "source" : "34y_HW88aSBUAf_5tLiBF$$rvjnZzsZtK9yZkBJNGnZU",
+    "sourcePort" : "3OXuVB8Eoahw075SrJ3Yh$$0k8UxHR0go59T19siiQSH",
+    "target" : "5YoAK_5p7ZPK9vAizfPCE$$rlMKiv0lvd5mbbnQLfdzn",
+    "targetPort" : "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR"
+  }, {
+    "id" : "0xJwf0NdmE4_quMhjPATg$$yD84hmLon46ZF703V3n6z",
+    "source" : "5YoAK_5p7ZPK9vAizfPCE$$rlMKiv0lvd5mbbnQLfdzn",
+    "sourcePort" : "80MnwZszajNClUr1fKzEZ$$gTgVzgqEaMFj0JCyU0VDP",
+    "target" : "3iMvu15qzMQyIaHTmW9Xc$$fx0qlg1460J-7F0SvU0nE",
+    "targetPort" : "6bveX-9XTQQ11NKEAA28g$$AQn0Ue2c-RDdeTZD3K_9W"
+  } ],
+  "processes" : {
+    "34y_HW88aSBUAf_5tLiBF$$rvjnZzsZtK9yZkBJNGnZU" : {
+      "id" : "34y_HW88aSBUAf_5tLiBF$$rvjnZzsZtK9yZkBJNGnZU",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Products_Raw",
+        "slug" : "Products_Raw",
+        "x" : 280,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "3OXuVB8Eoahw075SrJ3Yh$$0k8UxHR0go59T19siiQSH",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/Products_Raw"
+      }
+    },
+    "5YoAK_5p7ZPK9vAizfPCE$$rlMKiv0lvd5mbbnQLfdzn" : {
+      "id" : "5YoAK_5p7ZPK9vAizfPCE$$rlMKiv0lvd5mbbnQLfdzn",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_Products",
+        "slug" : "Reformat_Products",
+        "x" : 440,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "80MnwZszajNClUr1fKzEZ$$gTgVzgqEaMFj0JCyU0VDP",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "python",
+        "expressions" : [ {
+          "target" : "brand",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "brand"
+          },
+          "description" : ""
+        }, {
+          "target" : "category",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "category"
+          },
+          "description" : ""
+        }, {
+          "target" : "description",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "description"
+          },
+          "description" : ""
+        }, {
+          "target" : "discountPercentage",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "discountPercentage"
+          },
+          "description" : ""
+        }, {
+          "target" : "id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(id as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "images",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "images"
+          },
+          "description" : ""
+        }, {
+          "target" : "price",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(price as float)"
+          },
+          "description" : ""
+        }, {
+          "target" : "rating",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(rating as float)"
+          },
+          "description" : ""
+        }, {
+          "target" : "stock",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(stock as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "thumbnail",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "thumbnail"
+          },
+          "description" : ""
+        }, {
+          "target" : "title",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "title"
+          },
+          "description" : ""
+        }, {
+          "target" : "ingest_time",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ingest_time"
+          },
+          "description" : ""
+        }, {
+          "target" : "env",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "'${env}'"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##category", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##stock", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##discountPercentage", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##title", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##description", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##images", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##thumbnail", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##rating", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##price", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##ingest_time", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##id", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##brand" ]
+      }
+    },
+    "3iMvu15qzMQyIaHTmW9Xc$$fx0qlg1460J-7F0SvU0nE" : {
+      "id" : "3iMvu15qzMQyIaHTmW9Xc$$fx0qlg1460J-7F0SvU0nE",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "Products_Bronze",
+        "slug" : "Products_Bronze",
+        "x" : 640,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "6bveX-9XTQQ11NKEAA28g$$AQn0Ue2c-RDdeTZD3K_9W",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/Products_Bronze"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}

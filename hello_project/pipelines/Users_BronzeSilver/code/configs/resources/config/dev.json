@@ -1,0 +1,5 @@
+{
+  "env" : "dev",
+  "table_name" : "Users_Bronze_dev",
+  "target_table" : "Users_Silver_dev"
+}

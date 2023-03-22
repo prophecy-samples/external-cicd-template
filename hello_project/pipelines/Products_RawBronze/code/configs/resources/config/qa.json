@@ -1,0 +1,4 @@
+{
+  "env" : "qa",
+  "table_name" : "Products_Bronze_qa"
+}

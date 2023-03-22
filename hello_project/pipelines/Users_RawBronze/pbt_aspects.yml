@@ -1,0 +1,7 @@
+version: 1
+configurations:
+- default
+- qa
+- dev
+- prod
+dependencies: []

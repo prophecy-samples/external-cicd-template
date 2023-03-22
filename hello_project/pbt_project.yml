@@ -1,0 +1,193 @@
+name: HelloCICD
+description: An example project that shows how to integrate with external CICD systems
+version: 0.0.1
+author: scott+data_eng@prophecy.io
+language: python
+buildSystem: wheel
+pipelines:
+  pipelines/IngestData:
+    name: IngestData
+    description: ''
+    author: scott+data_eng@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-03-20 19:43:43'
+    modifiedAt: '2023-03-21 22:46:48'
+    datasets:
+      inputs: []
+      outputs:
+      - datasets/Carts_Raw
+      - datasets/Products_Raw
+      - datasets/Users_Raw
+    dependencies: {}
+  pipelines/Products_RawBronze:
+    name: Products_RawBronze
+    description: Processes raw Product data into Bronze Layer
+    author: scott+data_eng@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-03-20 21:10:10'
+    modifiedAt: '2023-03-21 23:32:34'
+    datasets:
+      inputs:
+      - datasets/Products_Raw
+      outputs:
+      - datasets/Products_Bronze
+    dependencies: {}
+  pipelines/Carts_RawBronze:
+    name: Carts_RawBronze
+    description: Processes Cart data into Bronze layer using SCD1
+    author: scott+data_eng@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-03-20 21:19:31'
+    modifiedAt: '2023-03-21 23:29:43'
+    datasets:
+      inputs:
+      - datasets/Carts_Raw
+      outputs:
+      - datasets/Carts_Bronze
+    dependencies: {}
+  pipelines/Users_RawBronze:
+    name: Users_RawBronze
+    description: Transforms User data from Raw to Bronze Layer
+    author: scott+data_eng@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-03-20 22:10:51'
+    modifiedAt: '2023-03-21 23:04:14'
+    datasets:
+      inputs:
+      - datasets/Users_Raw
+      outputs:
+      - datasets/Users_Bronze
+    dependencies: {}
+  pipelines/Users_BronzeSilver:
+    name: Users_BronzeSilver
+    description: 'Bronze to Silver SDC2 Pipeline for Users '
+    author: scott+data_eng@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-03-21 17:11:11'
+    modifiedAt: '2023-03-22 01:03:31'
+    datasets:
+      inputs:
+      - datasets/Users_Bronze
+      outputs:
+      - datasets/Users_Silver
+    dependencies: {}
+datasets:
+  datasets/Users_Raw:
+    name: Users_Raw
+    description: ''
+    author: scott+data_eng@prophecy.io
+    createdAt: '2023-03-20 20:33:34'
+    modifiedAt: '2023-03-21 22:46:48'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1726
+        datasetType: File
+        description: ''
+        author: scott+data_eng@prophecy.io
+        createdAt: '2023-03-20 20:33:34'
+        modifiedAt: '2023-03-20 20:33:34'
+  datasets/Products_Raw:
+    name: Products_Raw
+    description: ''
+    author: scott+data_eng@prophecy.io
+    createdAt: '2023-03-20 20:34:33'
+    modifiedAt: '2023-03-21 16:51:41'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1726
+        datasetType: File
+        description: ''
+        author: scott+data_eng@prophecy.io
+        createdAt: '2023-03-20 20:34:33'
+        modifiedAt: '2023-03-20 20:34:33'
+  datasets/Carts_Raw:
+    name: Carts_Raw
+    description: ''
+    author: scott+data_eng@prophecy.io
+    createdAt: '2023-03-20 20:37:04'
+    modifiedAt: '2023-03-21 16:51:41'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1726
+        datasetType: File
+        description: ''
+        author: scott+data_eng@prophecy.io
+        createdAt: '2023-03-20 20:37:04'
+        modifiedAt: '2023-03-20 20:37:04'
+  datasets/Products_Bronze:
+    name: Products_Bronze
+    description: ''
+    author: scott+data_eng@prophecy.io
+    createdAt: '2023-03-20 21:17:33'
+    modifiedAt: '2023-03-21 23:32:34'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1726
+        datasetType: Database
+        description: ''
+        author: scott+data_eng@prophecy.io
+        createdAt: '2023-03-20 21:17:33'
+        modifiedAt: '2023-03-20 21:17:33'
+  datasets/Carts_Bronze:
+    name: Carts_Bronze
+    description: ''
+    author: scott+data_eng@prophecy.io
+    createdAt: '2023-03-20 22:08:52'
+    modifiedAt: '2023-03-21 23:29:39'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1726
+        datasetType: Database
+        description: ''
+        author: scott+data_eng@prophecy.io
+        createdAt: '2023-03-20 22:08:52'
+        modifiedAt: '2023-03-20 22:08:52'
+  datasets/Users_Bronze:
+    name: Users_Bronze
+    description: ''
+    author: scott+data_eng@prophecy.io
+    createdAt: '2023-03-20 22:27:28'
+    modifiedAt: '2023-03-21 23:04:14'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1726
+        datasetType: Database
+        description: ''
+        author: scott+data_eng@prophecy.io
+        createdAt: '2023-03-20 22:27:28'
+        modifiedAt: '2023-03-20 22:27:28'
+  datasets/Users_Silver:
+    name: Users_Silver
+    description: ''
+    author: scott+data_eng@prophecy.io
+    createdAt: '2023-03-21 23:42:40'
+    modifiedAt: '2023-03-21 23:42:40'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1726
+        datasetType: Database
+        description: ''
+        author: scott+data_eng@prophecy.io
+        createdAt: '2023-03-21 23:42:40'
+        modifiedAt: '2023-03-21 23:42:40'
+templates: {}
+jobs: {}
+libraries: []
+subgraphs: {}
+sqlModels: {}
+sqlPipeline: null
+dependencies: []
+projectDependencies: {}
+pipelineConfigurations: {}

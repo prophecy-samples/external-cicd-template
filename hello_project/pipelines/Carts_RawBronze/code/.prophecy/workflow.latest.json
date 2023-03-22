@@ -1,0 +1,461 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "1726",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "env",
+          "kind" : {
+            "type" : "string",
+            "value" : "unspecified"
+          },
+          "optional" : false
+        }, {
+          "name" : "table_name",
+          "kind" : {
+            "type" : "string",
+            "value" : ""
+          },
+          "optional" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "prod",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "carts_rawbronze"
+  },
+  "connections" : [ {
+    "id" : "k-1ofCbwtdbyNjjqLJ90P$$5t0W4ny8sOhsvRWObFjzZ",
+    "source" : "Jmhn0qyuaTJZDkRh71TOD$$uSh6fg9SnQmWT9QKEXaHS",
+    "sourcePort" : "ydc854BK2WBBUfVRIarrn$$rClF5AbcZNEMFlkS83yuJ",
+    "target" : "GbnpfhktTYn5p9tDdub8I$$XSJgbeE609t1DlAto3W0L",
+    "targetPort" : "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy"
+  }, {
+    "id" : "86y2i36Sz6zf3kMCo4Nmg",
+    "source" : "uYg9Ifop09h6nvnGOQvCE$$zM426ARa_xnNzfpOLpubp",
+    "sourcePort" : "eE0qGLCfSl1B4XZmx3KbG$$c7IkQBZInmwOb-ttT0lJc",
+    "target" : "tZZKdn8VlYVrXhfyB_i7_$$NsyhDnCeQFMTdKnkw7Vqh",
+    "targetPort" : "OplN8qX6Iwb7kCjcIGwbn$$-FK40Cz0iBizcO4P-0E13"
+  }, {
+    "id" : "coK5JV8bjRO6KKd9goqJF$$49-zvHGyes3YDWH8VPqrX",
+    "source" : "GbnpfhktTYn5p9tDdub8I$$XSJgbeE609t1DlAto3W0L",
+    "sourcePort" : "hnsmeeHcrAyAm7_smm_5H$$RpzSp5ZdIappfV2LIGHM1",
+    "target" : "f-4NPBboj52dksnXBmi18$$qOUb-kefh7xqunlHYlU2W",
+    "targetPort" : "RPJJl7uVijNNtxZ01M-pv$$D_6QH1nLQCLW1goFz5gJZ"
+  }, {
+    "id" : "oaopoOezIB3eHs4lROMwo$$m764Eu_ELVKKAyU732gko",
+    "source" : "f-4NPBboj52dksnXBmi18$$qOUb-kefh7xqunlHYlU2W",
+    "sourcePort" : "ucfKrXdWanHzYaOqD6kn5$$dHwc8LEQPxYgYGKq-YNZo",
+    "target" : "uYg9Ifop09h6nvnGOQvCE$$zM426ARa_xnNzfpOLpubp",
+    "targetPort" : "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto"
+  } ],
+  "processes" : {
+    "uYg9Ifop09h6nvnGOQvCE$$zM426ARa_xnNzfpOLpubp" : {
+      "id" : "uYg9Ifop09h6nvnGOQvCE$$zM426ARa_xnNzfpOLpubp",
+      "component" : "FlattenSchema",
+      "metadata" : {
+        "label" : "FlattenSchema_1",
+        "slug" : "FlattenSchema_1",
+        "x" : 780,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "eE0qGLCfSl1B4XZmx3KbG$$c7IkQBZInmwOb-ttT0lJc",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "explodedColsNewName" : [ ],
+        "fsExpressions" : [ {
+          "exploded" : "",
+          "flattenedExpression" : "id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "id"
+          },
+          "targetTokens" : [ "id" ],
+          "target" : "id"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "userId",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "userId"
+          },
+          "targetTokens" : [ "userId" ],
+          "target" : "userId"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "discountedTotal",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "discountedTotal"
+          },
+          "targetTokens" : [ "discountedTotal" ],
+          "target" : "discountedTotal"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "totalQuantity",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "totalQuantity"
+          },
+          "targetTokens" : [ "totalQuantity" ],
+          "target" : "totalQuantity"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "totalProducts",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "totalProducts"
+          },
+          "targetTokens" : [ "totalProducts" ],
+          "target" : "totalProducts"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "total",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "total"
+          },
+          "targetTokens" : [ "total" ],
+          "target" : "total"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "product_position",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "product_position"
+          },
+          "targetTokens" : [ "product_position" ],
+          "target" : "product_position"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "product.discountPercentage",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "product.discountPercentage"
+          },
+          "targetTokens" : [ "product", "discountPercentage" ],
+          "target" : "product_discountPercentage"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "product.discountedPrice",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "product.discountedPrice"
+          },
+          "targetTokens" : [ "product", "discountedPrice" ],
+          "target" : "product_discountedPrice"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "product.id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "product.id"
+          },
+          "targetTokens" : [ "product", "id" ],
+          "target" : "product_id"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "product.price",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "product.price"
+          },
+          "targetTokens" : [ "product", "price" ],
+          "target" : "product_price"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "product.quantity",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "product.quantity"
+          },
+          "targetTokens" : [ "product", "quantity" ],
+          "target" : "product_quantity"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "product.title",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "product.title"
+          },
+          "targetTokens" : [ "product", "title" ],
+          "target" : "product_title"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "product.total",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "product.total"
+          },
+          "targetTokens" : [ "product", "total" ],
+          "target" : "product_total"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "ingest_time",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ingest_time"
+          },
+          "targetTokens" : [ "ingest_time" ],
+          "target" : "ingest_time"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "env",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "env"
+          },
+          "targetTokens" : [ "env" ],
+          "target" : "env"
+        } ],
+        "columnsSelector" : [ "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.total", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.quantity", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##discountedTotal", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.discountedPrice", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.id", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##total", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##totalQuantity", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.title", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product_position", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##id", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.price", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.discountPercentage", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##userId", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##env", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##totalProducts", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##ingest_time" ],
+        "explodeColumns" : [ ],
+        "delimiter" : "_"
+      }
+    },
+    "GbnpfhktTYn5p9tDdub8I$$XSJgbeE609t1DlAto3W0L" : {
+      "id" : "GbnpfhktTYn5p9tDdub8I$$XSJgbeE609t1DlAto3W0L",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Carts_Reformat",
+        "slug" : "Carts_Reformat",
+        "x" : 440,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "hnsmeeHcrAyAm7_smm_5H$$RpzSp5ZdIappfV2LIGHM1",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "python",
+        "expressions" : [ {
+          "target" : "discountedTotal",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(discountedTotal as double)"
+          },
+          "description" : ""
+        }, {
+          "target" : "id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(id as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "products",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "products"
+          },
+          "description" : ""
+        }, {
+          "target" : "total",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(total as double)"
+          },
+          "description" : ""
+        }, {
+          "target" : "totalProducts",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(totalProducts as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "totalQuantity",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(totalQuantity as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "userId",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(userId as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "ingest_time",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ingest_time"
+          },
+          "description" : ""
+        }, {
+          "target" : "env",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "'${env}'"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalQuantity", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##userId", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##products", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##id", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##total", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##ingest_time", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalProducts", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##discountedTotal" ]
+      }
+    },
+    "Jmhn0qyuaTJZDkRh71TOD$$uSh6fg9SnQmWT9QKEXaHS" : {
+      "id" : "Jmhn0qyuaTJZDkRh71TOD$$uSh6fg9SnQmWT9QKEXaHS",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Carts_Raw",
+        "slug" : "Carts_Raw",
+        "x" : 280,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ydc854BK2WBBUfVRIarrn$$rClF5AbcZNEMFlkS83yuJ",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/Carts_Raw"
+      }
+    },
+    "tZZKdn8VlYVrXhfyB_i7_$$NsyhDnCeQFMTdKnkw7Vqh" : {
+      "id" : "tZZKdn8VlYVrXhfyB_i7_$$NsyhDnCeQFMTdKnkw7Vqh",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "Carts_Bronze",
+        "slug" : "Carts_Bronze",
+        "x" : 960,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "OplN8qX6Iwb7kCjcIGwbn$$-FK40Cz0iBizcO4P-0E13",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/Carts_Bronze"
+      }
+    },
+    "f-4NPBboj52dksnXBmi18$$qOUb-kefh7xqunlHYlU2W" : {
+      "id" : "f-4NPBboj52dksnXBmi18$$qOUb-kefh7xqunlHYlU2W",
+      "component" : "SQLStatement",
+      "metadata" : {
+        "label" : "SQLStatement_1",
+        "slug" : "SQLStatement_1",
+        "x" : 600,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "RPJJl7uVijNNtxZ01M-pv$$D_6QH1nLQCLW1goFz5gJZ",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "ucfKrXdWanHzYaOqD6kn5$$dHwc8LEQPxYgYGKq-YNZo",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "fileTabs" : [ {
+          "path" : "out",
+          "id" : "ucfKrXdWanHzYaOqD6kn5$$dHwc8LEQPxYgYGKq-YNZo",
+          "language" : "sql",
+          "content" : "select *, posexplode(products) AS (product_position, product) FROM in0"
+        } ],
+        "inputPortNames" : [ "in0" ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}

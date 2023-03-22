@@ -1,0 +1,837 @@
+{
+  "metainfo" : {
+    "id" : "1",
+    "language" : "python",
+    "fabricId" : "1726",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "python",
+      "udfs" : [ ]
+    },
+    "udafs" : {
+      "language" : "python",
+      "code" : ""
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "env",
+          "kind" : {
+            "type" : "string",
+            "value" : "unspecified"
+          },
+          "optional" : false
+        }, {
+          "name" : "table_name",
+          "kind" : {
+            "type" : "string",
+            "value" : " "
+          },
+          "optional" : false
+        } ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "dev",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "users_rawbronze"
+  },
+  "connections" : [ {
+    "id" : "JlPUUqIsFEYtNUwb4Za0U$$-kaaos_MnEwHP5rhXHGkA",
+    "source" : "k0BbQBWrYE_YKpaYjB51P$$wCQ19GwwqVpfk1VNwDca2",
+    "sourcePort" : "89CZSl1p4zTBAUB1rdtW4$$2q88V1T69Hb7uuIVhfzPj",
+    "target" : "w-GMJTVxJBWEvzBIlZC6o$$dur8AegD8gpg0TJMiqrFt",
+    "targetPort" : "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf"
+  }, {
+    "id" : "OzhN9OfM67_5QjxT0OaRL$$LJBR5hlCUzpk14H4JXmx0",
+    "source" : "w-GMJTVxJBWEvzBIlZC6o$$dur8AegD8gpg0TJMiqrFt",
+    "sourcePort" : "CZU73vb34dXMg5gWARzfP$$Heuj819QHqvsqPzvhEof0",
+    "target" : "RMsTXDaGqrSOMCBxLv98y$$-IkBFHK3C_aknTCLnflRL",
+    "targetPort" : "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O"
+  }, {
+    "id" : "MWxSH58Hnp4X0487xfNjZ",
+    "source" : "RMsTXDaGqrSOMCBxLv98y$$-IkBFHK3C_aknTCLnflRL",
+    "sourcePort" : "c1UJ268_0cLJRWCZVc4LR$$kX_jIY9E-Vl9aW_hP1ddR",
+    "target" : "f8mRhwCQYMlRt-vOiMTtG$$XgCaXUL4BGxQYAkpSfhJr",
+    "targetPort" : "W9I59MVf3-wyx4GS_29oy$$cJNQaDpcKoRFOHE97OzfR"
+  } ],
+  "processes" : {
+    "k0BbQBWrYE_YKpaYjB51P$$wCQ19GwwqVpfk1VNwDca2" : {
+      "id" : "k0BbQBWrYE_YKpaYjB51P$$wCQ19GwwqVpfk1VNwDca2",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Users_Raw",
+        "slug" : "Users_Raw",
+        "x" : -20,
+        "y" : 340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "89CZSl1p4zTBAUB1rdtW4$$2q88V1T69Hb7uuIVhfzPj",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/Users_Raw"
+      }
+    },
+    "w-GMJTVxJBWEvzBIlZC6o$$dur8AegD8gpg0TJMiqrFt" : {
+      "id" : "w-GMJTVxJBWEvzBIlZC6o$$dur8AegD8gpg0TJMiqrFt",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Users_Reformat",
+        "slug" : "Users_Reformat",
+        "x" : 180,
+        "y" : 340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "CZU73vb34dXMg5gWARzfP$$Heuj819QHqvsqPzvhEof0",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "python",
+        "expressions" : [ {
+          "target" : "address",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "address"
+          },
+          "description" : ""
+        }, {
+          "target" : "age",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(age as integer)"
+          },
+          "description" : ""
+        }, {
+          "target" : "bank",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "bank"
+          },
+          "description" : ""
+        }, {
+          "target" : "birthDate",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "to_date(birthDate)"
+          },
+          "description" : ""
+        }, {
+          "target" : "bloodGroup",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "bloodGroup"
+          },
+          "description" : ""
+        }, {
+          "target" : "company",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "company"
+          },
+          "description" : ""
+        }, {
+          "target" : "domain",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "domain"
+          },
+          "description" : ""
+        }, {
+          "target" : "ein",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ein"
+          },
+          "description" : ""
+        }, {
+          "target" : "email",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "email"
+          },
+          "description" : ""
+        }, {
+          "target" : "eyeColor",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "eyeColor"
+          },
+          "description" : ""
+        }, {
+          "target" : "firstName",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "firstName"
+          },
+          "description" : ""
+        }, {
+          "target" : "gender",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "gender"
+          },
+          "description" : ""
+        }, {
+          "target" : "hair",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "hair"
+          },
+          "description" : ""
+        }, {
+          "target" : "height",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(height as float)"
+          },
+          "description" : ""
+        }, {
+          "target" : "id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(id as long)"
+          },
+          "description" : ""
+        }, {
+          "target" : "image",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "image"
+          },
+          "description" : ""
+        }, {
+          "target" : "ip",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ip"
+          },
+          "description" : ""
+        }, {
+          "target" : "lastName",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "lastName"
+          },
+          "description" : ""
+        }, {
+          "target" : "macAddress",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "macAddress"
+          },
+          "description" : ""
+        }, {
+          "target" : "maidenName",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "maidenName"
+          },
+          "description" : ""
+        }, {
+          "target" : "password",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "password"
+          },
+          "description" : ""
+        }, {
+          "target" : "phone",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "phone"
+          },
+          "description" : ""
+        }, {
+          "target" : "ssn",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ssn"
+          },
+          "description" : ""
+        }, {
+          "target" : "university",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "university"
+          },
+          "description" : ""
+        }, {
+          "target" : "userAgent",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "userAgent"
+          },
+          "description" : ""
+        }, {
+          "target" : "username",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "username"
+          },
+          "description" : ""
+        }, {
+          "target" : "weight",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "CAST(weight as double)"
+          },
+          "description" : ""
+        }, {
+          "target" : "ingest_time",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ingest_time"
+          },
+          "description" : ""
+        }, {
+          "target" : "env",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "'${env}'"
+          },
+          "description" : ""
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##age", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##university", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##gender", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##bank", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##eyeColor", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##password", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##phone", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##id", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##maidenName", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##firstName", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##domain", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##height", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ein", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##username", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##image", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ssn", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ingest_time", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##company", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##bloodGroup", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##hair", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##ip", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##address", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##email", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##weight", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##birthDate", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##userAgent", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##macAddress", "kh-AWUtd9PaGlJHqf9Z5d$$-4zvg1exuQWarnbMflICf##lastName" ]
+      }
+    },
+    "f8mRhwCQYMlRt-vOiMTtG$$XgCaXUL4BGxQYAkpSfhJr" : {
+      "id" : "f8mRhwCQYMlRt-vOiMTtG$$XgCaXUL4BGxQYAkpSfhJr",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "Users_Bronze",
+        "slug" : "Users_Bronze",
+        "x" : 640,
+        "y" : 340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "W9I59MVf3-wyx4GS_29oy$$cJNQaDpcKoRFOHE97OzfR",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/Users_Bronze"
+      }
+    },
+    "RMsTXDaGqrSOMCBxLv98y$$-IkBFHK3C_aknTCLnflRL" : {
+      "id" : "RMsTXDaGqrSOMCBxLv98y$$-IkBFHK3C_aknTCLnflRL",
+      "component" : "FlattenSchema",
+      "metadata" : {
+        "label" : "FlattenSchema",
+        "slug" : "FlattenSchema",
+        "x" : 400,
+        "y" : 340,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O",
+          "slug" : "in0",
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "c1UJ268_0cLJRWCZVc4LR$$kX_jIY9E-Vl9aW_hP1ddR",
+          "slug" : "out",
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "explodedColsNewName" : [ ],
+        "fsExpressions" : [ {
+          "exploded" : "",
+          "flattenedExpression" : "id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "id"
+          },
+          "targetTokens" : [ "id" ],
+          "target" : "id"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "username",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "username"
+          },
+          "targetTokens" : [ "username" ],
+          "target" : "username"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "firstName",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "firstName"
+          },
+          "targetTokens" : [ "firstName" ],
+          "target" : "firstName"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "lastName",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "lastName"
+          },
+          "targetTokens" : [ "lastName" ],
+          "target" : "lastName"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "age",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "age"
+          },
+          "targetTokens" : [ "age" ],
+          "target" : "age"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "birthDate",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "birthDate"
+          },
+          "targetTokens" : [ "birthDate" ],
+          "target" : "birthDate"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "bloodGroup",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "bloodGroup"
+          },
+          "targetTokens" : [ "bloodGroup" ],
+          "target" : "bloodGroup"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "domain",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "domain"
+          },
+          "targetTokens" : [ "domain" ],
+          "target" : "domain"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "ein",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ein"
+          },
+          "targetTokens" : [ "ein" ],
+          "target" : "ein"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "email",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "email"
+          },
+          "targetTokens" : [ "email" ],
+          "target" : "email"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "eyeColor",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "eyeColor"
+          },
+          "targetTokens" : [ "eyeColor" ],
+          "target" : "eyeColor"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "gender",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "gender"
+          },
+          "targetTokens" : [ "gender" ],
+          "target" : "gender"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "height",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "height"
+          },
+          "targetTokens" : [ "height" ],
+          "target" : "height"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "image",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "image"
+          },
+          "targetTokens" : [ "image" ],
+          "target" : "image"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "ip",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ip"
+          },
+          "targetTokens" : [ "ip" ],
+          "target" : "ip"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "macAddress",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "macAddress"
+          },
+          "targetTokens" : [ "macAddress" ],
+          "target" : "macAddress"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "maidenName",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "maidenName"
+          },
+          "targetTokens" : [ "maidenName" ],
+          "target" : "maidenName"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "password",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "password"
+          },
+          "targetTokens" : [ "password" ],
+          "target" : "password"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "phone",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "phone"
+          },
+          "targetTokens" : [ "phone" ],
+          "target" : "phone"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "ssn",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ssn"
+          },
+          "targetTokens" : [ "ssn" ],
+          "target" : "ssn"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "university",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "university"
+          },
+          "targetTokens" : [ "university" ],
+          "target" : "university"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "userAgent",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "userAgent"
+          },
+          "targetTokens" : [ "userAgent" ],
+          "target" : "userAgent"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "weight",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "weight"
+          },
+          "targetTokens" : [ "weight" ],
+          "target" : "weight"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "address.city",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "address.city"
+          },
+          "targetTokens" : [ "address", "city" ],
+          "target" : "address_city"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "address.coordinates.lat",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "address.coordinates.lat"
+          },
+          "targetTokens" : [ "address", "coordinates", "lat" ],
+          "target" : "address_coordinates_lat"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "address.coordinates.lng",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "address.coordinates.lng"
+          },
+          "targetTokens" : [ "address", "coordinates", "lng" ],
+          "target" : "address_coordinates_lng"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "address.postalCode",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "address.postalCode"
+          },
+          "targetTokens" : [ "address", "postalCode" ],
+          "target" : "address_postalCode"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "address.state",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "address.state"
+          },
+          "targetTokens" : [ "address", "state" ],
+          "target" : "address_state"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "address.street",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "address.street"
+          },
+          "targetTokens" : [ "address", "street" ],
+          "target" : "address_street"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "bank.cardExpire",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "bank.cardExpire"
+          },
+          "targetTokens" : [ "bank", "cardExpire" ],
+          "target" : "bank_cardExpire"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "bank.cardNumber",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "bank.cardNumber"
+          },
+          "targetTokens" : [ "bank", "cardNumber" ],
+          "target" : "bank_cardNumber"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "bank.cardType",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "bank.cardType"
+          },
+          "targetTokens" : [ "bank", "cardType" ],
+          "target" : "bank_cardType"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "bank.currency",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "bank.currency"
+          },
+          "targetTokens" : [ "bank", "currency" ],
+          "target" : "bank_currency"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "bank.iban",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "bank.iban"
+          },
+          "targetTokens" : [ "bank", "iban" ],
+          "target" : "bank_iban"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "company.address.address",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "company.address.address"
+          },
+          "targetTokens" : [ "company", "address", "address" ],
+          "target" : "company_address_street"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "company.address.city",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "company.address.city"
+          },
+          "targetTokens" : [ "company", "address", "city" ],
+          "target" : "company_address_city"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "company.address.coordinates.lat",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "company.address.coordinates.lat"
+          },
+          "targetTokens" : [ "company", "address", "coordinates", "lat" ],
+          "target" : "company_address_coordinates_lat"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "company.address.coordinates.lng",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "company.address.coordinates.lng"
+          },
+          "targetTokens" : [ "company", "address", "coordinates", "lng" ],
+          "target" : "company_address_coordinates_lng"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "company.address.postalCode",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "company.address.postalCode"
+          },
+          "targetTokens" : [ "company", "address", "postalCode" ],
+          "target" : "company_address_postalCode"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "company.address.state",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "company.address.state"
+          },
+          "targetTokens" : [ "company", "address", "state" ],
+          "target" : "company_address_state"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "company.department",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "company.department"
+          },
+          "targetTokens" : [ "company", "department" ],
+          "target" : "company_department"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "company.name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "company.name"
+          },
+          "targetTokens" : [ "company", "name" ],
+          "target" : "company_name"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "company.title",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "company.title"
+          },
+          "targetTokens" : [ "company", "title" ],
+          "target" : "company_title"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "hair.color",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "hair.color"
+          },
+          "targetTokens" : [ "hair", "color" ],
+          "target" : "hair_color"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "hair.type",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "hair.type"
+          },
+          "targetTokens" : [ "hair", "type" ],
+          "target" : "hair_type"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "ingest_time",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ingest_time"
+          },
+          "targetTokens" : [ "ingest_time" ],
+          "target" : "ingest_time"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "env",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "env"
+          },
+          "targetTokens" : [ "env" ],
+          "target" : "env"
+        } ],
+        "columnsSelector" : [ "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company.title", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##bank.iban", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##bank.currency", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##hair", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##hair.color", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##eyeColor", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##birthDate", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##university", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##lastName", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##username", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##bloodGroup", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company.address.state", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##bank.cardType", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##bank.cardExpire", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##image", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##id", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##bank.cardNumber", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##age", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##address.street", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##address.coordinates", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company.name", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##gender", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##ingest_time", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##password", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##address.postalCode", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##address.coordinates.lat", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##domain", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##address", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##address.coordinates.lng", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##firstName", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##weight", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company.address.address", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##macAddress", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##userAgent", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company.address.postalCode", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##ein", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company.address.city", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##email", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company.address.coordinates.lng", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company.address.coordinates.lat", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company.address", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##hair.type", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##bank", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company.department", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##maidenName", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##address.city", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##address.state", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##ip", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##env", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##height", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##ssn", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##company.address.coordinates", "slfXA7zvbN-cM67uAbNd6$$dNQ-W2E6GAzNDWPK7tS9O##phone" ],
+        "explodeColumns" : [ ],
+        "delimiter" : "_"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  }
+}

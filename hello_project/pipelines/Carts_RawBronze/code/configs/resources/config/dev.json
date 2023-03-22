@@ -1,0 +1,4 @@
+{
+  "env" : "dev",
+  "table_name" : "Carts_Bronze_dev"
+}

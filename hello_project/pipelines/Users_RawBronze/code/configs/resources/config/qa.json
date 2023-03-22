@@ -1,0 +1,4 @@
+{
+  "env" : "qa",
+  "table_name" : "Users_Bronze_qa"
+}
