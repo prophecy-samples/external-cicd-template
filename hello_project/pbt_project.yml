@@ -154,56 +154,7 @@ datasets:
         createdAt: '2023-03-20 22:27:28'
         modifiedAt: '2023-03-20 22:27:28'
 templates: {}
-jobs:
-  jobs/IngestJob:
-    name: IngestJob
-    description: Weekly data ingest job
-    fabricUID: 1726
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 5 4 ? * 2 *
-    timeout: null
-    alerting:
-      emails: ''
-      onStart: false
-      onSuccess: false
-      onFailure: false
-    pipelines: []
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: null
-    createdAt: '2023-03-22 21:13:10'
-    modifiedAt: '2023-03-22 21:13:10'
-    author: scott+data_eng@prophecy.io
-  jobs/test:
-    name: test
-    description: ''
-    fabricUID: 1726
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0 * * ? *
-    timeout: null
-    alerting:
-      emails: ''
-      onStart: false
-      onSuccess: false
-      onFailure: false
-    pipelines:
-    - pipelines/IngestData
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: null
-    createdAt: '2023-03-22 21:47:10'
-    modifiedAt: '2023-03-22 21:47:10'
-    author: scott+data_eng@prophecy.io
+jobs: {}
 libraries: []
 subgraphs: {}
 sqlModels: {}
