@@ -6,13 +6,6 @@ schema:
     type:
       type: struct
       fields:
-      - name: address
-        type: string
-        nullable: true
-        metadata:
-          description: ''
-          mappings: []
-          tags: []
       - name: city
         type: string
         nullable: true
@@ -51,6 +44,13 @@ schema:
           mappings: []
           tags: []
       - name: state
+        type: string
+        nullable: true
+        metadata:
+          description: ''
+          mappings: []
+          tags: []
+      - name: street
         type: string
         nullable: true
         metadata:

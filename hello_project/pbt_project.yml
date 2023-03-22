@@ -12,7 +12,7 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2023-03-20 19:43:43'
-    modifiedAt: '2023-03-21 16:56:02'
+    modifiedAt: '2023-03-21 22:46:48'
     datasets:
       inputs: []
       outputs:
@@ -27,7 +27,7 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2023-03-20 21:10:10'
-    modifiedAt: '2023-03-21 17:06:49'
+    modifiedAt: '2023-03-21 23:32:34'
     datasets:
       inputs:
       - datasets/Products_Raw
@@ -41,7 +41,7 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2023-03-20 21:19:31'
-    modifiedAt: '2023-03-21 16:56:58'
+    modifiedAt: '2023-03-21 23:29:43'
     datasets:
       inputs:
       - datasets/Carts_Raw
@@ -55,12 +55,26 @@ pipelines:
     mode: batch
     language: python
     createdAt: '2023-03-20 22:10:51'
-    modifiedAt: '2023-03-21 17:06:23'
+    modifiedAt: '2023-03-21 23:04:14'
     datasets:
       inputs:
       - datasets/Users_Raw
       outputs:
       - datasets/Users_Bronze
+    dependencies: {}
+  pipelines/Users_BronzeSilver:
+    name: Users_BronzeSilver
+    description: 'Bronze to Silver SDC2 Pipeline for Users '
+    author: scott+data_eng@prophecy.io
+    mode: batch
+    language: python
+    createdAt: '2023-03-21 17:11:11'
+    modifiedAt: '2023-03-22 01:03:31'
+    datasets:
+      inputs:
+      - datasets/Users_Bronze
+      outputs:
+      - datasets/Users_Silver
     dependencies: {}
 datasets:
   datasets/Users_Raw:
@@ -68,7 +82,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 20:33:34'
-    modifiedAt: '2023-03-21 16:51:41'
+    modifiedAt: '2023-03-21 22:46:48'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -113,7 +127,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 21:17:33'
-    modifiedAt: '2023-03-21 17:06:49'
+    modifiedAt: '2023-03-21 23:32:34'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -128,7 +142,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 22:08:52'
-    modifiedAt: '2023-03-21 16:44:28'
+    modifiedAt: '2023-03-21 23:29:39'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -143,7 +157,7 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 22:27:28'
-    modifiedAt: '2023-03-21 17:06:23'
+    modifiedAt: '2023-03-21 23:04:14'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -153,6 +167,21 @@ datasets:
         author: scott+data_eng@prophecy.io
         createdAt: '2023-03-20 22:27:28'
         modifiedAt: '2023-03-20 22:27:28'
+  datasets/Users_Silver:
+    name: Users_Silver
+    description: ''
+    author: scott+data_eng@prophecy.io
+    createdAt: '2023-03-21 23:42:40'
+    modifiedAt: '2023-03-21 23:42:40'
+    mode: batch
+    physicalDatasets:
+      HelloDev:
+        fabricId: 1726
+        datasetType: Database
+        description: ''
+        author: scott+data_eng@prophecy.io
+        createdAt: '2023-03-21 23:42:40'
+        modifiedAt: '2023-03-21 23:42:40'
 templates: {}
 jobs: {}
 libraries: []

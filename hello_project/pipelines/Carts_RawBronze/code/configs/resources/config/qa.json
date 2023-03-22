@@ -1,3 +1,4 @@
 {
-  "env" : "qa"
+  "env" : "qa",
+  "table_name" : "Carts_Bronze_qa"
 }

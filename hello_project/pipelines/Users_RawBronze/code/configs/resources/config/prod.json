@@ -1,3 +1,4 @@
 {
-  "env" : "prod"
+  "env" : "prod",
+  "table_name" : "Users_Bronze_prod"
 }

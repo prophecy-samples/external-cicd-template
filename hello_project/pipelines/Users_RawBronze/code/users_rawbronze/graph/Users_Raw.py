@@ -11,9 +11,9 @@ def Users_Raw(spark: SparkSession) -> DataFrame:
         .schema(
           StructType([
             StructField("address", StructType([
-              StructField("address", StringType(), True), StructField("city", StringType(), True), StructField("coordinates", StructType([
+              StructField("city", StringType(), True), StructField("coordinates", StructType([
                 StructField("lat", DoubleType(), True), StructField("lng", DoubleType(), True)
-              ]), True), StructField("postalCode", StringType(), True), StructField("state", StringType(), True)
+              ]), True), StructField("postalCode", StringType(), True), StructField("state", StringType(), True), StructField("street", StringType(), True)
             ]), True), StructField("age", StringType(), True), StructField("bank", StructType([
               StructField("cardExpire", StringType(), True), StructField("cardNumber", StringType(), True), StructField("cardType", StringType(), True), StructField("currency", StringType(), True), StructField("iban", StringType(), True)
             ]), True), StructField("birthDate", StringType(), True), StructField("bloodGroup", StringType(), True), StructField("company", StructType([

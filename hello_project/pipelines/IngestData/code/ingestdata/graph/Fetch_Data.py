@@ -11,9 +11,13 @@ def Fetch_Data(spark: SparkSession) -> (DataFrame, DataFrame, DataFrame):
     user_data = requests.get("https://dummyjson.com/users?limit=1000").json()["users"]
 
     for u in user_data:
+
         for (k, v) in u.items():
             if not isinstance(v, dict) and not isinstance(v, list):
                 u[k] = str(v)
+
+        u["address"]["street"] = u["address"]["address"]
+        del u["address"]["address"]
 
     user_df = spark.read\
                   .json(spark.sparkContext.parallelize(user_data), samplingRatio = 1.0)\

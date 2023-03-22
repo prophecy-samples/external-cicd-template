@@ -1,3 +1,4 @@
 {
-  "env" : "prod"
+  "env" : "prod",
+  "table_name" : "Carts_Bronze_prod"
 }

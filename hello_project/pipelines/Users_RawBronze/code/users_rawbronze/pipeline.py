@@ -9,7 +9,8 @@ from users_rawbronze.graph import *
 def pipeline(spark: SparkSession) -> None:
     df_Users_Raw = Users_Raw(spark)
     df_Users_Reformat = Users_Reformat(spark, df_Users_Raw)
-    Users_Bronze(spark, df_Users_Reformat)
+    df_FlattenSchema = FlattenSchema(spark, df_Users_Reformat)
+    Users_Bronze(spark, df_FlattenSchema)
 
 def main():
     spark = SparkSession.builder\

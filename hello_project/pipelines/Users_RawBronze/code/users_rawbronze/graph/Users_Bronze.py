@@ -10,4 +10,4 @@ def Users_Bronze(spark: SparkSession, in0: DataFrame):
         .format("delta")\
         .option("path", f"dbfs:/FileStore/Prophecy/hello_cicd/{Config.env}/bronze/users")\
         .mode("append")\
-        .saveAsTable(f"hello_cicd.{f"{Config.env}_Users_Bronze"}")
+        .saveAsTable(f"hello_cicd.{Config.table_name}")
