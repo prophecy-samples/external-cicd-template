@@ -761,8 +761,8 @@
       "metadata" : {
         "label" : "Carts_Raw",
         "slug" : "Carts_Raw",
-        "x" : -60,
-        "y" : 260,
+        "x" : 40,
+        "y" : 280,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -1153,7 +1153,7 @@
       "metadata" : {
         "label" : "Limit_1",
         "slug" : "Limit_1",
-        "x" : 300,
+        "x" : 240,
         "y" : 280,
         "phase" : 0,
         "cache" : false,

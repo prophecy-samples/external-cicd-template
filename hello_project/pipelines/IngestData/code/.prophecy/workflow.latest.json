@@ -2,7 +2,7 @@
   "metainfo" : {
     "id" : "1",
     "language" : "python",
-    "fabricId" : "647",
+    "fabricId" : "1691",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -75,68 +75,6 @@
     "targetPort" : "GKNcC5I68l6dexy2MfTxP$$RHD4e1I0FpeHaTX9tVJai"
   } ],
   "processes" : {
-    "stK36X_NbjTHKafCAyT5j$$m2y5gLVjZ5D2vKif_EFMW" : {
-      "id" : "stK36X_NbjTHKafCAyT5j$$m2y5gLVjZ5D2vKif_EFMW",
-      "component" : "RestAPIEnrich",
-      "metadata" : {
-        "label" : "RestAPIEnrich_1",
-        "slug" : "RestAPIEnrich_1",
-        "x" : -120,
-        "y" : 80,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "sIUzZBnxanQpR-ozbh1N4$$KcQkUKBGxI-IL4EKg-Fyo",
-          "slug" : "in0"
-        } ],
-        "outputs" : [ {
-          "id" : "U8vCOYz6Hhmh3OdQkIESE$$2JSrFnGdvjW3ALhhLJX0f",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : {
-        "awaitTime" : null,
-        "method" : "GET",
-        "proxies" : null,
-        "verify" : null,
-        "streamFrom" : null,
-        "headersFrom" : null,
-        "auth" : null,
-        "url" : "https://www.boredapi.com/api/activity",
-        "json" : null,
-        "cert" : null,
-        "data" : null,
-        "params" : null,
-        "allow_redirectsFrom" : null,
-        "authFrom" : null,
-        "proxiesFrom" : null,
-        "files" : null,
-        "awaitTimeFrom" : null,
-        "cookies" : null,
-        "jsonFrom" : null,
-        "urlFrom" : "staticValue",
-        "parseContent" : null,
-        "activeTab" : "basicTab",
-        "allow_redirects" : null,
-        "certFrom" : null,
-        "stream" : null,
-        "filesFrom" : null,
-        "paramsFrom" : null,
-        "dataFrom" : null,
-        "timeoutFrom" : null,
-        "verifyFrom" : null,
-        "headers" : null,
-        "methodFrom" : "staticValue",
-        "timeout" : null,
-        "cookiesFrom" : null
-      }
-    },
     "4c3he450FIQUHwD43CFoN$$YZO2WuWetb6YlS95fJIvX" : {
       "id" : "4c3he450FIQUHwD43CFoN$$YZO2WuWetb6YlS95fJIvX",
       "component" : "Script",
@@ -937,30 +875,6 @@
         "scriptMethodHeader" : "def Script(spark: SparkSession) -> (DataFrame, DataFrame, DataFrame):",
         "scriptMethodFooter" : "    return (user_df, products_df, carts_df)"
       }
-    },
-    "i7DLetcAwCcAG17rbnjat$$VKsLrcn-O_54UhpFdPOOL" : {
-      "id" : "i7DLetcAwCcAG17rbnjat$$VKsLrcn-O_54UhpFdPOOL",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "Source_1",
-        "slug" : "Source_1",
-        "x" : -260,
-        "y" : 80,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "3ruvUEKVW7uGe4b9gGYy-$$dEFwEK9P1B4D3trw5y8jK",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
-      },
-      "properties" : { }
     },
     "WOD7nMyQzPgdj2lZBoihA$$_eHZZNZcZYRT7mkGcrYYR" : {
       "id" : "WOD7nMyQzPgdj2lZBoihA$$_eHZZNZcZYRT7mkGcrYYR",
@@ -1813,38 +1727,5 @@
     "outputs" : [ ],
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.stK36X_NbjTHKafCAyT5j$$m2y5gLVjZ5D2vKif_EFMW",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "Please connect input port in0",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.i7DLetcAwCcAG17rbnjat$$VKsLrcn-O_54UhpFdPOOL.properties.datasetId",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 1,
-    "message" : "dataset id missing",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }

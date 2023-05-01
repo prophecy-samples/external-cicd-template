@@ -7,9 +7,7 @@ from prophecy.utils import *
 from ingestdata.graph import *
 
 def pipeline(spark: SparkSession) -> None:
-    df_RestAPIEnrich_1 = RestAPIEnrich_1(spark)
     df_Fetch_Data_user_df, df_Fetch_Data_products_df, df_Fetch_Data_carts_df = Fetch_Data(spark)
-    df_Source_1 = Source_1(spark)
     Products_Raw(spark, df_Fetch_Data_products_df)
     Carts_Raw(spark, df_Fetch_Data_carts_df)
     Users_Raw(spark, df_Fetch_Data_user_df)

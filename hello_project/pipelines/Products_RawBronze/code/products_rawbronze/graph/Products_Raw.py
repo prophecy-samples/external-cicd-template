@@ -13,4 +13,4 @@ def Products_Raw(spark: SparkSession) -> DataFrame:
             StructField("brand", StringType(), True), StructField("category", StringType(), True), StructField("description", StringType(), True), StructField("discountPercentage", StringType(), True), StructField("id", StringType(), True), StructField("images", ArrayType(StringType(), True), True), StructField("price", StringType(), True), StructField("rating", StringType(), True), StructField("stock", StringType(), True), StructField("thumbnail", StringType(), True), StructField("title", StringType(), True), StructField("ingest_time", TimestampType(), False)
         ])
         )\
-        .load(f"dbfs:/FileStore/Prophecy/hello_cicd/{Config.env}/raw/products.json")
+        .load("dbfs:/FileStore/Prophecy/hello_cicd/raw/products.json")
