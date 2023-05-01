@@ -161,22 +161,22 @@
     } ]
   },
   "processes" : {
-    "PLA04W2BxDFvWNK5JqvN3$$YKTHIKYBujBgD_jdpgdvO" : {
-      "id" : "PLA04W2BxDFvWNK5JqvN3$$YKTHIKYBujBgD_jdpgdvO",
+    "Xw3-FXXFWG1NhE_fvuT6L$$zH2LvzoD6yZ02vryEq4nr" : {
+      "id" : "Xw3-FXXFWG1NhE_fvuT6L$$zH2LvzoD6yZ02vryEq4nr",
       "component" : "Pipeline",
       "metadata" : {
-        "label" : "Carts_RawBronze",
-        "slug" : "Carts_RawBronze",
-        "x" : 674.4000244140625,
-        "y" : 205.1999969482422
+        "label" : "IngestData",
+        "slug" : "IngestData",
+        "x" : 693.5999755859375,
+        "y" : 372
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "VSNKoKk4qgcJbYrOCBq0Y$$DiCcJVcaWQJN6S2OYHDrO",
+          "id" : "ODk2PTbPFChOTY2IP-o75$$kowXUO1Lfx5MOvdFXXnTc",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "ynyngaC0NmD2N-H_FoixI$$mtAQ2HUQMLDsb7Zq21Kb-",
+          "id" : "jj9JNQep6Ct6KplCfOzh1$$pVv4oqxGCpRrm9q_q8nUi",
           "slug" : ""
         } ]
       },
@@ -190,21 +190,13 @@
         }
       },
       "properties" : {
-        "pipelineId" : "pipelines/Carts_RawBronze",
+        "pipelineId" : "pipelines/IngestData",
         "configurations" : {
           "schema" : [ {
             "name" : "env",
             "kind" : {
               "type" : "string",
               "value" : "unspecified"
-            },
-            "optional" : false,
-            "isWorkflowNodeConfiguration" : false
-          }, {
-            "name" : "table_name",
-            "kind" : {
-              "type" : "string",
-              "value" : ""
             },
             "optional" : false,
             "isWorkflowNodeConfiguration" : false

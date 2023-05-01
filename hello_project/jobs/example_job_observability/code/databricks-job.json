@@ -2,9 +2,9 @@
   "fabric_id" : "1174",
   "components" : [ {
     "PipelineComponent" : {
-      "id" : "pipelines/Carts_RawBronze",
-      "nodeName" : "Carts_RawBronze",
-      "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Carts_RawBronze-1.0-py3-none-any.whl",
+      "id" : "pipelines/IngestData",
+      "nodeName" : "IngestData",
+      "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/IngestData-1.0-py3-none-any.whl",
       "language" : "python"
     }
   } ],
@@ -28,7 +28,7 @@
           "prophecy.metadata.is.interactive.run" : "false",
           "prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "prophecy.execution.service.url" : "wss://execution.dp.app.prophecy.io/eventws",
-          "prophecy.packages.path" : "{\"pipelines/Carts_RawBronze\":\"dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Carts_RawBronze-1.0-py3-none-any.whl\"}",
+          "prophecy.packages.path" : "{\"pipelines/IngestData\":\"dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/IngestData-1.0-py3-none-any.whl\"}",
           "prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
           "prophecy.execution.metrics.disabled" : false
@@ -37,10 +37,10 @@
     } ],
     "email_notifications" : { },
     "tasks" : [ {
-      "task_key" : "Carts_RawBronze",
+      "task_key" : "IngestData",
       "job_cluster_key" : "example_job_observability_default_small",
       "python_wheel_task" : {
-        "package_name" : "Carts_RawBronze",
+        "package_name" : "IngestData",
         "entry_point" : "main",
         "parameters" : [ "-i", "default", "-O", "{}" ]
       },
@@ -53,7 +53,7 @@
           "package" : "prophecy-libs==1.5.0"
         }
       }, {
-        "whl" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Carts_RawBronze-1.0-py3-none-any.whl"
+        "whl" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/IngestData-1.0-py3-none-any.whl"
       } ],
       "email_notifications" : { },
       "max_retries" : 0
