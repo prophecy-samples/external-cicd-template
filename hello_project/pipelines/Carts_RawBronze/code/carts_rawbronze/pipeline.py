@@ -8,7 +8,8 @@ from carts_rawbronze.graph import *
 
 def pipeline(spark: SparkSession) -> None:
     df_Carts_Raw = Carts_Raw(spark)
-    df_Carts_Reformat = Carts_Reformat(spark, df_Carts_Raw)
+    df_Limit_1 = Limit_1(spark, df_Carts_Raw)
+    df_Carts_Reformat = Carts_Reformat(spark, df_Limit_1)
     df_SQLStatement_1 = SQLStatement_1(spark, df_Carts_Reformat)
     df_FlattenSchema_1 = FlattenSchema_1(spark, df_SQLStatement_1)
     Carts_Bronze(spark, df_FlattenSchema_1)

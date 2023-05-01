@@ -2,12 +2,14 @@
   "metainfo" : {
     "id" : "1",
     "language" : "python",
-    "fabricId" : "1726",
+    "fabricId" : "647",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
       "language" : "python",
-      "udfs" : [ ]
+      "udfs" : [ ],
+      "functionPackageName" : "prophecy_demos.hellocicd.functions",
+      "sharedFunctionPackageNames" : [ ]
     },
     "udafs" : {
       "language" : "python",
@@ -22,7 +24,8 @@
             "type" : "string",
             "value" : "unspecified"
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         } ]
       },
       "oldCommon" : {
@@ -40,6 +43,7 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -48,7 +52,8 @@
       "enabled" : false,
       "value" : 1000
     },
-    "topLevelPackage" : "ingestdata"
+    "topLevelPackage" : "ingestdata",
+    "configurationVersion" : "v1"
   },
   "connections" : [ {
     "id" : "cT5OI5I4WXz3MUkuhSjOc$$7Ezz3Gqyy-JRQmCZ2cUP3",
@@ -70,6 +75,68 @@
     "targetPort" : "GKNcC5I68l6dexy2MfTxP$$RHD4e1I0FpeHaTX9tVJai"
   } ],
   "processes" : {
+    "stK36X_NbjTHKafCAyT5j$$m2y5gLVjZ5D2vKif_EFMW" : {
+      "id" : "stK36X_NbjTHKafCAyT5j$$m2y5gLVjZ5D2vKif_EFMW",
+      "component" : "RestAPIEnrich",
+      "metadata" : {
+        "label" : "RestAPIEnrich_1",
+        "slug" : "RestAPIEnrich_1",
+        "x" : -120,
+        "y" : 80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "sIUzZBnxanQpR-ozbh1N4$$KcQkUKBGxI-IL4EKg-Fyo",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "U8vCOYz6Hhmh3OdQkIESE$$2JSrFnGdvjW3ALhhLJX0f",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "awaitTime" : null,
+        "method" : "GET",
+        "proxies" : null,
+        "verify" : null,
+        "streamFrom" : null,
+        "headersFrom" : null,
+        "auth" : null,
+        "url" : "https://www.boredapi.com/api/activity",
+        "json" : null,
+        "cert" : null,
+        "data" : null,
+        "params" : null,
+        "allow_redirectsFrom" : null,
+        "authFrom" : null,
+        "proxiesFrom" : null,
+        "files" : null,
+        "awaitTimeFrom" : null,
+        "cookies" : null,
+        "jsonFrom" : null,
+        "urlFrom" : "staticValue",
+        "parseContent" : null,
+        "activeTab" : "basicTab",
+        "allow_redirects" : null,
+        "certFrom" : null,
+        "stream" : null,
+        "filesFrom" : null,
+        "paramsFrom" : null,
+        "dataFrom" : null,
+        "timeoutFrom" : null,
+        "verifyFrom" : null,
+        "headers" : null,
+        "methodFrom" : "staticValue",
+        "timeout" : null,
+        "cookiesFrom" : null
+      }
+    },
     "4c3he450FIQUHwD43CFoN$$YZO2WuWetb6YlS95fJIvX" : {
       "id" : "4c3he450FIQUHwD43CFoN$$YZO2WuWetb6YlS95fJIvX",
       "component" : "Script",
@@ -871,6 +938,30 @@
         "scriptMethodFooter" : "    return (user_df, products_df, carts_df)"
       }
     },
+    "i7DLetcAwCcAG17rbnjat$$VKsLrcn-O_54UhpFdPOOL" : {
+      "id" : "i7DLetcAwCcAG17rbnjat$$VKsLrcn-O_54UhpFdPOOL",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "Source_1",
+        "slug" : "Source_1",
+        "x" : -260,
+        "y" : 80,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "3ruvUEKVW7uGe4b9gGYy-$$dEFwEK9P1B4D3trw5y8jK",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : { }
+    },
     "WOD7nMyQzPgdj2lZBoihA$$_eHZZNZcZYRT7mkGcrYYR" : {
       "id" : "WOD7nMyQzPgdj2lZBoihA$$_eHZZNZcZYRT7mkGcrYYR",
       "component" : "Target",
@@ -888,6 +979,122 @@
         "inputs" : [ {
           "id" : "UQ4n_XS-_J7AOBA9zWEiX$$SSStlCcVXLJuc72ZjWCoo",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "brand",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "description",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "discountPercentage",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "images",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "price",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rating",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "stock",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "thumbnail",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "title",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ingest_time",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ ],
@@ -915,6 +1122,152 @@
         "inputs" : [ {
           "id" : "GKNcC5I68l6dexy2MfTxP$$RHD4e1I0FpeHaTX9tVJai",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "discountedTotal",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "products",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "struct",
+                  "fields" : [ {
+                    "name" : "discountPercentage",
+                    "type" : "double",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "discountedPrice",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "id",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "price",
+                    "type" : "double",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "quantity",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "title",
+                    "type" : "string",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "total",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  } ]
+                },
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "total",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalProducts",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalQuantity",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "userId",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ingest_time",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ ],
@@ -942,6 +1295,508 @@
         "inputs" : [ {
           "id" : "yjXDlt0EU2hVQLbyfsYRy$$T6UfaOhhABEL-T78bYVzJ",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "address",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "city",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "coordinates",
+                  "type" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "lat",
+                      "type" : "double",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "lng",
+                      "type" : "double",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "postalCode",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "state",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "street",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "age",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "bank",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "cardExpire",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "cardNumber",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "cardType",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "currency",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "iban",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "birthDate",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "bloodGroup",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "company",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "address",
+                  "type" : {
+                    "type" : "struct",
+                    "fields" : [ {
+                      "name" : "address",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "city",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "coordinates",
+                      "type" : {
+                        "type" : "struct",
+                        "fields" : [ {
+                          "name" : "lat",
+                          "type" : "double",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        }, {
+                          "name" : "lng",
+                          "type" : "double",
+                          "nullable" : true,
+                          "metadata" : {
+                            "description" : "",
+                            "mappings" : [ ],
+                            "tags" : [ ]
+                          }
+                        } ]
+                      },
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "postalCode",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    }, {
+                      "name" : "state",
+                      "type" : "string",
+                      "nullable" : true,
+                      "metadata" : {
+                        "description" : "",
+                        "mappings" : [ ],
+                        "tags" : [ ]
+                      }
+                    } ]
+                  },
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "department",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "name",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "title",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "domain",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ein",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "email",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "eyeColor",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "firstName",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "hair",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "color",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "type",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "height",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "image",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ip",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lastName",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "macAddress",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "maidenName",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "password",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "phone",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ssn",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "university",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "userAgent",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "username",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "weight",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ingest_time",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ ],
@@ -958,5 +1813,38 @@
     "outputs" : [ ],
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false
-  }
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.stK36X_NbjTHKafCAyT5j$$m2y5gLVjZ5D2vKif_EFMW",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "Please connect input port in0",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.i7DLetcAwCcAG17rbnjat$$VKsLrcn-O_54UhpFdPOOL.properties.datasetId",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 1,
+    "message" : "dataset id missing",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
 }

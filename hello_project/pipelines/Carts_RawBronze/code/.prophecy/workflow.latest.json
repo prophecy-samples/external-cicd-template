@@ -2,12 +2,14 @@
   "metainfo" : {
     "id" : "1",
     "language" : "python",
-    "fabricId" : "1726",
+    "fabricId" : "1174",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
       "language" : "python",
-      "udfs" : [ ]
+      "udfs" : [ ],
+      "functionPackageName" : "prophecy_demos.hellocicd.functions",
+      "sharedFunctionPackageNames" : [ ]
     },
     "udafs" : {
       "language" : "python",
@@ -22,14 +24,16 @@
             "type" : "string",
             "value" : "unspecified"
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         }, {
           "name" : "table_name",
           "kind" : {
             "type" : "string",
             "value" : ""
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false
         } ]
       },
       "oldCommon" : {
@@ -47,6 +51,7 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -55,15 +60,10 @@
       "enabled" : false,
       "value" : 1000
     },
-    "topLevelPackage" : "carts_rawbronze"
+    "topLevelPackage" : "carts_rawbronze",
+    "configurationVersion" : "v1"
   },
   "connections" : [ {
-    "id" : "k-1ofCbwtdbyNjjqLJ90P$$5t0W4ny8sOhsvRWObFjzZ",
-    "source" : "Jmhn0qyuaTJZDkRh71TOD$$uSh6fg9SnQmWT9QKEXaHS",
-    "sourcePort" : "ydc854BK2WBBUfVRIarrn$$rClF5AbcZNEMFlkS83yuJ",
-    "target" : "GbnpfhktTYn5p9tDdub8I$$XSJgbeE609t1DlAto3W0L",
-    "targetPort" : "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy"
-  }, {
     "id" : "86y2i36Sz6zf3kMCo4Nmg",
     "source" : "uYg9Ifop09h6nvnGOQvCE$$zM426ARa_xnNzfpOLpubp",
     "sourcePort" : "eE0qGLCfSl1B4XZmx3KbG$$c7IkQBZInmwOb-ttT0lJc",
@@ -81,6 +81,18 @@
     "sourcePort" : "ucfKrXdWanHzYaOqD6kn5$$dHwc8LEQPxYgYGKq-YNZo",
     "target" : "uYg9Ifop09h6nvnGOQvCE$$zM426ARa_xnNzfpOLpubp",
     "targetPort" : "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto"
+  }, {
+    "id" : "BgjhAtK0OaKl2YmhoJtTL$$TE37aN60-h69fXzINDFl7",
+    "source" : "Jmhn0qyuaTJZDkRh71TOD$$uSh6fg9SnQmWT9QKEXaHS",
+    "sourcePort" : "ydc854BK2WBBUfVRIarrn$$rClF5AbcZNEMFlkS83yuJ",
+    "target" : "V2XOKoWZtvXMkYqIVVCnb$$bqBqK0dq_psPL2VpXPLGR",
+    "targetPort" : "GyapWXujXxxcGV7gdlJWF$$bQZ8Eqx82sYyxypNRlWa1"
+  }, {
+    "id" : "wB2fkQ556XA0q7mBUhM_v$$75PuTTe7_KpkmLj2ZfB_Q",
+    "source" : "V2XOKoWZtvXMkYqIVVCnb$$bqBqK0dq_psPL2VpXPLGR",
+    "sourcePort" : "1Z6dLFJ6yH0n-MfBpS4wt$$tdg8qve16lyDTbFwdQFO7",
+    "target" : "GbnpfhktTYn5p9tDdub8I$$XSJgbeE609t1DlAto3W0L",
+    "targetPort" : "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy"
   } ],
   "processes" : {
     "uYg9Ifop09h6nvnGOQvCE$$zM426ARa_xnNzfpOLpubp" : {
@@ -100,12 +112,250 @@
         "inputs" : [ {
           "id" : "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "discountedTotal",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "products",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "struct",
+                  "fields" : [ {
+                    "name" : "discountPercentage",
+                    "type" : "double",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "discountedPrice",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "id",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "price",
+                    "type" : "double",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "quantity",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "title",
+                    "type" : "string",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "total",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  } ]
+                },
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "total",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalProducts",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalQuantity",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "userId",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ingest_time",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "env",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_position",
+              "type" : "integer",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product",
+              "type" : {
+                "type" : "struct",
+                "fields" : [ {
+                  "name" : "discountPercentage",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "discountedPrice",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "id",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "price",
+                  "type" : "double",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "quantity",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "title",
+                  "type" : "string",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                }, {
+                  "name" : "total",
+                  "type" : "long",
+                  "nullable" : true,
+                  "metadata" : {
+                    "description" : "",
+                    "mappings" : [ ],
+                    "tags" : [ ]
+                  }
+                } ]
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "eE0qGLCfSl1B4XZmx3KbG$$c7IkQBZInmwOb-ttT0lJc",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -268,7 +518,7 @@
       "metadata" : {
         "label" : "Carts_Reformat",
         "slug" : "Carts_Reformat",
-        "x" : 440,
+        "x" : 420,
         "y" : 280,
         "phase" : 0,
         "cache" : false,
@@ -279,12 +529,157 @@
         "inputs" : [ {
           "id" : "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "discountedTotal",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "products",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "struct",
+                  "fields" : [ {
+                    "name" : "discountPercentage",
+                    "type" : "double",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "discountedPrice",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "id",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "price",
+                    "type" : "double",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "quantity",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "title",
+                    "type" : "string",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "total",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  } ]
+                },
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "total",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalProducts",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalQuantity",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "userId",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ingest_time",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "hnsmeeHcrAyAm7_smm_5H$$RpzSp5ZdIappfV2LIGHM1",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -357,7 +752,7 @@
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalQuantity", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##userId", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##products", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##id", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##total", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##ingest_time", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalProducts", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##discountedTotal" ]
+        "columnsSelector" : [ ]
       }
     },
     "Jmhn0qyuaTJZDkRh71TOD$$uSh6fg9SnQmWT9QKEXaHS" : {
@@ -366,8 +761,8 @@
       "metadata" : {
         "label" : "Carts_Raw",
         "slug" : "Carts_Raw",
-        "x" : 280,
-        "y" : 280,
+        "x" : -60,
+        "y" : 260,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
@@ -377,8 +772,7 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "ydc854BK2WBBUfVRIarrn$$rClF5AbcZNEMFlkS83yuJ",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -404,6 +798,154 @@
         "inputs" : [ {
           "id" : "OplN8qX6Iwb7kCjcIGwbn$$-FK40Cz0iBizcO4P-0E13",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "userId",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "discountedTotal",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalQuantity",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalProducts",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "total",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_position",
+              "type" : "integer",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_discountPercentage",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_discountedPrice",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_price",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_quantity",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_title",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "product_total",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ingest_time",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "env",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ ],
@@ -431,12 +973,166 @@
         "inputs" : [ {
           "id" : "RPJJl7uVijNNtxZ01M-pv$$D_6QH1nLQCLW1goFz5gJZ",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "discountedTotal",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "products",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "struct",
+                  "fields" : [ {
+                    "name" : "discountPercentage",
+                    "type" : "double",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "discountedPrice",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "id",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "price",
+                    "type" : "double",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "quantity",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "title",
+                    "type" : "string",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "total",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  } ]
+                },
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "total",
+              "type" : "double",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalProducts",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalQuantity",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "userId",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ingest_time",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "env",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "ucfKrXdWanHzYaOqD6kn5$$dHwc8LEQPxYgYGKq-YNZo",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -449,6 +1145,182 @@
           "content" : "select *, posexplode(products) AS (product_position, product) FROM in0"
         } ],
         "inputPortNames" : [ "in0" ]
+      }
+    },
+    "V2XOKoWZtvXMkYqIVVCnb$$bqBqK0dq_psPL2VpXPLGR" : {
+      "id" : "V2XOKoWZtvXMkYqIVVCnb$$bqBqK0dq_psPL2VpXPLGR",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "Limit_1",
+        "slug" : "Limit_1",
+        "x" : 300,
+        "y" : 280,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "GyapWXujXxxcGV7gdlJWF$$bQZ8Eqx82sYyxypNRlWa1",
+          "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "discountedTotal",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "products",
+              "type" : {
+                "type" : "array",
+                "elementType" : {
+                  "type" : "struct",
+                  "fields" : [ {
+                    "name" : "discountPercentage",
+                    "type" : "double",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "discountedPrice",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "id",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "price",
+                    "type" : "double",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "quantity",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "title",
+                    "type" : "string",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  }, {
+                    "name" : "total",
+                    "type" : "long",
+                    "nullable" : true,
+                    "metadata" : {
+                      "description" : "",
+                      "mappings" : [ ],
+                      "tags" : [ ]
+                    }
+                  } ]
+                },
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "total",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalProducts",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "totalQuantity",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "userId",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ingest_time",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "1Z6dLFJ6yH0n-MfBpS4wt$$tdg8qve16lyDTbFwdQFO7",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "limit" : "10"
       }
     }
   },
