@@ -1,57 +1,23 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.utils import *
 from prophecy.libs import typed_lit
 from users_rawbronze.config.ConfigStore import *
 from users_rawbronze.udfs.UDFs import *
 
 def FlattenSchema(spark: SparkSession, in0: DataFrame) -> DataFrame:
-    return in0.select(
-        col("id"), 
-        col("username"), 
-        col("firstName"), 
-        col("lastName"), 
-        col("age"), 
-        col("birthDate"), 
-        col("bloodGroup"), 
-        col("domain"), 
-        col("ein"), 
-        col("email"), 
-        col("eyeColor"), 
-        col("gender"), 
-        col("height"), 
-        col("image"), 
-        col("ip"), 
-        col("macAddress"), 
-        col("maidenName"), 
-        col("password"), 
-        col("phone"), 
-        col("ssn"), 
-        col("university"), 
-        col("userAgent"), 
-        col("weight"), 
-        col("address.city").alias("address_city"), 
-        col("address.coordinates.lat").alias("address_coordinates_lat"), 
-        col("address.coordinates.lng").alias("address_coordinates_lng"), 
-        col("address.postalCode").alias("address_postalCode"), 
-        col("address.state").alias("address_state"), 
-        col("address.street").alias("address_street"), 
-        col("bank.cardExpire").alias("bank_cardExpire"), 
-        col("bank.cardNumber").alias("bank_cardNumber"), 
-        col("bank.cardType").alias("bank_cardType"), 
-        col("bank.currency").alias("bank_currency"), 
-        col("bank.iban").alias("bank_iban"), 
-        col("company.address.address").alias("company_address_street"), 
-        col("company.address.city").alias("company_address_city"), 
-        col("company.address.coordinates.lat").alias("company_address_coordinates_lat"), 
-        col("company.address.coordinates.lng").alias("company_address_coordinates_lng"), 
-        col("company.address.postalCode").alias("company_address_postalCode"), 
-        col("company.address.state").alias("company_address_state"), 
-        col("company.department").alias("company_department"), 
-        col("company.name").alias("company_name"), 
-        col("company.title").alias("company_title"), 
-        col("hair.color").alias("hair_color"), 
-        col("hair.type").alias("hair_type"), 
-        col("ingest_time"), 
-        col("env")
-    )
+    flt_col = in0.columns
+    selectCols = [col("id") if "id" in flt_col else col("id"),                   col("username") if "username" in flt_col else col("username"),                   col("firstName") if "firstName" in flt_col else col("firstName"),                   col("lastName") if "lastName" in flt_col else col("lastName"),                   col("age") if "age" in flt_col else col("age"),                   col("birthDate") if "birthDate" in flt_col else col("birthDate"),                   col("bloodGroup") if "bloodGroup" in flt_col else col("bloodGroup"),                   col("domain") if "domain" in flt_col else col("domain"),                   col("ein") if "ein" in flt_col else col("ein"),                   col("email") if "email" in flt_col else col("email"),                   col("eyeColor") if "eyeColor" in flt_col else col("eyeColor"),                   col("gender") if "gender" in flt_col else col("gender"),                   col("height") if "height" in flt_col else col("height"),                   col("image") if "image" in flt_col else col("image"),                   col("ip") if "ip" in flt_col else col("ip"),                   col("macAddress") if "macAddress" in flt_col else col("macAddress"),                   col("maidenName") if "maidenName" in flt_col else col("maidenName"),                   col("password") if "password" in flt_col else col("password"),                   col("phone") if "phone" in flt_col else col("phone"),                   col("ssn") if "ssn" in flt_col else col("ssn"),                   col("university") if "university" in flt_col else col("university"),                   col("userAgent") if "userAgent" in flt_col else col("userAgent"),                   col("weight") if "weight" in flt_col else col("weight"),                   col("address_city") if "address_city" in flt_col else col("address.city").alias("address_city"),                   col("address_coordinates_lat") if "address_coordinates_lat" in flt_col else col("address.coordinates.lat")\
+                    .alias("address_coordinates_lat"),                   col("address_coordinates_lng") if "address_coordinates_lng" in flt_col else col("address.coordinates.lng")\
+                    .alias("address_coordinates_lng"),                   col("address_postalCode") if "address_postalCode" in flt_col else col("address.postalCode")\
+                    .alias("address_postalCode"),                   col("address_state") if "address_state" in flt_col else col("address.state").alias("address_state"),                   col("address_street") if "address_street" in flt_col else col("address.street").alias("address_street"),                   col("bank_cardExpire") if "bank_cardExpire" in flt_col else col("bank.cardExpire").alias("bank_cardExpire"),                   col("bank_cardNumber") if "bank_cardNumber" in flt_col else col("bank.cardNumber").alias("bank_cardNumber"),                   col("bank_cardType") if "bank_cardType" in flt_col else col("bank.cardType").alias("bank_cardType"),                   col("bank_currency") if "bank_currency" in flt_col else col("bank.currency").alias("bank_currency"),                   col("bank_iban") if "bank_iban" in flt_col else col("bank.iban").alias("bank_iban"),                   col("company_address_street") if "company_address_street" in flt_col else col("company.address.address")\
+                    .alias("company_address_street"),                   col("company_address_city") if "company_address_city" in flt_col else col("company.address.city")\
+                    .alias("company_address_city"),                   col("company_address_coordinates_lat") if "company_address_coordinates_lat" in flt_col else col("company.address.coordinates.lat")\
+                    .alias("company_address_coordinates_lat"),                   col("company_address_coordinates_lng") if "company_address_coordinates_lng" in flt_col else col("company.address.coordinates.lng")\
+                    .alias("company_address_coordinates_lng"),                   col("company_address_postalCode") if "company_address_postalCode" in flt_col else col("company.address.postalCode")\
+                    .alias("company_address_postalCode"),                   col("company_address_state") if "company_address_state" in flt_col else col("company.address.state")\
+                    .alias("company_address_state"),                   col("company_department") if "company_department" in flt_col else col("company.department")\
+                    .alias("company_department"),                   col("company_name") if "company_name" in flt_col else col("company.name").alias("company_name"),                   col("company_title") if "company_title" in flt_col else col("company.title").alias("company_title"),                   col("hair_color") if "hair_color" in flt_col else col("hair.color").alias("hair_color"),                   col("hair_type") if "hair_type" in flt_col else col("hair.type").alias("hair_type"),                   col("ingest_time") if "ingest_time" in flt_col else col("ingest_time"),                   col("env") if "env" in flt_col else col("env")]
+
+    return in0.select(*selectCols)

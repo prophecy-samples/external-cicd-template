@@ -1,6 +1,7 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.utils import *
 from carts_rawbronze.config.ConfigStore import *
 from carts_rawbronze.udfs.UDFs import *
 from prophecy.utils import *
@@ -23,8 +24,15 @@ def main():
                 .newSession()
     Utils.initializeFromArgs(spark, parse_args())
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/Carts_RawBronze")
-    
-    MetricsCollector.start(spark = spark, pipelineId = "pipelines/Carts_RawBronze")
+    registerUDFs(spark)
+
+    try:
+        
+        MetricsCollector.start(spark = spark, pipelineId = "pipelines/Carts_RawBronze", config = Config)
+    except :
+        
+        MetricsCollector.start(spark = spark, pipelineId = "pipelines/Carts_RawBronze")
+
     pipeline(spark)
     MetricsCollector.end(spark)
 

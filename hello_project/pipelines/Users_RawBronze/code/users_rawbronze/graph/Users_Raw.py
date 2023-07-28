@@ -1,6 +1,7 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.utils import *
 from prophecy.libs import typed_lit
 from users_rawbronze.config.ConfigStore import *
 from users_rawbronze.udfs.UDFs import *
@@ -27,4 +28,4 @@ def Users_Raw(spark: SparkSession) -> DataFrame:
             ]), True), StructField("height", StringType(), True), StructField("id", StringType(), True), StructField("image", StringType(), True), StructField("ip", StringType(), True), StructField("lastName", StringType(), True), StructField("macAddress", StringType(), True), StructField("maidenName", StringType(), True), StructField("password", StringType(), True), StructField("phone", StringType(), True), StructField("ssn", StringType(), True), StructField("university", StringType(), True), StructField("userAgent", StringType(), True), StructField("username", StringType(), True), StructField("weight", StringType(), True), StructField("ingest_time", TimestampType(), False)
         ])
         )\
-        .load(f"dbfs:/FileStore/Prophecy/hello_cicd/{Config.env}/raw/users.json")
+        .load("dbfs:/FileStore/Prophecy/hello_cicd/raw/users.json")
