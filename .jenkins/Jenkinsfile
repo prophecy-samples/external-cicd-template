@@ -5,7 +5,7 @@ pipeline {
         DATABRICKS_TOKEN = credentials('DATABRICKS_TOKEN')
         PROJECT_PATH = "./hello_project"
         VENV_NAME = ".venv"
-        switch(GIT_BRANCH) {
+        switch('${ghprbTargetBranch}') {
           case "main":
             FABRIC_ID = "2807"
             break
@@ -20,7 +20,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git branch: params.branch, credentialsId: 'github-hello-cicd-deploy-ssh', url: 'git@github.com:SimpleDataLabsInc/HelloCICD.git'
+                git branch: '${sha1}', credentialsId: 'github-hello-cicd-deploy-ssh', url: 'git@github.com:SimpleDataLabsInc/HelloCICD.git'
             }
         }
         stage('install pbt') {
