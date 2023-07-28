@@ -2,105 +2,57 @@
   "unitTests" : [ {
     "data" : {
       "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR" : {
-        "values" : [ [ "Vintage Apparel", "mens-shirts", "Many store is creating new designs and trend every month and every year. Daraz.pk have a beautiful range of men fashion brands", "12.76", "51", "[\"https://i.dummyjson.com/data/products/51/1.png\",\"https://i.dummyjson.com/data/products/51/2.jpg\",\"https://i.dummyjson.com/data/products/51/3.jpg\",\"https://i.dummyjson.com/data/products/51/thumbnail.jpg\"]", "23", "4.26", "132", "https://i.dummyjson.com/data/products/51/thumbnail.jpg", "half sleeves T shirts" ], [ "FREE FIRE", "mens-shirts", "quality and professional print - It doesn't just look high quality, it is high quality.", "14.72", "52", "[\"https://i.dummyjson.com/data/products/52/1.png\",\"https://i.dummyjson.com/data/products/52/2.png\",\"https://i.dummyjson.com/data/products/52/3.jpg\",\"https://i.dummyjson.com/data/products/52/4.jpg\",\"https://i.dummyjson.com/data/products/52/thumbnail.jpg\"]", "10", "4.52", "128", "https://i.dummyjson.com/data/products/52/thumbnail.jpg", "FREE FIRE T Shirt" ], [ "Vintage Apparel", "mens-shirts", "Brand: vintage Apparel ,Export quality", "7.54", "53", "[\"https://i.dummyjson.com/data/products/53/1.webp\",\"https://i.dummyjson.com/data/products/53/2.jpg\",\"https://i.dummyjson.com/data/products/53/3.jpg\",\"https://i.dummyjson.com/data/products/53/4.jpg\",\"https://i.dummyjson.com/data/products/53/thumbnail.jpg\"]", "35", "4.89", "6", "https://i.dummyjson.com/data/products/53/thumbnail.jpg", "printed high quality T shirts" ], [ "The Warehouse", "mens-shirts", "Product Description Features: 100% Ultra soft Polyester Jersey. Vibrant & colorful printing on front. Feels soft as cotton without ever cracking", "16.44", "54", "[\"https://i.dummyjson.com/data/products/54/1.jpg\",\"https://i.dummyjson.com/data/products/54/2.jpg\",\"https://i.dummyjson.com/data/products/54/3.jpg\",\"https://i.dummyjson.com/data/products/54/4.jpg\",\"https://i.dummyjson.com/data/products/54/thumbnail.jpg\"]", "46", "4.62", "136", "https://i.dummyjson.com/data/products/54/thumbnail.jpg", "Pubg Printed Graphic T-Shirt" ], [ "The Warehouse", "mens-shirts", "Fabric Jercy, Size: M & L Wear Stylish Dual Stiched", "15.97", "55", "[\"https://i.dummyjson.com/data/products/55/1.jpg\",\"https://i.dummyjson.com/data/products/55/2.webp\",\"https://i.dummyjson.com/data/products/55/3.jpg\",\"https://i.dummyjson.com/data/products/55/4.jpg\",\"https://i.dummyjson.com/data/products/55/thumbnail.jpg\"]", "66", "4.9", "122", "https://i.dummyjson.com/data/products/55/thumbnail.jpg", "Money Heist Printed Summer T Shirts" ], [ "Sneakers", "mens-shoes", "Gender: Men , Colors: Same as DisplayedCondition: 100% Brand New", "12.57", "56", "[\"https://i.dummyjson.com/data/products/56/1.jpg\",\"https://i.dummyjson.com/data/products/56/2.jpg\",\"https://i.dummyjson.com/data/products/56/3.jpg\",\"https://i.dummyjson.com/data/products/56/4.jpg\",\"https://i.dummyjson.com/data/products/56/5.jpg\",\"https://i.dummyjson.com/data/products/56/thumbnail.jpg\"]", "40", "4.38", "6", "https://i.dummyjson.com/data/products/56/thumbnail.jpg", "Sneakers Joggers Shoes" ], [ "Rubber", "mens-shoes", "Men Shoes - Loafers for men - Rubber Shoes - Nylon Shoes - Shoes for men - Moccassion - Pure Nylon (Rubber) Expot Quality.", "10.91", "57", "[\"https://i.dummyjson.com/data/products/57/1.jpg\",\"https://i.dummyjson.com/data/products/57/2.jpg\",\"https://i.dummyjson.com/data/products/57/3.jpg\",\"https://i.dummyjson.com/data/products/57/4.jpg\",\"https://i.dummyjson.com/data/products/57/thumbnail.jpg\"]", "47", "4.91", "20", "https://i.dummyjson.com/data/products/57/thumbnail.jpg", "Loafers for men" ], [ "The Warehouse", "mens-shoes", "Pattern Type: Solid, Material: PU, Toe Shape: Pointed Toe ,Outsole Material: Rubber", "12", "58", "[\"https://i.dummyjson.com/data/products/58/1.jpg\",\"https://i.dummyjson.com/data/products/58/2.jpg\",\"https://i.dummyjson.com/data/products/58/3.jpg\",\"https://i.dummyjson.com/data/products/58/4.jpg\",\"https://i.dummyjson.com/data/products/58/thumbnail.jpg\"]", "57", "4.41", "68", "https://i.dummyjson.com/data/products/58/thumbnail.jpg", "formal offices shoes" ], [ "Sneakers", "mens-shoes", "Comfortable stretch cloth, lightweight body; ,rubber sole, anti-skid wear;", "8.71", "59", "[\"https://i.dummyjson.com/data/products/59/1.jpg\",\"https://i.dummyjson.com/data/products/59/2.jpg\",\"https://i.dummyjson.com/data/products/59/3.jpg\",\"https://i.dummyjson.com/data/products/59/4.jpg\",\"https://i.dummyjson.com/data/products/59/thumbnail.jpg\"]", "20", "4.33", "137", "https://i.dummyjson.com/data/products/59/thumbnail.jpg", "Spring and summershoes" ], [ "Sneakers", "mens-shoes", "High Quality ,Stylish design ,Comfortable wear ,FAshion ,Durable", "7.55", "60", "[\"https://i.dummyjson.com/data/products/60/1.jpg\",\"https://i.dummyjson.com/data/products/60/2.jpg\",\"https://i.dummyjson.com/data/products/60/3.jpg\",\"https://i.dummyjson.com/data/products/60/thumbnail.jpg\"]", "58", "4.55", "129", "https://i.dummyjson.com/data/products/60/thumbnail.jpg", "Stylish Casual Jeans Shoes" ] ],
+        "values" : [ [ "2023-07-28T20:14:33.435Z" ], [ "2023-07-28T20:14:33.435Z" ], [ "2023-07-28T20:14:33.435Z" ], [ "2023-07-28T20:14:33.435Z" ], [ "2023-07-28T20:14:33.435Z" ], [ "2023-07-28T20:14:33.435Z" ], [ "2023-07-28T20:14:33.435Z" ], [ "2023-07-28T20:14:33.435Z" ], [ "2023-07-28T20:14:33.435Z" ], [ "2023-07-28T20:14:33.435Z" ] ],
         "schema" : {
           "type" : "struct",
           "fields" : [ {
-            "name" : "brand",
-            "type" : "string",
+            "name" : "ingest_time",
+            "type" : "timestamp",
             "nullable" : true,
             "metadata" : {
               "description" : "",
               "mappings" : [ ],
               "tags" : [ ]
             }
-          }, {
-            "name" : "category",
-            "type" : "string",
+          } ]
+        },
+        "predicates" : [ ]
+      },
+      "80MnwZszajNClUr1fKzEZ$$gTgVzgqEaMFj0JCyU0VDP" : {
+        "values" : [ [ "2023-07-28 20:14:33.435000" ], [ "2023-07-28 20:14:33.435000" ], [ "2023-07-28 20:14:33.435000" ], [ "2023-07-28 20:14:33.435000" ], [ "2023-07-28 20:14:33.435000" ], [ "2023-07-28 20:14:33.435000" ], [ "2023-07-28 20:14:33.435000" ], [ "2023-07-28 20:14:33.435000" ], [ "2023-07-28 20:14:33.435000" ], [ "2023-07-28 20:14:33.435000" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
+            "name" : "ingest_time",
+            "type" : "timestamp",
             "nullable" : true,
             "metadata" : {
               "description" : "",
               "mappings" : [ ],
               "tags" : [ ]
             }
-          }, {
-            "name" : "description",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "discountPercentage",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
+          } ]
+        },
+        "predicates" : [ {
+          "name" : "date sanity",
+          "expression" : {
+            "predicate" : "current_timestamp() > ingest_time",
+            "format" : "sql"
+          }
+        } ]
+      }
+    },
+    "name" : "Date checking",
+    "testType" : "outputPredicate",
+    "language" : "python"
+  }, {
+    "data" : {
+      "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR" : {
+        "values" : [ [ "51" ], [ "52" ], [ "53" ], [ "54" ], [ "55" ], [ "56" ], [ "57" ], [ "58" ], [ "59" ], [ "60" ] ],
+        "schema" : {
+          "type" : "struct",
+          "fields" : [ {
             "name" : "id",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "images",
-            "type" : {
-              "type" : "array",
-              "elementType" : "string",
-              "containsNull" : true
-            },
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "price",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "rating",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "stock",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "thumbnail",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "title",
             "type" : "string",
             "nullable" : true,
             "metadata" : {
@@ -113,46 +65,10 @@
         "predicates" : [ ]
       },
       "80MnwZszajNClUr1fKzEZ$$gTgVzgqEaMFj0JCyU0VDP" : {
-        "values" : [ [ "Vintage Apparel", "mens-shirts", "Many store is creating new designs and trend every month and every year. Daraz.pk have a beautiful range of men fashion brands", "12.76", "51", "['https://i.dummyjson.com/data/products/51/1.png', 'https://i.dummyjson.com/data/products/51/2.jpg', 'https://i.dummyjson.com/data/products/51/3.jpg', 'https://i.dummyjson.com/data/products/51/thumbnail.jpg']", "23.0", "4.260000228881836", "132", "https://i.dummyjson.com/data/products/51/thumbnail.jpg", "half sleeves T shirts" ], [ "FREE FIRE", "mens-shirts", "quality and professional print - It doesn't just look high quality, it is high quality.", "14.72", "52", "['https://i.dummyjson.com/data/products/52/1.png', 'https://i.dummyjson.com/data/products/52/2.png', 'https://i.dummyjson.com/data/products/52/3.jpg', 'https://i.dummyjson.com/data/products/52/4.jpg', 'https://i.dummyjson.com/data/products/52/thumbnail.jpg']", "10.0", "4.519999980926514", "128", "https://i.dummyjson.com/data/products/52/thumbnail.jpg", "FREE FIRE T Shirt" ], [ "Vintage Apparel", "mens-shirts", "Brand: vintage Apparel ,Export quality", "7.54", "53", "['https://i.dummyjson.com/data/products/53/1.webp', 'https://i.dummyjson.com/data/products/53/2.jpg', 'https://i.dummyjson.com/data/products/53/3.jpg', 'https://i.dummyjson.com/data/products/53/4.jpg', 'https://i.dummyjson.com/data/products/53/thumbnail.jpg']", "35.0", "4.889999866485596", "6", "https://i.dummyjson.com/data/products/53/thumbnail.jpg", "printed high quality T shirts" ], [ "The Warehouse", "mens-shirts", "Product Description Features: 100% Ultra soft Polyester Jersey. Vibrant & colorful printing on front. Feels soft as cotton without ever cracking", "16.44", "54", "['https://i.dummyjson.com/data/products/54/1.jpg', 'https://i.dummyjson.com/data/products/54/2.jpg', 'https://i.dummyjson.com/data/products/54/3.jpg', 'https://i.dummyjson.com/data/products/54/4.jpg', 'https://i.dummyjson.com/data/products/54/thumbnail.jpg']", "46.0", "4.619999885559082", "136", "https://i.dummyjson.com/data/products/54/thumbnail.jpg", "Pubg Printed Graphic T-Shirt" ], [ "The Warehouse", "mens-shirts", "Fabric Jercy, Size: M & L Wear Stylish Dual Stiched", "15.97", "55", "['https://i.dummyjson.com/data/products/55/1.jpg', 'https://i.dummyjson.com/data/products/55/2.webp', 'https://i.dummyjson.com/data/products/55/3.jpg', 'https://i.dummyjson.com/data/products/55/4.jpg', 'https://i.dummyjson.com/data/products/55/thumbnail.jpg']", "66.0", "4.900000095367432", "122", "https://i.dummyjson.com/data/products/55/thumbnail.jpg", "Money Heist Printed Summer T Shirts" ], [ "Sneakers", "mens-shoes", "Gender: Men , Colors: Same as DisplayedCondition: 100% Brand New", "12.57", "56", "['https://i.dummyjson.com/data/products/56/1.jpg', 'https://i.dummyjson.com/data/products/56/2.jpg', 'https://i.dummyjson.com/data/products/56/3.jpg', 'https://i.dummyjson.com/data/products/56/4.jpg', 'https://i.dummyjson.com/data/products/56/5.jpg', 'https://i.dummyjson.com/data/products/56/thumbnail.jpg']", "40.0", "4.380000114440918", "6", "https://i.dummyjson.com/data/products/56/thumbnail.jpg", "Sneakers Joggers Shoes" ], [ "Rubber", "mens-shoes", "Men Shoes - Loafers for men - Rubber Shoes - Nylon Shoes - Shoes for men - Moccassion - Pure Nylon (Rubber) Expot Quality.", "10.91", "57", "['https://i.dummyjson.com/data/products/57/1.jpg', 'https://i.dummyjson.com/data/products/57/2.jpg', 'https://i.dummyjson.com/data/products/57/3.jpg', 'https://i.dummyjson.com/data/products/57/4.jpg', 'https://i.dummyjson.com/data/products/57/thumbnail.jpg']", "47.0", "4.909999847412109", "20", "https://i.dummyjson.com/data/products/57/thumbnail.jpg", "Loafers for men" ], [ "The Warehouse", "mens-shoes", "Pattern Type: Solid, Material: PU, Toe Shape: Pointed Toe ,Outsole Material: Rubber", "12", "58", "['https://i.dummyjson.com/data/products/58/1.jpg', 'https://i.dummyjson.com/data/products/58/2.jpg', 'https://i.dummyjson.com/data/products/58/3.jpg', 'https://i.dummyjson.com/data/products/58/4.jpg', 'https://i.dummyjson.com/data/products/58/thumbnail.jpg']", "57.0", "4.409999847412109", "68", "https://i.dummyjson.com/data/products/58/thumbnail.jpg", "formal offices shoes" ], [ "Sneakers", "mens-shoes", "Comfortable stretch cloth, lightweight body; ,rubber sole, anti-skid wear", ";8.71", "59", "['https://i.dummyjson.com/data/products/59/1.jpg', 'https://i.dummyjson.com/data/products/59/2.jpg', 'https://i.dummyjson.com/data/products/59/3.jpg', 'https://i.dummyjson.com/data/products/59/4.jpg', 'https://i.dummyjson.com/data/products/59/thumbnail.jpg']", "20.0", "4.329999923706055", "137", "https://i.dummyjson.com/data/products/59/thumbnail.jpg", "Spring and summershoes" ], [ "Sneakers", "mens-shoes", "High Quality ,Stylish design ,Comfortable wear ,FAshion ,Durable", "7.55", "60", "['https://i.dummyjson.com/data/products/60/1.jpg', 'https://i.dummyjson.com/data/products/60/2.jpg', 'https://i.dummyjson.com/data/products/60/3.jpg', 'https://i.dummyjson.com/data/products/60/thumbnail.jpg']", "58.0", "4.550000190734863", "129", "https://i.dummyjson.com/data/products/60/thumbnail.jpg", "Stylish Casual Jeans Shoes" ] ],
+        "values" : [ [ "51" ], [ "52" ], [ "53" ], [ "54" ], [ "55" ], [ "56" ], [ "57" ], [ "58" ], [ "59" ], [ "60" ] ],
         "schema" : {
           "type" : "struct",
           "fields" : [ {
-            "name" : "brand",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "category",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "description",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "discountPercentage",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
             "name" : "id",
             "type" : "long",
             "nullable" : true,
@@ -161,71 +77,19 @@
               "mappings" : [ ],
               "tags" : [ ]
             }
-          }, {
-            "name" : "images",
-            "type" : {
-              "type" : "array",
-              "elementType" : "string",
-              "containsNull" : true
-            },
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "price",
-            "type" : "float",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "rating",
-            "type" : "float",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "stock",
-            "type" : "long",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "thumbnail",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
-          }, {
-            "name" : "title",
-            "type" : "string",
-            "nullable" : true,
-            "metadata" : {
-              "description" : "",
-              "mappings" : [ ],
-              "tags" : [ ]
-            }
           } ]
         },
-        "predicates" : [ ]
+        "predicates" : [ {
+          "name" : "deliberately pass or fail ",
+          "expression" : {
+            "predicate" : "True",
+            "format" : "sql"
+          }
+        } ]
       }
     },
-    "name" : "Unit Test 0",
-    "testType" : "outputRow",
+    "name" : "DeliberatePassFailTest",
+    "testType" : "outputPredicate",
     "language" : "python"
   } ],
   "language" : "python"

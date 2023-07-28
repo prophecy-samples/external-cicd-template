@@ -338,13 +338,13 @@
           "target" : "env",
           "expression" : {
             "format" : "sql",
-            "expression" : "'${env}'"
+            "expression" : "'$env'"
           },
           "description" : ""
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##category", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##stock", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##discountPercentage", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##title", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##description", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##images", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##thumbnail", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##rating", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##price", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##ingest_time", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##id", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##brand" ]
+        "columnsSelector" : [ "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##id", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##ingest_time", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##description", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##thumbnail", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##title", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##images", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##brand", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##price", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##category", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##stock", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##rating", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##discountPercentage" ]
       }
     },
     "3iMvu15qzMQyIaHTmW9Xc$$fx0qlg1460J-7F0SvU0nE" : {

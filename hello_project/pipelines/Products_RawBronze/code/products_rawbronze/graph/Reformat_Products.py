@@ -20,5 +20,5 @@ def Reformat_Products(spark: SparkSession, in0: DataFrame) -> DataFrame:
         col("thumbnail"), 
         col("title"), 
         col("ingest_time"), 
-        lit("").alias("env")
+        lit(Config.env).alias("env")
     )
