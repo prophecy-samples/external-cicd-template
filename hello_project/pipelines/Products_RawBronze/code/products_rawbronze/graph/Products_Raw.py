@@ -1,6 +1,7 @@
 from pyspark.sql import *
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+from prophecy.utils import *
 from prophecy.libs import typed_lit
 from products_rawbronze.config.ConfigStore import *
 from products_rawbronze.udfs.UDFs import *

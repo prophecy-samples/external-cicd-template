@@ -1,6 +1,7 @@
 {
   "metainfo" : {
     "id" : "1",
+    "uri" : "pipelines/Carts_RawBronze",
     "language" : "python",
     "fabricId" : "1174",
     "frontEndLanguage" : "sql",
@@ -25,7 +26,8 @@
             "value" : "unspecified"
           },
           "optional" : false,
-          "isWorkflowNodeConfiguration" : false
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
         }, {
           "name" : "table_name",
           "kind" : {
@@ -33,7 +35,8 @@
             "value" : ""
           },
           "optional" : false,
-          "isWorkflowNodeConfiguration" : false
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
         } ]
       },
       "oldCommon" : {
@@ -57,7 +60,7 @@
     "interimModeEnabled" : true,
     "visualCodeInterimMode" : "Disabled",
     "recordsLimit" : {
-      "enabled" : false,
+      "enabled" : true,
       "value" : 1000
     },
     "topLevelPackage" : "carts_rawbronze",

@@ -1,6 +1,7 @@
 {
   "metainfo" : {
     "id" : "1",
+    "uri" : "pipelines/IngestData",
     "language" : "python",
     "fabricId" : "1691",
     "frontEndLanguage" : "sql",
@@ -25,7 +26,8 @@
             "value" : "unspecified"
           },
           "optional" : false,
-          "isWorkflowNodeConfiguration" : false
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
         } ]
       },
       "oldCommon" : {

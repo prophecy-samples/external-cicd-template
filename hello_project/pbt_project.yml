@@ -10,7 +10,6 @@ buildSystemDetails:
   buildSystem: wheel
   author: null
   createdAt: '2023-04-03 15:25:13'
-  modifiedAt: '2023-04-03 15:25:13'
 pipelines:
   pipelines/IngestData:
     name: IngestData
@@ -20,7 +19,6 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-03-20 19:43:43'
-    modifiedAt: '2023-05-01 19:27:20'
     datasets:
       inputs: []
       outputs:
@@ -37,7 +35,6 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-03-20 21:10:10'
-    modifiedAt: '2023-05-01 19:27:26'
     datasets:
       inputs:
       - datasets/Products_Raw
@@ -53,7 +50,6 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-03-20 21:19:31'
-    modifiedAt: '2023-05-01 19:26:05'
     datasets:
       inputs:
       - datasets/Carts_Raw
@@ -69,7 +65,6 @@ pipelines:
     artefactID: ''
     language: python
     createdAt: '2023-03-20 22:10:51'
-    modifiedAt: '2023-05-01 19:27:32'
     datasets:
       inputs:
       - datasets/Users_Raw
@@ -83,7 +78,6 @@ datasets:
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 20:33:34'
-    modifiedAt: '2023-03-22 20:46:25'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -92,13 +86,11 @@ datasets:
         description: ''
         author: scott+data_eng@prophecy.io
         createdAt: '2023-03-20 20:33:34'
-        modifiedAt: '2023-03-20 20:33:34'
   datasets/Products_Raw:
     name: Products_Raw
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 20:34:33'
-    modifiedAt: '2023-03-22 20:46:32'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -107,13 +99,11 @@ datasets:
         description: ''
         author: scott+data_eng@prophecy.io
         createdAt: '2023-03-20 20:34:33'
-        modifiedAt: '2023-03-20 20:34:33'
   datasets/Carts_Raw:
     name: Carts_Raw
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 20:37:04'
-    modifiedAt: '2023-03-22 20:46:39'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -122,13 +112,11 @@ datasets:
         description: ''
         author: scott+data_eng@prophecy.io
         createdAt: '2023-03-20 20:37:04'
-        modifiedAt: '2023-03-20 20:37:04'
   datasets/Products_Bronze:
     name: Products_Bronze
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 21:17:33'
-    modifiedAt: '2023-03-21 23:32:34'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -137,13 +125,11 @@ datasets:
         description: ''
         author: scott+data_eng@prophecy.io
         createdAt: '2023-03-20 21:17:33'
-        modifiedAt: '2023-03-20 21:17:33'
   datasets/Carts_Bronze:
     name: Carts_Bronze
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 22:08:52'
-    modifiedAt: '2023-03-21 23:29:39'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -152,13 +138,11 @@ datasets:
         description: ''
         author: scott+data_eng@prophecy.io
         createdAt: '2023-03-20 22:08:52'
-        modifiedAt: '2023-03-20 22:08:52'
   datasets/Users_Bronze:
     name: Users_Bronze
     description: ''
     author: scott+data_eng@prophecy.io
     createdAt: '2023-03-20 22:27:28'
-    modifiedAt: '2023-03-21 23:04:14'
     mode: batch
     physicalDatasets:
       HelloDev:
@@ -167,7 +151,6 @@ datasets:
         description: ''
         author: scott+data_eng@prophecy.io
         createdAt: '2023-03-20 22:27:28'
-        modifiedAt: '2023-03-20 22:27:28'
 templates: {}
 jobs:
   jobs/example_job_observability:
@@ -187,18 +170,19 @@ jobs:
       onFailure: false
     pipelines:
     - pipelines/IngestData
+    - pipelines/Products_RawBronze
+    - pipelines/Users_RawBronze
+    - pipelines/Carts_RawBronze
     jobClusterMode:
       clusterMode:
         Single: {}
       clusterId: null
     enabled: null
     createdAt: '2023-05-01 19:14:29'
-    modifiedAt: '2023-05-01 19:27:59'
     author: rj@prophecy.io
 functions:
   author: null
   createdAt: '2023-04-03 15:25:13'
-  modifiedAt: '2023-04-03 15:25:13'
   gems: {}
   udfs: {}
   udafs: {}

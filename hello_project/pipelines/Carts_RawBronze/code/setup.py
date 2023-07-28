@@ -2,12 +2,12 @@ from setuptools import setup, find_packages
 setup(
     name = 'Carts_RawBronze',
     version = '1.0',
-    packages = find_packages(include = ('carts_rawbronze*', )) + ["prophecy_config_instances"],
+    packages = find_packages(include = ('carts_rawbronze*', )) + ['prophecy_config_instances'],
     package_dir = {'prophecy_config_instances' : 'configs/resources/config'},
-    package_data = {'prophecy_config_instances' : ['*.json', '*.py']},
+    package_data = {'prophecy_config_instances' : ['*.json', '*.py', '*.conf']},
     description = 'workflow',
     install_requires = [
-'prophecy-libs==1.5.0'],
+'prophecy-libs==1.5.9'],
     entry_points = {
 'console_scripts' : [
 'main = carts_rawbronze.pipeline:main'], },

@@ -1,8 +1,9 @@
 {
   "metainfo" : {
     "id" : "1",
+    "uri" : "pipelines/Users_RawBronze",
     "language" : "python",
-    "fabricId" : "1691",
+    "fabricId" : "1174",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -25,7 +26,8 @@
             "value" : "unspecified"
           },
           "optional" : false,
-          "isWorkflowNodeConfiguration" : false
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
         }, {
           "name" : "table_name",
           "kind" : {
@@ -33,7 +35,8 @@
             "value" : " "
           },
           "optional" : false,
-          "isWorkflowNodeConfiguration" : false
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
         } ]
       },
       "oldCommon" : {
