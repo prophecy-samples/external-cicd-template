@@ -154,7 +154,7 @@ datasets:
 templates: {}
 jobs:
   jobs/observability-job-for-cicd-1:
-    name: observability-job-for-cicd-1
+    name: observability-job-for-cicd-dev
     description: ''
     fabricUID: 1174
     scheduler:
@@ -179,6 +179,60 @@ jobs:
       clusterId: null
     enabled: null
     createdAt: '2023-07-28 19:58:23'
+    author: rj@prophecy.io
+  jobs/observability-job-for-cicd-qa:
+    name: observability-job-for-cicd-qa
+    description: ''
+    fabricUID: 1174
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 1 * ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/Carts_RawBronze
+    - pipelines/IngestData
+    - pipelines/Products_RawBronze
+    - pipelines/Users_RawBronze
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-07-28 20:00:47'
+    author: rj@prophecy.io
+  jobs/observability-job-for-cicd-prod:
+    name: observability-job-for-cicd-prod
+    description: ''
+    fabricUID: 1174
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 1/1 * ? *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines:
+    - pipelines/Carts_RawBronze
+    - pipelines/IngestData
+    - pipelines/Products_RawBronze
+    - pipelines/Users_RawBronze
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: false
+    createdAt: '2023-07-28 20:02:17'
     author: rj@prophecy.io
 functions:
   author: null

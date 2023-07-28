@@ -2,8 +2,8 @@
   "metainfo" : {
     "type" : "Databricks",
     "fabricId" : "1174",
-    "jobId" : "jobs/observability-job-for-cicd-1",
-    "name" : "observability-job-for-cicd-dev",
+    "jobId" : "jobs/observability-job-for-cicd-qa",
+    "name" : "observability-job-for-cicd-qa",
     "schedule" : "0 0 0 1 * ? *",
     "scheduleTimeZone" : "UTC",
     "jobClusterMode" : {
@@ -122,22 +122,22 @@
     } ]
   },
   "processes" : {
-    "Leh1w7pKpFDEX_t2Jy9Jn$$KTe_tQyemquQLjBLEy8kF" : {
-      "id" : "Leh1w7pKpFDEX_t2Jy9Jn$$KTe_tQyemquQLjBLEy8kF",
+    "UQd_uk2QYMj23u-N7LJ14" : {
+      "id" : "UQd_uk2QYMj23u-N7LJ14",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "Carts_RawBronze",
         "slug" : "Carts_RawBronze",
-        "x" : 320,
-        "y" : 120
+        "x" : 600,
+        "y" : 320
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "hOKikL7yHv_5C3ZCYBfau$$2toWjjsx1W_kBJSIWdQQ_",
+          "id" : "znJY9TAxElAaWBNSlqcm7",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "lLELP8UMHhLKm8cFDwMIr$$WxJiyH-jEtSQGLybM2W_i",
+          "id" : "zB7U5xkFHcluW_UgQuHsm",
           "slug" : ""
         } ]
       },
@@ -158,7 +158,7 @@
             "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "dev"
+              "value" : "qa"
             },
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
@@ -167,7 +167,7 @@
             "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "Carts_Bronze_dev"
+              "value" : "Carts_Bronze_qa"
             },
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
@@ -176,26 +176,26 @@
             "HelloCICD" : [ "default", "qa", "dev", "prod" ]
           },
           "overrides" : { },
-          "selectedInstance" : "dev"
+          "selectedInstance" : "qa"
         }
       }
     },
-    "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1" : {
-      "id" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
+    "2ihadIE19yVse6-L7hxAN" : {
+      "id" : "2ihadIE19yVse6-L7hxAN",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "IngestData",
         "slug" : "IngestData",
-        "x" : 120,
-        "y" : 320
+        "x" : 400,
+        "y" : 520
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "xmJi6B1dSSqmLOD_tVwhe$$g6TJPBLhx0sMjDPkxfh1E",
+          "id" : "Xyj_7P54vo7VSnns_eIBn",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
+          "id" : "Y6cjASPPjX7oLEfyM0Use",
           "slug" : ""
         } ]
       },
@@ -216,7 +216,7 @@
             "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "dev"
+              "value" : "qa"
             },
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
@@ -225,26 +225,26 @@
             "HelloCICD" : [ "default", "qa", "dev", "prod" ]
           },
           "overrides" : { },
-          "selectedInstance" : "dev"
+          "selectedInstance" : "qa"
         }
       }
     },
-    "-E_B-l63HkUX47OPDkHqP$$4trQKSUV8mbK1e955lrfV" : {
-      "id" : "-E_B-l63HkUX47OPDkHqP$$4trQKSUV8mbK1e955lrfV",
+    "TSekgklHuLHDc1_mJV9Fb" : {
+      "id" : "TSekgklHuLHDc1_mJV9Fb",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "Products_RawBronze",
         "slug" : "Products_RawBronze",
-        "x" : 320,
-        "y" : 320
+        "x" : 600,
+        "y" : 520
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "o0tV0LgHewTLuwktPSMaW$$X2XbG6Klit0vMdsMwwMzw",
+          "id" : "i28UsiKW7PbKgIEd9RZK3",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "LS1wWtywqvYPsYoncAK9n$$VQ6aeZInjt8HQfmZxjsKa",
+          "id" : "h-b8o-0Hf-23jrvV8Dzot",
           "slug" : ""
         } ]
       },
@@ -265,7 +265,7 @@
             "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "dev"
+              "value" : "qa"
             },
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
@@ -274,7 +274,7 @@
             "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "Products_Bronze_dev"
+              "value" : "Products_Bronze_qa"
             },
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
@@ -283,26 +283,26 @@
             "HelloCICD" : [ "default", "qa", "dev", "prod" ]
           },
           "overrides" : { },
-          "selectedInstance" : "dev"
+          "selectedInstance" : "qa"
         }
       }
     },
-    "2WAP7cqeQPQETzBu7NXBy$$uojKJnVJgfLS9TJeHT4Fk" : {
-      "id" : "2WAP7cqeQPQETzBu7NXBy$$uojKJnVJgfLS9TJeHT4Fk",
+    "YnG3Bc4fqUWGKQ27MfkGi" : {
+      "id" : "YnG3Bc4fqUWGKQ27MfkGi",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "Users_RawBronze",
         "slug" : "Users_RawBronze",
-        "x" : 320,
-        "y" : 520
+        "x" : 600,
+        "y" : 720
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "eImlV1Q7Z9KIjLVZr2voX$$xzwnONkS82Pd6alT6O6xM",
+          "id" : "N46T5yy3WovKTprAFqmZP",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "h09Ou56Rn-mxAW6rOL7Lq$$RgwMCPoRXHRwwDx9hU6sS",
+          "id" : "EHEMIkX3BfAUS7--L1vdC",
           "slug" : ""
         } ]
       },
@@ -323,7 +323,7 @@
             "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "dev"
+              "value" : "qa"
             },
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
@@ -332,7 +332,7 @@
             "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "Users_Bronze_dev "
+              "value" : "Users_Bronze_qa"
             },
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
@@ -341,28 +341,28 @@
             "HelloCICD" : [ "default", "qa", "dev", "prod" ]
           },
           "overrides" : { },
-          "selectedInstance" : "dev"
+          "selectedInstance" : "qa"
         }
       }
     }
   },
   "connections" : [ {
-    "id" : "-JU9sz-WXkto7ZwOv8Vs2$$esiEDsS9F43OZ43eu5go0",
-    "source" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
-    "target" : "Leh1w7pKpFDEX_t2Jy9Jn$$KTe_tQyemquQLjBLEy8kF",
-    "sourcePort" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
-    "targetPort" : "hOKikL7yHv_5C3ZCYBfau$$2toWjjsx1W_kBJSIWdQQ_"
+    "id" : "pDRp-4se7zGh1PP_WP6B1",
+    "source" : "2ihadIE19yVse6-L7hxAN",
+    "target" : "UQd_uk2QYMj23u-N7LJ14",
+    "sourcePort" : "Y6cjASPPjX7oLEfyM0Use",
+    "targetPort" : "znJY9TAxElAaWBNSlqcm7"
   }, {
-    "id" : "YgzukT4g96RmiH7i4xC_z",
-    "source" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
-    "target" : "-E_B-l63HkUX47OPDkHqP$$4trQKSUV8mbK1e955lrfV",
-    "sourcePort" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
-    "targetPort" : "o0tV0LgHewTLuwktPSMaW$$X2XbG6Klit0vMdsMwwMzw"
+    "id" : "XnWHhCQSId1Vscl9lM6rc",
+    "source" : "2ihadIE19yVse6-L7hxAN",
+    "target" : "TSekgklHuLHDc1_mJV9Fb",
+    "sourcePort" : "Y6cjASPPjX7oLEfyM0Use",
+    "targetPort" : "i28UsiKW7PbKgIEd9RZK3"
   }, {
-    "id" : "wuund21AV1fSb_0mq6Iug",
-    "source" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
-    "target" : "2WAP7cqeQPQETzBu7NXBy$$uojKJnVJgfLS9TJeHT4Fk",
-    "sourcePort" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
-    "targetPort" : "eImlV1Q7Z9KIjLVZr2voX$$xzwnONkS82Pd6alT6O6xM"
+    "id" : "JkXSRL0mDFN0LHB2yOxIK",
+    "source" : "2ihadIE19yVse6-L7hxAN",
+    "target" : "YnG3Bc4fqUWGKQ27MfkGi",
+    "sourcePort" : "Y6cjASPPjX7oLEfyM0Use",
+    "targetPort" : "N46T5yy3WovKTprAFqmZP"
   } ]
 }

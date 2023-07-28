@@ -4,7 +4,7 @@
     "PipelineComponent" : {
       "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/IngestData-1.0-py3-none-any.whl",
       "nodeName" : "IngestData",
-      "id" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
+      "id" : "YNwBY1Nrgnira999vrSee",
       "language" : "python",
       "pipelineId" : "pipelines/IngestData"
     }
@@ -12,7 +12,7 @@
     "PipelineComponent" : {
       "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Carts_RawBronze-1.0-py3-none-any.whl",
       "nodeName" : "Carts_RawBronze",
-      "id" : "Leh1w7pKpFDEX_t2Jy9Jn$$KTe_tQyemquQLjBLEy8kF",
+      "id" : "6KJ6_dvEZ4ehy646e7rFI",
       "language" : "python",
       "pipelineId" : "pipelines/Carts_RawBronze"
     }
@@ -20,7 +20,7 @@
     "PipelineComponent" : {
       "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Products_RawBronze-1.0-py3-none-any.whl",
       "nodeName" : "Products_RawBronze",
-      "id" : "-E_B-l63HkUX47OPDkHqP$$4trQKSUV8mbK1e955lrfV",
+      "id" : "har5YiC2SRYPNXl-Lu8qJ",
       "language" : "python",
       "pipelineId" : "pipelines/Products_RawBronze"
     }
@@ -28,16 +28,16 @@
     "PipelineComponent" : {
       "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Users_RawBronze-1.0-py3-none-any.whl",
       "nodeName" : "Users_RawBronze",
-      "id" : "2WAP7cqeQPQETzBu7NXBy$$uojKJnVJgfLS9TJeHT4Fk",
+      "id" : "e3-IMx6cxJUpQ9DuI2rdX",
       "language" : "python",
       "pipelineId" : "pipelines/Users_RawBronze"
     }
   } ],
   "request" : {
     "format" : "MULTI_TASK",
-    "name" : "observability-job-for-cicd-dev",
+    "name" : "observability-job-for-cicd-prod",
     "job_clusters" : [ {
-      "job_cluster_key" : "observability-job-for-cicd-dev_default_small",
+      "job_cluster_key" : "observability-job-for-cicd-prod_default_small",
       "new_cluster" : {
         "spark_version" : "11.3.x-scala2.12",
         "node_type_id" : "i4i.large",
@@ -45,7 +45,7 @@
         "num_workers" : 1,
         "spark_conf" : {
           "spark.prophecy.metadata.fabric.id" : "1174",
-          "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/observability-job-for-cicd-1",
+          "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/observability-job-for-cicd-prod",
           "spark.prophecy.metadata.is.interactive.run" : "false",
           "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "spark.prophecy.metadata.user.id" : 2169,
@@ -61,11 +61,11 @@
     "email_notifications" : { },
     "tasks" : [ {
       "task_key" : "IngestData",
-      "job_cluster_key" : "observability-job-for-cicd-dev_default_small",
+      "job_cluster_key" : "observability-job-for-cicd-prod_default_small",
       "python_wheel_task" : {
         "package_name" : "IngestData",
         "entry_point" : "main",
-        "parameters" : [ "-i", "dev", "-O", "{}" ]
+        "parameters" : [ "-i", "prod", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
@@ -85,11 +85,11 @@
       "depends_on" : [ {
         "task_key" : "IngestData"
       } ],
-      "job_cluster_key" : "observability-job-for-cicd-dev_default_small",
+      "job_cluster_key" : "observability-job-for-cicd-prod_default_small",
       "python_wheel_task" : {
         "package_name" : "Carts_RawBronze",
         "entry_point" : "main",
-        "parameters" : [ "-i", "dev", "-O", "{}" ]
+        "parameters" : [ "-i", "prod", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
@@ -109,11 +109,11 @@
       "depends_on" : [ {
         "task_key" : "IngestData"
       } ],
-      "job_cluster_key" : "observability-job-for-cicd-dev_default_small",
+      "job_cluster_key" : "observability-job-for-cicd-prod_default_small",
       "python_wheel_task" : {
         "package_name" : "Products_RawBronze",
         "entry_point" : "main",
-        "parameters" : [ "-i", "dev", "-O", "{}" ]
+        "parameters" : [ "-i", "prod", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
@@ -133,11 +133,11 @@
       "depends_on" : [ {
         "task_key" : "IngestData"
       } ],
-      "job_cluster_key" : "observability-job-for-cicd-dev_default_small",
+      "job_cluster_key" : "observability-job-for-cicd-prod_default_small",
       "python_wheel_task" : {
         "package_name" : "Users_RawBronze",
         "entry_point" : "main",
-        "parameters" : [ "-i", "dev", "-O", "{}" ]
+        "parameters" : [ "-i", "prod", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
@@ -155,14 +155,15 @@
     } ],
     "max_concurrent_runs" : 1,
     "schedule" : {
-      "quartz_cron_expression" : "0 0 0 1 * ? *",
+      "quartz_cron_expression" : "0 0 0 1/1 * ? *",
       "timezone_id" : "UTC",
       "pause_status" : "PAUSED"
-    }
+    },
+    "access_control_list" : [ ]
   },
   "cluster_mode" : {
     "clusterMode" : "Single"
   },
   "secret_scope" : "prophecy_jobs_694",
-  "sorted_processes" : [ "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1", "Leh1w7pKpFDEX_t2Jy9Jn$$KTe_tQyemquQLjBLEy8kF", "-E_B-l63HkUX47OPDkHqP$$4trQKSUV8mbK1e955lrfV", "2WAP7cqeQPQETzBu7NXBy$$uojKJnVJgfLS9TJeHT4Fk" ]
+  "sorted_processes" : [ "YNwBY1Nrgnira999vrSee", "6KJ6_dvEZ4ehy646e7rFI", "har5YiC2SRYPNXl-Lu8qJ", "e3-IMx6cxJUpQ9DuI2rdX" ]
 }
