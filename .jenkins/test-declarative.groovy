@@ -1,15 +1,16 @@
 pipeline {
     agent any
     environment {
-        DATABRICKS_HOST = credentials('DATABRICKS_HOST')
-        DATABRICKS_TOKEN = credentials('DATABRICKS_TOKEN')
+        DATABRICKS_HOST = credentials('DEMO_DATABRICKS_HOST')
+        DATABRICKS_TOKEN = credentials('DEMO_DATABRICKS_TOKEN')
         PROJECT_PATH = "./hello_project"
         VENV_NAME = ".venv"
     }
     stages {
         stage('checkout') {
             steps {
-                git branch: '${sha1}', credentialsId: 'github-hello-cicd-deploy-ssh', url: 'git@github.com:SimpleDataLabsInc/HelloCICD.git'
+                git branch: '${sha1}', credentialsId: 'jenkins-cicd-runner-demo', url: 'git@github.com:SimpleDataLabsInc/HelloCICD.git'
+                sh "apt-get install -y python3-venv"
             }
         }
         stage('install pbt') {

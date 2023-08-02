@@ -1,26 +1,24 @@
+def DEFAULT_FABRIC = "1174"
+def fabricPerBranch = [
+        main: "2807",
+        qa: "1400",
+        dev: DEFAULT_FABRIC
+]
+
 pipeline {
     agent any
     environment {
-        DATABRICKS_HOST = credentials('DATABRICKS_HOST')
-        DATABRICKS_TOKEN = credentials('DATABRICKS_TOKEN')
+        DATABRICKS_HOST = credentials('DEMO_DATABRICKS_HOST')
+        DATABRICKS_TOKEN = credentials('DEMO_DATABRICKS_TOKEN')
         PROJECT_PATH = "./hello_project"
         VENV_NAME = ".venv"
-        switch('${ghprbTargetBranch}') {
-          case "main":
-            FABRIC_ID = "2807"
-            break
-          case "qa":
-            FABRIC_ID = "1400"
-            break
-          default:
-            FABRIC_ID = "1174"
-            break
-        }
+        FABRIC_ID = fabricPerBranch.getOrDefault('${ghprbTargetBranch}', DEFAULT_FABRIC)
     }
     stages {
         stage('checkout') {
             steps {
-                git branch: '${sha1}', credentialsId: 'github-hello-cicd-deploy-ssh', url: 'git@github.com:SimpleDataLabsInc/HelloCICD.git'
+                git branch: '${sha1}', credentialsId: 'jenkins-cicd-runner-demo', url: 'git@github.com:SimpleDataLabsInc/HelloCICD.git'
+                sh "apt-get install -y python3-venv"
             }
         }
         stage('install pbt') {
