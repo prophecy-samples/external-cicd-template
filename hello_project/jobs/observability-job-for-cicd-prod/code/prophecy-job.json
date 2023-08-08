@@ -161,7 +161,7 @@
     } ],
     "accessControlList" : [ {
       "userName" : "scotts-robot@prophecy.io",
-      "permissionLevel" : "CAN_MANAGE"
+      "permissionLevel" : "IS_OWNER"
     } ]
   },
   "processes" : {
