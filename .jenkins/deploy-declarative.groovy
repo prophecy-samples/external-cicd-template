@@ -12,12 +12,12 @@ pipeline {
         DATABRICKS_TOKEN = credentials('DEMO_DATABRICKS_TOKEN')
         PROJECT_PATH = "./hello_project"
         VENV_NAME = ".venv"
-        FABRIC_ID = fabricPerBranch.getOrDefault('${env.BRANCH_NAME}', DEFAULT_FABRIC)
+        FABRIC_ID = fabricPerBranch.getOrDefault("${env.BRANCH_NAME}", DEFAULT_FABRIC)
     }
     stages {
         stage('checkout') {
             steps {
-                git branch: '${env.BRANCH_NAME}', credentialsId: 'jenkins-cicd-runner-demo', url: 'git@github.com:SimpleDataLabsInc/HelloCICD.git'
+                git branch: "${env.BRANCH_NAME}", credentialsId: 'jenkins-cicd-runner-demo', url: 'git@github.com:SimpleDataLabsInc/HelloCICD.git'
                 sh "apt-get install -y python3-venv"
             }
         }
