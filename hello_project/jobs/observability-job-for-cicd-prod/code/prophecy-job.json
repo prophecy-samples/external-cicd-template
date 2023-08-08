@@ -159,7 +159,10 @@
         "PublicCentral" : { }
       }
     } ],
-    "accessControlList" : [ ]
+    "accessControlList" : [ {
+      "userName" : "scotts-robot@prophecy.io",
+      "permissionLevel" : "CAN_MANAGE"
+    } ]
   },
   "processes" : {
     "6KJ6_dvEZ4ehy646e7rFI" : {

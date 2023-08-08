@@ -50,7 +50,7 @@
         },
         "enable_elastic_disk" : false,
         "spark_conf" : {
-          "spark.prophecy.metadata.fabric.id" : "1174",
+          "spark.prophecy.metadata.fabric.id" : "4005",
           "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/observability-job-for-cicd-qa",
           "spark.prophecy.metadata.is.interactive.run" : "false",
           "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
@@ -179,7 +179,10 @@
       "timezone_id" : "UTC",
       "pause_status" : "PAUSED"
     },
-    "access_control_list" : [ ]
+    "access_control_list" : [ {
+      "user_name" : "scotts-robot@prophecy.io",
+      "permission_level" : "CAN_MANAGE"
+    } ]
   },
   "cluster_mode" : {
     "clusterMode" : "Single"

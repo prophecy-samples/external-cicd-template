@@ -158,7 +158,11 @@
       "quartz_cron_expression" : "0 0 0 1 * ? *",
       "timezone_id" : "UTC",
       "pause_status" : "UNPAUSED"
-    }
+    },
+    "access_control_list" : [ {
+      "user_name" : "scotts-robot@prophecy.io",
+      "permission_level" : "CAN_MANAGE"
+    } ]
   },
   "cluster_mode" : {
     "clusterMode" : "Single"
