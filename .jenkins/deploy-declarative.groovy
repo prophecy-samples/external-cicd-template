@@ -15,9 +15,8 @@ pipeline {
         FABRIC_ID = fabricPerBranch.getOrDefault("${env.GIT_BRANCH}", DEFAULT_FABRIC)
     }
     stages {
-        stage('checkout') {
+        stage('prepare system') {
             steps {
-                git branch: "${env.GIT_BRANCH}", credentialsId: 'jenkins-cicd-runner-demo', url: 'git@github.com:SimpleDataLabsInc/HelloCICD.git'
                 sh "apt-get install -y python3-venv"
             }
         }
