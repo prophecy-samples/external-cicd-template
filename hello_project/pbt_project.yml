@@ -183,7 +183,7 @@ jobs:
   jobs/observability-job-for-cicd-qa:
     name: observability-job-for-cicd-qa
     description: ''
-    fabricUID: 1174
+    fabricUID: 4005
     scheduler:
       Databricks: {}
     cloudProvider: null
@@ -204,13 +204,13 @@ jobs:
       clusterMode:
         Single: {}
       clusterId: null
-    enabled: null
+    enabled: false
     createdAt: '2023-07-28 20:00:47'
     author: rj@prophecy.io
   jobs/observability-job-for-cicd-prod:
     name: observability-job-for-cicd-prod
     description: ''
-    fabricUID: 1174
+    fabricUID: 4004
     scheduler:
       Databricks: {}
     cloudProvider: null

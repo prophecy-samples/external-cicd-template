@@ -1,7 +1,7 @@
 {
   "metainfo" : {
     "type" : "Databricks",
-    "fabricId" : "1174",
+    "fabricId" : "4005",
     "jobId" : "jobs/observability-job-for-cicd-qa",
     "name" : "observability-job-for-cicd-qa",
     "schedule" : "0 0 0 1 * ? *",
@@ -81,6 +81,45 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "3911",
+      "name" : "fedex-demo-fabric",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "4005",
+      "name" : "demos-qa",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "4004",
+      "name" : "demos-prod",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "3703",
       "name" : "HSBC-Cluster",
       "clusterSizes" : {
@@ -119,7 +158,8 @@
       "scalalibsResolutionMode" : {
         "PublicCentral" : { }
       }
-    } ]
+    } ],
+    "accessControlList" : [ ]
   },
   "processes" : {
     "UQd_uk2QYMj23u-N7LJ14" : {
