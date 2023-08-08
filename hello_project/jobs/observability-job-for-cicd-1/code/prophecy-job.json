@@ -158,6 +158,10 @@
       "scalalibsResolutionMode" : {
         "PublicCentral" : { }
       }
+    } ],
+    "accessControlList" : [ {
+      "userName" : "scotts-robot@prophecy.io",
+      "permissionLevel" : "CAN_MANAGE"
     } ]
   },
   "processes" : {
