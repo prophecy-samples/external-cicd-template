@@ -1,7 +1,7 @@
 def DEFAULT_FABRIC = "1174"
 def fabricPerBranch = [
-        prod: "2807",
-        qa: "1400",
+        prod: "4004",
+        qa: "4005",
         develop: DEFAULT_FABRIC
 ]
 
