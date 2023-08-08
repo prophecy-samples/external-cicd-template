@@ -1,0 +1,408 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "4004",
+    "jobId" : "jobs/observability-job-for-cicd-prod",
+    "name" : "observability-job-for-cicd-prod",
+    "schedule" : "0 0 0 1/1 * ? *",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : false,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "1691",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2807",
+      "name" : "demos-unity-catalog-guides-dev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "small-with-new-java", "large" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "1684",
+      "name" : "workday-default",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium", "large" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2055",
+      "name" : "bt-dataplatform-bi-dev01",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "prophecy_policy_dev" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3911",
+      "name" : "fedex-demo-fabric",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "4005",
+      "name" : "demos-qa",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "4004",
+      "name" : "demos-prod",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "3703",
+      "name" : "HSBC-Cluster",
+      "clusterSizes" : {
+        "default" : "hsbc-cluster",
+        "availableClusterSizes" : [ "hsbc-cluster" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "1174",
+      "name" : "demos",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "2588",
+      "name" : "HealthVerityDemoFabric",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "largeGroup" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    } ],
+    "accessControlList" : [ ]
+  },
+  "processes" : {
+    "6KJ6_dvEZ4ehy646e7rFI" : {
+      "id" : "6KJ6_dvEZ4ehy646e7rFI",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Carts_RawBronze",
+        "slug" : "Carts_RawBronze",
+        "x" : 700,
+        "y" : 360
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "37CgaVNzC4fS-Ouxffgee",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "afmH1bWVJrOlF3n0VOuup",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/Carts_RawBronze",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "env",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "prod"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "table_name",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "Carts_Bronze_prod"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "HelloCICD" : [ "default", "qa", "dev", "prod" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "prod"
+        }
+      }
+    },
+    "YNwBY1Nrgnira999vrSee" : {
+      "id" : "YNwBY1Nrgnira999vrSee",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "IngestData",
+        "slug" : "IngestData",
+        "x" : 500,
+        "y" : 560
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "2u8mJhWRPOTyYnE2qNa8o",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "ZZS2R70_f3bOEjucV-lKt",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/IngestData",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "env",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "prod"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "HelloCICD" : [ "default", "qa", "dev", "prod" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "prod"
+        }
+      }
+    },
+    "har5YiC2SRYPNXl-Lu8qJ" : {
+      "id" : "har5YiC2SRYPNXl-Lu8qJ",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Products_RawBronze",
+        "slug" : "Products_RawBronze",
+        "x" : 700,
+        "y" : 560
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "xrD6rhesLzX9lWnLuFo2y",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "U8M9_D6sprZL1k3LGrVBH",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/Products_RawBronze",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "env",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "prod"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "table_name",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "Products_Bronze_prod"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "HelloCICD" : [ "default", "qa", "dev", "prod" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "prod"
+        }
+      }
+    },
+    "e3-IMx6cxJUpQ9DuI2rdX" : {
+      "id" : "e3-IMx6cxJUpQ9DuI2rdX",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Users_RawBronze",
+        "slug" : "Users_RawBronze",
+        "x" : 700,
+        "y" : 760
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ovpNOdJ7rxXf3oZkAMPIq",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "ek1SJ44vb0D7te_oIEDrn",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/Users_RawBronze",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "env",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "prod"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "table_name",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "Users_Bronze_prod"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "HelloCICD" : [ "default", "qa", "dev", "prod" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "prod"
+        }
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "lCgqhKr_XjeVBZR3Z7qBa",
+    "source" : "YNwBY1Nrgnira999vrSee",
+    "target" : "6KJ6_dvEZ4ehy646e7rFI",
+    "sourcePort" : "ZZS2R70_f3bOEjucV-lKt",
+    "targetPort" : "37CgaVNzC4fS-Ouxffgee"
+  }, {
+    "id" : "_CskF2I0x_iV5IWSkHb_4",
+    "source" : "YNwBY1Nrgnira999vrSee",
+    "target" : "har5YiC2SRYPNXl-Lu8qJ",
+    "sourcePort" : "ZZS2R70_f3bOEjucV-lKt",
+    "targetPort" : "xrD6rhesLzX9lWnLuFo2y"
+  }, {
+    "id" : "F3mTwtuPDou5j0NKvSNcM",
+    "source" : "YNwBY1Nrgnira999vrSee",
+    "target" : "e3-IMx6cxJUpQ9DuI2rdX",
+    "sourcePort" : "ZZS2R70_f3bOEjucV-lKt",
+    "targetPort" : "ovpNOdJ7rxXf3oZkAMPIq"
+  } ]
+}

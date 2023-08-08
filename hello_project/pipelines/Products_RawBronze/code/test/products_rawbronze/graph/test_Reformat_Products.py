@@ -5,60 +5,41 @@ from argparse import Namespace
 from prophecy.test import BaseTestCase
 from prophecy.test.utils import *
 from products_rawbronze.graph.Reformat_Products import *
-import products_rawbronze.config.ConfigStore as ConfigStore
+from products_rawbronze.config.ConfigStore import *
 
 
 class Reformat_ProductsTest(BaseTestCase):
 
-    def test_unit_test_0(self):
+    def test_date_checking(self):
         dfIn0 = createDfFromResourceFiles(
             self.spark,
             'test/resources/data/products_rawbronze/graph/Reformat_Products/in0/schema.json',
-            'test/resources/data/products_rawbronze/graph/Reformat_Products/in0/data/test_unit_test_0.json',
+            'test/resources/data/products_rawbronze/graph/Reformat_Products/in0/data/test_date_checking.json',
             'in0'
         )
-        dfOut = createDfFromResourceFiles(
+        dfOutComputed = Reformat_Products(self.spark, dfIn0)
+        assertPredicates("out", dfOutComputed, list(zip([(current_timestamp() > col("ingest_time"))], ["date sanity"])))
+
+    def test_deliberatepassfailtest(self):
+        dfIn0 = createDfFromResourceFiles(
             self.spark,
-            'test/resources/data/products_rawbronze/graph/Reformat_Products/out/schema.json',
-            'test/resources/data/products_rawbronze/graph/Reformat_Products/out/data/test_unit_test_0.json',
-            'out'
+            'test/resources/data/products_rawbronze/graph/Reformat_Products/in0/schema.json',
+            'test/resources/data/products_rawbronze/graph/Reformat_Products/in0/data/test_deliberatepassfailtest.json',
+            'in0'
         )
         dfOutComputed = Reformat_Products(self.spark, dfIn0)
-        assertDFEquals(
-            dfOut.select(
-              "brand",
-              "category",
-              "description",
-              "discountPercentage",
-              "id",
-              "images",
-              "price",
-              "rating",
-              "stock",
-              "thumbnail",
-              "title"
-            ),
-            dfOutComputed.select(
-              "brand",
-              "category",
-              "description",
-              "discountPercentage",
-              "id",
-              "images",
-              "price",
-              "rating",
-              "stock",
-              "thumbnail",
-              "title"
-            ),
-            self.maxUnequalRowsToShow
-        )
+        assertPredicates("out", dfOutComputed, list(zip([lit(True)], ["deliberately pass or fail "])))
 
     def setUp(self):
         BaseTestCase.setUp(self)
         import os
         fabricName = os.environ['FABRIC_NAME']
-        ConfigStore.Utils.initializeFromArgs(
+        Utils.initializeFromArgs(
             self.spark,
-            Namespace(file = f"configs/resources/config/{fabricName}.json", config = None, overrideJson = None)
+            Namespace(
+              file = f"configs/resources/config/{fabricName}.json",
+              config = None,
+              overrideJson = None,
+              defaultConfFile = None
+            )
         )

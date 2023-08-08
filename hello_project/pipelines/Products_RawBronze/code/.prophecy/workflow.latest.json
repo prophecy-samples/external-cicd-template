@@ -1,13 +1,16 @@
 {
   "metainfo" : {
     "id" : "1",
+    "uri" : "pipelines/Products_RawBronze",
     "language" : "python",
-    "fabricId" : "1726",
+    "fabricId" : "1691",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
       "language" : "python",
-      "udfs" : [ ]
+      "udfs" : [ ],
+      "functionPackageName" : "prophecy_demos.hellocicd.functions",
+      "sharedFunctionPackageNames" : [ ]
     },
     "udafs" : {
       "language" : "python",
@@ -22,14 +25,18 @@
             "type" : "string",
             "value" : "unspecified"
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
         }, {
           "name" : "table_name",
           "kind" : {
             "type" : "string",
             "value" : " "
           },
-          "optional" : false
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
         } ]
       },
       "oldCommon" : {
@@ -47,6 +54,7 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -55,7 +63,8 @@
       "enabled" : false,
       "value" : 1000
     },
-    "topLevelPackage" : "products_rawbronze"
+    "topLevelPackage" : "products_rawbronze",
+    "configurationVersion" : "v1"
   },
   "connections" : [ {
     "id" : "uU7foogoFtzcAa9R5PheF$$S470yAdwtRP3nNn0OVunl",
@@ -88,8 +97,7 @@
         "inputs" : [ ],
         "outputs" : [ {
           "id" : "3OXuVB8Eoahw075SrJ3Yh$$0k8UxHR0go59T19siiQSH",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -115,12 +123,127 @@
         "inputs" : [ {
           "id" : "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "brand",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "description",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "discountPercentage",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "images",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "price",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rating",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "stock",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "thumbnail",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "title",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ingest_time",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ {
           "id" : "80MnwZszajNClUr1fKzEZ$$gTgVzgqEaMFj0JCyU0VDP",
-          "slug" : "out",
-          "isStreaming" : false
+          "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
         "isCustomOutputSchema" : false
@@ -215,13 +338,13 @@
           "target" : "env",
           "expression" : {
             "format" : "sql",
-            "expression" : "'${env}'"
+            "expression" : "'$env'"
           },
           "description" : ""
         } ],
         "importString" : "",
         "activeTab" : "expressions",
-        "columnsSelector" : [ "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##category", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##stock", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##discountPercentage", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##title", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##description", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##images", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##thumbnail", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##rating", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##price", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##ingest_time", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##id", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##brand" ]
+        "columnsSelector" : [ "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##id", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##ingest_time", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##description", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##thumbnail", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##title", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##images", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##brand", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##price", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##category", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##stock", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##rating", "RP1YG7j1KoDl62QMy6054$$9NZ0XuOzq8cwL8hZQKRMR##discountPercentage" ]
       }
     },
     "3iMvu15qzMQyIaHTmW9Xc$$fx0qlg1460J-7F0SvU0nE" : {
@@ -241,6 +364,131 @@
         "inputs" : [ {
           "id" : "6bveX-9XTQQ11NKEAA28g$$AQn0Ue2c-RDdeTZD3K_9W",
           "slug" : "in0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "brand",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "category",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "description",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "discountPercentage",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "id",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "images",
+              "type" : {
+                "type" : "array",
+                "elementType" : "string",
+                "containsNull" : true
+              },
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "price",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "rating",
+              "type" : "float",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "stock",
+              "type" : "long",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "thumbnail",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "title",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ingest_time",
+              "type" : "timestamp",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "env",
+              "type" : "string",
+              "nullable" : false,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
           "isStreaming" : false
         } ],
         "outputs" : [ ],
