@@ -4,37 +4,24 @@ def fabricPerBranch = [
         qa: "4005",
         develop: DEFAULT_FABRIC
 ]
-def get_databricks_host_cred_string() {
-    if ("${env.GIT_BRANCH}" == "prod") {
-        return "DEMO_PROD_DATABRICKS_HOST"
-    } else {
-        return "DEMO_DATABRICKS_HOST"
-    }
-}
-def get_databricks_token_cred_string() {
-    if ("${env.GIT_BRANCH}" == "prod") {
-        return "DEMO_PROD_DATABRICKS_TOKEN"
-    } else {
-        return "DEMO_DATABRICKS_TOKEN"
-    }
-}
 
 pipeline {
     agent any
     environment {
-        //note: credentials call must be made with a non-templated string
-        DATABRICKS_HOST_CRED_STRING = get_databricks_host_cred_string()
-        DATABRICKS_TOKEN_CRED_STRING = get_databricks_token_cred_string()
+        //note: credentials call must be made with a non-templated string which is why we have to get prod/nonprod
+        // here before assigning to our actual env var
+        DATABRICKS_HOST_PROD = credentials("DEMO_PROD_DATABRICKS_HOST")
+        DATABRICKS_TOKEN_PROD = credentials("DEMO_PROD_DATABRICKS_TOKEN")
+        DATABRICKS_HOST_NONPROD  = credentials("DEMO_DATABRICKS_HOST")
+        DATABRICKS_TOKEN_NONPROD = credentials("DEMO_DATABRICKS_TOKEN")
+        DATABRICKS_HOST = ("${env.GIT_BRANCH}" == "prod") ? DATABRICKS_HOST_PROD : DATABRICKS_HOST_NONPROD
+        DATABRICKS_TOKEN = ("${env.GIT_BRANCH}" == "prod") ? DATABRICKS_TOKEN_PROD : DATABRICKS_TOKEN_NONPROD
+
         PROJECT_PATH = "./hello_project"
         VENV_NAME = ".venv"
         FABRIC_ID = fabricPerBranch.getOrDefault("${env.GIT_BRANCH}", DEFAULT_FABRIC)
     }
     stages {
-        environment {
-            //note: credentials call must be made with a non-templated string
-            DATABRICKS_HOST = credentials("${DATABRICKS_HOST_CRED_STRING}")
-            DATABRICKS_TOKEN = credentials("${DATABRICKS_TOKEN_CRED_STRING}")
-        }
         stage('prepare system') {
             steps {
                 sh "apt-get install -y python3-venv"
@@ -54,6 +41,11 @@ pipeline {
             }
         }
         stage('deploy') {
+            environment {
+                //note: credentials call must be made with a non-templated string
+                DATABRICKS_HOST = credentials("${DATABRICKS_HOST_CRED_STRING}")
+                DATABRICKS_TOKEN = credentials("${DATABRICKS_TOKEN_CRED_STRING}")
+            }
             steps {
                 sh """
                 . ./$VENV_NAME/bin/activate
