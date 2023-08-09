@@ -6,7 +6,7 @@ on:
 env:
   DATABRICKS_HOST: ${{ secrets.QA_DATABRICKS_HOST }}
   DATABRICKS_TOKEN: ${{ secrets.QA_DATBRICKS_TOKEN }}
-  FABRIC_NAME: "HelloQA"
+  FABRIC_ID: "4005"
   PROJECT_PATH: hello_project
 
 concurrency: 
@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
-          pip3 install build pytest wheel pytest-html pyspark prophecy-build-tool databricks_cli
+          pip3 install build pytest wheel pytest-html pyspark prophecy-build-tool
       # Make sure you set the path to match the Project directory
       - name: Run PBT build
         run: pbt build --path ${{ env.PROJECT_PATH }}
@@ -61,7 +61,7 @@ jobs:
           python3 -m pip install --upgrade pip
           pip3 install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
       - name: Run PBT Deploy
-        run: pbt deploy --path ${{ env.PROJECT_PATH }}
+        run: pbt deploy --fabric-ids ${{ env.FABRIC_ID }}  --path ${{ env.PROJECT_PATH }}
   # If you wanted to start a QA-specific job, you could do it here
   #run:
   #  runs-on: ubuntu-latest

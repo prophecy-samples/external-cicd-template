@@ -1,8 +1,6 @@
 pipeline {
     agent any
     environment {
-        DATABRICKS_HOST = credentials('DEMO_DATABRICKS_HOST')
-        DATABRICKS_TOKEN = credentials('DEMO_DATABRICKS_TOKEN')
         PROJECT_PATH = "./hello_project"
         VENV_NAME = ".venv"
     }
