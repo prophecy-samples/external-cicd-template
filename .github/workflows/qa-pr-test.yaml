@@ -11,7 +11,7 @@ env:
   PROJECT_PATH: hello_project
 
 jobs:
-  build_and_test:
+  build_test:
     runs-on: ubuntu-latest
     env:
       PACKAGE_MANAGER: pip3
