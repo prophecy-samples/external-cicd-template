@@ -8,8 +8,9 @@ def fabricPerBranch = [
 pipeline {
     agent any
     environment {
-        DATABRICKS_HOST = credentials("${env.GIT_BRANCH}" == "prod" ? "DEMO_PROD_DATABRICKS_HOST" : "DEMO_DATABRICKS_HOST")
-        DATABRICKS_TOKEN = credentials("${env.GIT_BRANCH}" == "prod" ? "DEMO_PROD_DATABRICKS_TOKEN" : "DEMO_DATABRICKS_TOKEN")
+        DATABRICKS_HOST =  credentials("${env.GIT_BRANCH == "prod" ? "DEMO_PROD_DATABRICKS_HOST" : "DEMO_DATABRICKS_HOST"}")
+        DATABRICKS_TOKEN = credentials("${env.GIT_BRANCH == "prod" ? "DEMO_PROD_DATABRICKS_TOKEN" : "DEMO_DATABRICKS_TOKEN"}")
+
         PROJECT_PATH = "./hello_project"
         VENV_NAME = ".venv"
         FABRIC_ID = fabricPerBranch.getOrDefault("${env.GIT_BRANCH}", DEFAULT_FABRIC)
