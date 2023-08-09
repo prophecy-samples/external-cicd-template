@@ -161,7 +161,7 @@
     },
     "access_control_list" : [ {
       "user_name" : "scotts-robot@prophecy.io",
-      "permission_level" : "CAN_MANAGE"
+      "permission_level" : "IS_OWNER"
     } ]
   },
   "cluster_mode" : {
