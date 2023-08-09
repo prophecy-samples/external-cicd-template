@@ -8,14 +8,8 @@ def fabricPerBranch = [
 pipeline {
     agent any
     environment {
-        //note: credentials call must be made with a non-templated string which is why we have to get prod/nonprod
-        // here before assigning to our actual env var
-        DATABRICKS_HOST_PROD = credentials("DEMO_PROD_DATABRICKS_HOST")
-        DATABRICKS_TOKEN_PROD = credentials("DEMO_PROD_DATABRICKS_TOKEN")
-        DATABRICKS_HOST_NONPROD  = credentials("DEMO_DATABRICKS_HOST")
-        DATABRICKS_TOKEN_NONPROD = credentials("DEMO_DATABRICKS_TOKEN")
-        DATABRICKS_HOST = "${env.GIT_BRANCH == "prod" ? DATABRICKS_HOST_PROD : DATABRICKS_HOST_NONPROD}"
-        DATABRICKS_TOKEN = "${env.GIT_BRANCH == "prod" ? DATABRICKS_TOKEN_PROD : DATABRICKS_TOKEN_NONPROD}"
+        DATABRICKS_HOST =  credentials("${env.GIT_BRANCH == "prod" ? "DEMO_PROD_DATABRICKS_HOST" : "DEMO_DATABRICKS_HOST"}")
+        DATABRICKS_TOKEN = credentials("${env.GIT_BRANCH == "prod" ? "DEMO_PROD_DATABRICKS_TOKEN" : "DEMO_DATABRICKS_TOKEN"}")
 
         PROJECT_PATH = "./hello_project"
         VENV_NAME = ".venv"
@@ -41,11 +35,6 @@ pipeline {
             }
         }
         stage('deploy') {
-//            environment {
-//                //note: credentials call must be made with a non-templated string
-//                DATABRICKS_HOST = credentials("${DATABRICKS_HOST_CRED_STRING}")
-//                DATABRICKS_TOKEN = credentials("${DATABRICKS_TOKEN_CRED_STRING}")
-//            }
             steps {
                 sh """
                 . ./$VENV_NAME/bin/activate
