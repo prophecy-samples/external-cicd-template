@@ -1,12 +1,12 @@
 on:
   push:
     branches:
-      - 'main'
+      - 'develop'
 
 env:
   DATABRICKS_HOST: ${{ secrets.DEV_DATABRICKS_HOST }}
   DATABRICKS_TOKEN: ${{ secrets.DEV_DATBRICKS_TOKEN }}
-  FABRIC_NAME: "HelloDev"
+  FABRIC_ID: "1174"
   PROJECT_PATH: hello_project
 
 concurrency: 
@@ -61,4 +61,4 @@ jobs:
           python3 -m pip install --upgrade pip
           pip3 install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
       - name: Run PBT Deploy
-        run: pbt deploy --path ${{ env.PROJECT_PATH }}
+        run: pbt deploy --fabric-ids ${{ env.FABRIC_ID }}  --path ${{ env.PROJECT_PATH }}
