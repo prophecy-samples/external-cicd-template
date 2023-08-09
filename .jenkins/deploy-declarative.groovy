@@ -23,8 +23,8 @@ pipeline {
     agent any
     environment {
         //note: credentials call must be made with a non-templated string
-        DATABRICKS_HOST = get_databricks_host()
-        DATABRICKS_TOKEN = get_databricks_token()
+        DATABRICKS_HOST = credentials("DEMO_DATABRICKS_HOST") //get_databricks_host()
+        DATABRICKS_TOKEN = credentials("DEMO_DATABRICKS_TOKEN") //get_databricks_token()
         PROJECT_PATH = "./hello_project"
         VENV_NAME = ".venv"
         FABRIC_ID = fabricPerBranch.getOrDefault("${env.GIT_BRANCH}", DEFAULT_FABRIC)
