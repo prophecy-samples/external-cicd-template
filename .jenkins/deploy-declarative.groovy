@@ -4,18 +4,27 @@ def fabricPerBranch = [
         qa: "4005",
         develop: DEFAULT_FABRIC
 ]
+def get_databricks_host() {
+    if ("${env.GIT_BRANCH}" == "prod") {
+        return credentials("DEMO_PROD_DATABRICKS_HOST")
+    } else {
+        return credentials("DEMO_DATABRICKS_HOST")
+    }
+}
+def get_databricks_token() {
+    if ("${env.GIT_BRANCH}" == "prod") {
+        return credentials("DEMO_PROD_DATABRICKS_TOKEN")
+    } else {
+        return credentials("DEMO_DATABRICKS_TOKEN")
+    }
+}
 
 pipeline {
     agent any
     environment {
         //note: credentials call must be made with a non-templated string
-        if ("${env.GIT_BRANCH}" == "prod") {
-            DATABRICKS_HOST = credentials("DEMO_PROD_DATABRICKS_HOST")
-            DATABRICKS_TOKEN = credentials("DEMO_PROD_DATABRICKS_TOKEN")
-        } else {
-            DATABRICKS_HOST = credentials("DEMO_DATABRICKS_HOST")
-            DATABRICKS_TOKEN = credentials("DEMO_DATABRICKS_TOKEN")
-        }
+        DATABRICKS_HOST = get_databricks_host()
+        DATABRICKS_TOKEN = get_databricks_token()
         PROJECT_PATH = "./hello_project"
         VENV_NAME = ".venv"
         FABRIC_ID = fabricPerBranch.getOrDefault("${env.GIT_BRANCH}", DEFAULT_FABRIC)
