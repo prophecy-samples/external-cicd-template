@@ -4,18 +4,18 @@ def fabricPerBranch = [
         qa: "4005",
         develop: DEFAULT_FABRIC
 ]
-def get_databricks_host() {
+def get_databricks_host_cred_string() {
     if ("${env.GIT_BRANCH}" == "prod") {
-        return credentials("DEMO_PROD_DATABRICKS_HOST")
+        return "DEMO_PROD_DATABRICKS_HOST"
     } else {
-        return credentials("DEMO_DATABRICKS_HOST")
+        return "DEMO_DATABRICKS_HOST"
     }
 }
-def get_databricks_token() {
+def get_databricks_token_cred_string() {
     if ("${env.GIT_BRANCH}" == "prod") {
-        return credentials("DEMO_PROD_DATABRICKS_TOKEN")
+        return "DEMO_PROD_DATABRICKS_TOKEN"
     } else {
-        return credentials("DEMO_DATABRICKS_TOKEN")
+        return "DEMO_DATABRICKS_TOKEN"
     }
 }
 
@@ -23,13 +23,18 @@ pipeline {
     agent any
     environment {
         //note: credentials call must be made with a non-templated string
-        DATABRICKS_HOST = credentials("DEMO_DATABRICKS_HOST") //get_databricks_host()
-        DATABRICKS_TOKEN = credentials("DEMO_DATABRICKS_TOKEN") //get_databricks_token()
+        DATABRICKS_HOST_CRED_STRING = get_databricks_host_cred_string()
+        DATABRICKS_TOKEN_CRED_STRING = get_databricks_token_cred_string()
         PROJECT_PATH = "./hello_project"
         VENV_NAME = ".venv"
         FABRIC_ID = fabricPerBranch.getOrDefault("${env.GIT_BRANCH}", DEFAULT_FABRIC)
     }
     stages {
+        environment {
+            //note: credentials call must be made with a non-templated string
+            DATABRICKS_HOST = credentials("${DATABRICKS_HOST_CRED_STRING}")
+            DATABRICKS_TOKEN = credentials("${DATABRICKS_TOKEN_CRED_STRING}")
+        }
         stage('prepare system') {
             steps {
                 sh "apt-get install -y python3-venv"
