@@ -69,7 +69,7 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.6"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.7"
         }
       }, {
         "pypi" : {
@@ -93,7 +93,7 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.6"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.7"
         }
       }, {
         "pypi" : {
@@ -117,7 +117,7 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.6"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.7"
         }
       }, {
         "pypi" : {
@@ -141,7 +141,7 @@
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.6"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.7"
         }
       }, {
         "pypi" : {
@@ -160,7 +160,7 @@
       "pause_status" : "UNPAUSED"
     },
     "access_control_list" : [ {
-      "user_name" : "scotts-robot@prophecy.io",
+      "service_principal_name" : "5dbec94b-5487-42cc-81c9-e6ab816989d0",
       "permission_level" : "IS_OWNER"
     } ]
   },
