@@ -29,19 +29,6 @@
       }
     },
     "availableFabrics" : [ {
-      "id" : "1691",
-      "name" : "dev",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
       "id" : "2807",
       "name" : "demos-unity-catalog-guides-dev",
       "clusterSizes" : {
@@ -94,6 +81,19 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "4615",
+      "name" : "product-workspace",
+      "clusterSizes" : {
+        "default" : "small (autoscale)",
+        "availableClusterSizes" : [ "small (autoscale)" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "4005",
       "name" : "demos-qa",
       "clusterSizes" : {
@@ -120,24 +120,11 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "3703",
-      "name" : "HSBC-Cluster",
-      "clusterSizes" : {
-        "default" : "hsbc-cluster",
-        "availableClusterSizes" : [ "hsbc-cluster" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
       "id" : "1174",
       "name" : "demos",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small" ]
+        "availableClusterSizes" : [ "small", "large_autoscale" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
@@ -160,7 +147,7 @@
       }
     } ],
     "accessControlList" : [ {
-      "userName" : "scotts-robot@prophecy.io",
+      "servicePrincipalName" : "5dbec94b-5487-42cc-81c9-e6ab816989d0",
       "permissionLevel" : "IS_OWNER"
     } ]
   },
