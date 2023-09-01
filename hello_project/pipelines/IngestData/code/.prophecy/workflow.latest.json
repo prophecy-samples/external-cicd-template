@@ -3,7 +3,7 @@
     "id" : "1",
     "uri" : "pipelines/IngestData",
     "language" : "python",
-    "fabricId" : "1691",
+    "fabricId" : "1174",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
