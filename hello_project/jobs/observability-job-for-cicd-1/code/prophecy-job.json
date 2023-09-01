@@ -94,6 +94,45 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "4586",
+      "name" : "test-workshop-config",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "4589",
+      "name" : "testProphecyDemo",
+      "clusterSizes" : {
+        "default" : "Small",
+        "availableClusterSizes" : [ "Small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "4615",
+      "name" : "product-workspace",
+      "clusterSizes" : {
+        "default" : "small (autoscale)",
+        "availableClusterSizes" : [ "small (autoscale)" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "4005",
       "name" : "demos-qa",
       "clusterSizes" : {
@@ -120,24 +159,11 @@
         "PublicCentral" : { }
       }
     }, {
-      "id" : "3703",
-      "name" : "HSBC-Cluster",
-      "clusterSizes" : {
-        "default" : "hsbc-cluster",
-        "availableClusterSizes" : [ "hsbc-cluster" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
       "id" : "1174",
       "name" : "demos",
       "clusterSizes" : {
         "default" : "small",
-        "availableClusterSizes" : [ "small" ]
+        "availableClusterSizes" : [ "small", "large_autoscale" ]
       },
       "pylibsResolutionMode" : {
         "PublicCentral" : { }
