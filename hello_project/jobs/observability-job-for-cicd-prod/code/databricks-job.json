@@ -180,7 +180,7 @@
       "pause_status" : "PAUSED"
     },
     "access_control_list" : [ {
-      "user_name" : "scotts-robot@prophecy.io",
+      "service_principal_name" : "5dbec94b-5487-42cc-81c9-e6ab816989d0",
       "permission_level" : "IS_OWNER"
     } ]
   },

@@ -29,19 +29,6 @@
       }
     },
     "availableFabrics" : [ {
-      "id" : "1691",
-      "name" : "dev",
-      "clusterSizes" : {
-        "default" : "small",
-        "availableClusterSizes" : [ "small" ]
-      },
-      "pylibsResolutionMode" : {
-        "PublicCentral" : { }
-      },
-      "scalalibsResolutionMode" : {
-        "PublicCentral" : { }
-      }
-    }, {
       "id" : "2807",
       "name" : "demos-unity-catalog-guides-dev",
       "clusterSizes" : {
@@ -160,7 +147,7 @@
       }
     } ],
     "accessControlList" : [ {
-      "userName" : "scotts-robot@prophecy.io",
+      "servicePrincipalName" : "5dbec94b-5487-42cc-81c9-e6ab816989d0",
       "permissionLevel" : "IS_OWNER"
     } ]
   },
