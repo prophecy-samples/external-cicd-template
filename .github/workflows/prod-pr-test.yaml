@@ -8,6 +8,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  # Make sure you set the path to match the Project directory
   PROJECT_PATH: hello_project
 
 jobs:
@@ -33,12 +34,16 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           pip3 install build pytest pytest-cov wheel pytest-html pyspark prophecy-build-tool
-      # Make sure you set the path to match the Project directory
+
+      - name: Run PBT validate
+        run: pbt validate --path ${{ env.PROJECT_PATH }}
+
       - name: Run PBT build
         run: pbt build --path ${{ env.PROJECT_PATH }}
-      # Same as above, make the path match the Project directory
+
       - name: Run PBT test
         run: pbt test --path ${{ env.PROJECT_PATH }}
+
       # If you wanted to start a QA-specific job and wait for it to pass before merging to PROD, you could do it here
   #    - name: Run QA job
   #      run: databricks runs submit ...
