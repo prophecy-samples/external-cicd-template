@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git branch: '${ghprbSourceBranch}', credentialsId: 'jenkins-cicd-runner-demo', url: 'git@github.com:SimpleDataLabsInc/HelloCICD.git'
+                git branch: '${ghprbSourceBranch}', credentialsId: 'jenkins-cicd-runner-demo', url: 'git@github.com:prophecy-samples/external-cicd-template.git'
                 sh "apt-get install -y python3-venv"
             }
         }
