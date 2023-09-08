@@ -7,7 +7,7 @@ on:
 
 env:
   DATABRICKS_HOST: ${{ secrets.QA_DATABRICKS_HOST }}
-  DATABRICKS_TOKEN: ${{ secrets.QA_DATBRICKS_TOKEN }}
+  DATABRICKS_TOKEN: ${{ secrets.QA_DATABRICKS_TOKEN }}
   FABRIC_ID: "4005"
   PROJECT_PATH: hello_project
 
