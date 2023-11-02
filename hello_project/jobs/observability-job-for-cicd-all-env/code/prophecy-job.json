@@ -2,14 +2,14 @@
   "metainfo" : {
     "type" : "Databricks",
     "fabricId" : "1174",
-    "jobId" : "jobs/observability-job-for-cicd-1",
-    "name" : "observability-job-for-cicd-dev",
-    "schedule" : "0 0 0 1 * ? *",
+    "jobId" : "jobs/observability-job-for-cicd-all-env",
+    "name" : "observability-job-for-cicd-all-env",
+    "schedule" : "None",
     "scheduleTimeZone" : "UTC",
     "jobClusterMode" : {
       "clusterMode" : "Single"
     },
-    "enabled" : true,
+    "enabled" : false,
     "defaultClusterSize" : "small",
     "alerting" : {
       "emails" : "",
@@ -184,29 +184,25 @@
       "scalalibsResolutionMode" : {
         "PublicCentral" : { }
       }
-    } ],
-    "accessControlList" : [ {
-      "servicePrincipalName" : "5dbec94b-5487-42cc-81c9-e6ab816989d0",
-      "permissionLevel" : "IS_OWNER"
     } ]
   },
   "processes" : {
-    "Leh1w7pKpFDEX_t2Jy9Jn$$KTe_tQyemquQLjBLEy8kF" : {
-      "id" : "Leh1w7pKpFDEX_t2Jy9Jn$$KTe_tQyemquQLjBLEy8kF",
+    "umuA_sX_EgaDL_6E0SCwx" : {
+      "id" : "umuA_sX_EgaDL_6E0SCwx",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "Carts_RawBronze",
         "slug" : "Carts_RawBronze",
-        "x" : 320,
-        "y" : 120
+        "x" : -280,
+        "y" : -200
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "hOKikL7yHv_5C3ZCYBfau$$2toWjjsx1W_kBJSIWdQQ_",
+          "id" : "bfVz3iPixF8AV5Kce-Ylm",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "lLELP8UMHhLKm8cFDwMIr$$WxJiyH-jEtSQGLybM2W_i",
+          "id" : "OsTEQr1prkK7mLon3foGd",
           "slug" : ""
         } ]
       },
@@ -249,22 +245,22 @@
         }
       }
     },
-    "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1" : {
-      "id" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
+    "p1nCaV3ffdZ_2LBDtFu4L" : {
+      "id" : "p1nCaV3ffdZ_2LBDtFu4L",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "IngestData",
         "slug" : "IngestData",
-        "x" : 120,
-        "y" : 320
+        "x" : -520,
+        "y" : 0
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "xmJi6B1dSSqmLOD_tVwhe$$g6TJPBLhx0sMjDPkxfh1E",
+          "id" : "2d7zc-OLj8n16qp1awcaq",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
+          "id" : "tZP-0rF3odMXJ5NnhCVD9",
           "slug" : ""
         } ]
       },
@@ -298,22 +294,22 @@
         }
       }
     },
-    "-E_B-l63HkUX47OPDkHqP$$4trQKSUV8mbK1e955lrfV" : {
-      "id" : "-E_B-l63HkUX47OPDkHqP$$4trQKSUV8mbK1e955lrfV",
+    "W3Y46FHxVggCBn-vLz3hZ" : {
+      "id" : "W3Y46FHxVggCBn-vLz3hZ",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "Products_RawBronze",
         "slug" : "Products_RawBronze",
-        "x" : 320,
-        "y" : 320
+        "x" : -280,
+        "y" : 0
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "o0tV0LgHewTLuwktPSMaW$$X2XbG6Klit0vMdsMwwMzw",
+          "id" : "JkLIBRa5bOdaXgCTnUNdE",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "LS1wWtywqvYPsYoncAK9n$$VQ6aeZInjt8HQfmZxjsKa",
+          "id" : "LW5dcLTU5bkN5pMYX7VWu",
           "slug" : ""
         } ]
       },
@@ -356,22 +352,22 @@
         }
       }
     },
-    "2WAP7cqeQPQETzBu7NXBy$$uojKJnVJgfLS9TJeHT4Fk" : {
-      "id" : "2WAP7cqeQPQETzBu7NXBy$$uojKJnVJgfLS9TJeHT4Fk",
+    "McTvysWdeU7Rp4gnulUKT" : {
+      "id" : "McTvysWdeU7Rp4gnulUKT",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "Users_RawBronze",
         "slug" : "Users_RawBronze",
-        "x" : 320,
-        "y" : 520
+        "x" : -280,
+        "y" : 200
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "eImlV1Q7Z9KIjLVZr2voX$$xzwnONkS82Pd6alT6O6xM",
+          "id" : "mX_fq5t7RqYUsON-ToH9G",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "h09Ou56Rn-mxAW6rOL7Lq$$RgwMCPoRXHRwwDx9hU6sS",
+          "id" : "AKDjqO6-2bG-z7Vgs8qA-",
           "slug" : ""
         } ]
       },
@@ -416,22 +412,22 @@
     }
   },
   "connections" : [ {
-    "id" : "-JU9sz-WXkto7ZwOv8Vs2$$esiEDsS9F43OZ43eu5go0",
-    "source" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
-    "target" : "Leh1w7pKpFDEX_t2Jy9Jn$$KTe_tQyemquQLjBLEy8kF",
-    "sourcePort" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
-    "targetPort" : "hOKikL7yHv_5C3ZCYBfau$$2toWjjsx1W_kBJSIWdQQ_"
+    "id" : "PJJW1VDMtdKXWW1mhzGrX",
+    "source" : "p1nCaV3ffdZ_2LBDtFu4L",
+    "target" : "umuA_sX_EgaDL_6E0SCwx",
+    "sourcePort" : "tZP-0rF3odMXJ5NnhCVD9",
+    "targetPort" : "bfVz3iPixF8AV5Kce-Ylm"
   }, {
-    "id" : "YgzukT4g96RmiH7i4xC_z",
-    "source" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
-    "target" : "-E_B-l63HkUX47OPDkHqP$$4trQKSUV8mbK1e955lrfV",
-    "sourcePort" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
-    "targetPort" : "o0tV0LgHewTLuwktPSMaW$$X2XbG6Klit0vMdsMwwMzw"
+    "id" : "olesgj-OcUevKY-8slsqN",
+    "source" : "p1nCaV3ffdZ_2LBDtFu4L",
+    "target" : "W3Y46FHxVggCBn-vLz3hZ",
+    "sourcePort" : "tZP-0rF3odMXJ5NnhCVD9",
+    "targetPort" : "JkLIBRa5bOdaXgCTnUNdE"
   }, {
-    "id" : "wuund21AV1fSb_0mq6Iug",
-    "source" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
-    "target" : "2WAP7cqeQPQETzBu7NXBy$$uojKJnVJgfLS9TJeHT4Fk",
-    "sourcePort" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
-    "targetPort" : "eImlV1Q7Z9KIjLVZr2voX$$xzwnONkS82Pd6alT6O6xM"
+    "id" : "SQRml7-SoJApAavykcv2h",
+    "source" : "p1nCaV3ffdZ_2LBDtFu4L",
+    "target" : "McTvysWdeU7Rp4gnulUKT",
+    "sourcePort" : "tZP-0rF3odMXJ5NnhCVD9",
+    "targetPort" : "mX_fq5t7RqYUsON-ToH9G"
   } ]
 }

@@ -11,4 +11,4 @@ def Carts_Bronze(spark: SparkSession, in0: DataFrame):
         .format("delta")\
         .option("path", f"dbfs:/FileStore/Prophecy/hello_cicd/{Config.env}/bronze/carts")\
         .mode("overwrite")\
-        .saveAsTable(f"hello_cicd.{Config.table_name}")
+        .saveAsTable(f"`hello_cicd`.`{Config.table_name}`")

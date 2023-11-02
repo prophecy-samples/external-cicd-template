@@ -1,5 +1,8 @@
 {
   "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
     "id" : "1",
     "uri" : "pipelines/Carts_RawBronze",
     "language" : "python",
@@ -10,7 +13,7 @@
       "language" : "python",
       "udfs" : [ ],
       "functionPackageName" : "prophecy_demos.hellocicd.functions",
-      "sharedFunctionPackageNames" : [ ]
+      "sharedFunctionPackageNames" : [ "prophecy.spark_basic.functions", "prophecy.warehouse.functions" ]
     },
     "udafs" : {
       "language" : "python",
@@ -54,7 +57,15 @@
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
-    "dependentProjectExternalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12654",
+      "projectName" : "ProphecySparkBasicsPython",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12655",
+      "projectName" : "ProphecyWarehousePython",
+      "externalDependencies" : [ ]
+    } ],
     "isImported" : false,
     "interimMode" : "Full",
     "interimModeEnabled" : true,
@@ -355,7 +366,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "explodedColsNewName" : [ ],
@@ -507,6 +519,10 @@
         "columnsSelector" : [ "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.total", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.quantity", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##discountedTotal", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.discountedPrice", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.id", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##total", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##totalQuantity", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.title", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product_position", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##id", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.price", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product.discountPercentage", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##userId", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##product", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##env", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##totalProducts", "yxZ5zJQczmsvxff9DCiFT$$hGFS87TY-cscSNAeCHTto##ingest_time" ],
         "explodeColumns" : [ ],
         "delimiter" : "_"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/FlattenSchema",
+        "projectName" : "ProphecySparkBasicsPython"
       }
     },
     "GbnpfhktTYn5p9tDdub8I$$XSJgbeE609t1DlAto3W0L" : {
@@ -679,7 +695,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "importLanguage" : "python",
@@ -750,6 +767,10 @@
         "importString" : "",
         "activeTab" : "expressions",
         "columnsSelector" : [ "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalQuantity", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##userId", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##products", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##id", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##total", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##ingest_time", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##totalProducts", "WrMWXk47NVI_1BlyQ9trn$$AG6ygGTPXKHTnEcT_hZTy##discountedTotal" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/Reformat",
+        "projectName" : "ProphecySparkBasicsPython"
       }
     },
     "Jmhn0qyuaTJZDkRh71TOD$$uSh6fg9SnQmWT9QKEXaHS" : {
@@ -772,7 +793,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/Carts_Raw"
@@ -947,7 +969,8 @@
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "datasetId" : "datasets/Carts_Bronze"
@@ -1132,7 +1155,8 @@
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
       },
       "properties" : {
         "fileTabs" : [ {
@@ -1142,6 +1166,10 @@
           "content" : "select *, posexplode(products) AS (product_position, product) FROM in0"
         } ],
         "inputPortNames" : [ "in0" ]
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12654.git&subPath=&tag=0.0.4&projectSubscriptionProjectId=12654&path=gems/SQLStatement",
+        "projectName" : "ProphecySparkBasicsPython"
       }
     }
   },
@@ -1149,6 +1177,7 @@
     "inputs" : [ ],
     "outputs" : [ ],
     "selectedInputFields" : [ ],
-    "isCustomOutputSchema" : false
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
   }
 }

@@ -1,10 +1,10 @@
 {
-  "fabric_id" : "4004",
+  "fabric_id" : "1174",
   "components" : [ {
     "PipelineComponent" : {
       "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/IngestData-1.0-py3-none-any.whl",
       "nodeName" : "IngestData",
-      "id" : "YNwBY1Nrgnira999vrSee",
+      "id" : "p1nCaV3ffdZ_2LBDtFu4L",
       "language" : "python",
       "pipelineId" : "pipelines/IngestData"
     }
@@ -12,7 +12,7 @@
     "PipelineComponent" : {
       "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Carts_RawBronze-1.0-py3-none-any.whl",
       "nodeName" : "Carts_RawBronze",
-      "id" : "6KJ6_dvEZ4ehy646e7rFI",
+      "id" : "umuA_sX_EgaDL_6E0SCwx",
       "language" : "python",
       "pipelineId" : "pipelines/Carts_RawBronze"
     }
@@ -20,7 +20,7 @@
     "PipelineComponent" : {
       "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Products_RawBronze-1.0-py3-none-any.whl",
       "nodeName" : "Products_RawBronze",
-      "id" : "har5YiC2SRYPNXl-Lu8qJ",
+      "id" : "W3Y46FHxVggCBn-vLz3hZ",
       "language" : "python",
       "pipelineId" : "pipelines/Products_RawBronze"
     }
@@ -28,30 +28,26 @@
     "PipelineComponent" : {
       "path" : "dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Users_RawBronze-1.0-py3-none-any.whl",
       "nodeName" : "Users_RawBronze",
-      "id" : "e3-IMx6cxJUpQ9DuI2rdX",
+      "id" : "McTvysWdeU7Rp4gnulUKT",
       "language" : "python",
       "pipelineId" : "pipelines/Users_RawBronze"
     }
   } ],
   "request" : {
     "format" : "MULTI_TASK",
-    "name" : "observability-job-for-cicd-prod",
+    "name" : "observability-job-for-cicd-all-env",
     "job_clusters" : [ {
-      "job_cluster_key" : "observability-job-for-cicd-prod_default_small",
+      "job_cluster_key" : "observability-job-for-cicd-all-env_default_small",
       "new_cluster" : {
-        "spark_version" : "12.2.x-cpu-ml-scala2.12",
-        "node_type_id" : "i3.xlarge",
-        "driver_node_type_id" : "i3.xlarge",
+        "ssh_public_keys" : [ ],
+        "spark_version" : "11.3.x-scala2.12",
+        "node_type_id" : "i4i.large",
         "num_workers" : 1,
-        "custom_tags" : {
-          "CUSTOMER_NAME" : "saas",
-          "CONTROL_PLANE_NAME" : "app",
-          "DATA_PLANE_NAME" : "dp"
-        },
-        "enable_elastic_disk" : false,
+        "custom_tags" : { },
+        "init_scripts" : [ ],
         "spark_conf" : {
-          "spark.prophecy.metadata.fabric.id" : "4004",
-          "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/observability-job-for-cicd-prod",
+          "spark.prophecy.metadata.fabric.id" : "1174",
+          "spark.prophecy.metadata.job.uri" : "__PROJECT_ID_PLACEHOLDER__/jobs/observability-job-for-cicd-all-env",
           "spark.prophecy.metadata.is.interactive.run" : "false",
           "spark.prophecy.project.id" : "__PROJECT_ID_PLACEHOLDER__",
           "spark.prophecy.metadata.user.id" : 2169,
@@ -59,37 +55,34 @@
           "spark.prophecy.packages.path" : "{\"pipelines/Carts_RawBronze\":\"dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Carts_RawBronze-1.0-py3-none-any.whl\",\"pipelines/IngestData\":\"dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/IngestData-1.0-py3-none-any.whl\",\"pipelines/Products_RawBronze\":\"dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Products_RawBronze-1.0-py3-none-any.whl\",\"pipelines/Users_RawBronze\":\"dbfs:/FileStore/prophecy/artifacts/saas/app/__PROJECT_ID_PLACEHOLDER__/__PROJECT_RELEASE_VERSION_PLACEHOLDER__/pipeline/Users_RawBronze-1.0-py3-none-any.whl\"}",
           "spark.prophecy.metadata.job.branch" : "__PROJECT_RELEASE_VERSION_PLACEHOLDER__",
           "spark.prophecy.metadata.url" : "__PROPHECY_URL_PLACEHOLDER__",
-          "spark.databricks.isv.product" : "prophecy",
           "spark.prophecy.execution.metrics.disabled" : true
         },
         "spark_env_vars" : {
-          "JNAME" : "zulu11-ca-amd64"
+          "PYSPARK_PYTHON" : "/databricks/python3/bin/python3"
         },
-        "cluster_source" : "API",
-        "runtime_engine" : "STANDARD",
+        "runtime_engine" : "PHOTON",
         "aws_attributes" : {
           "first_on_demand" : 1,
           "availability" : "SPOT_WITH_FALLBACK",
-          "zone_id" : "us-east-1f",
+          "zone_id" : "auto",
           "spot_bid_price_percent" : 100,
           "ebs_volume_count" : 0
         },
-        "data_security_mode" : "LEGACY_SINGLE_USER_STANDARD",
-        "enable_local_disk_encryption" : false
+        "data_security_mode" : "SINGLE_USER"
       }
     } ],
     "email_notifications" : { },
     "tasks" : [ {
       "task_key" : "IngestData",
-      "job_cluster_key" : "observability-job-for-cicd-prod_default_small",
+      "job_cluster_key" : "observability-job-for-cicd-all-env_default_small",
       "python_wheel_task" : {
         "package_name" : "IngestData",
         "entry_point" : "main",
-        "parameters" : [ "-i", "prod", "-O", "{}" ]
+        "parameters" : [ "-i", "dev", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-ml-7.1.25"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.25"
         }
       }, {
         "pypi" : {
@@ -105,15 +98,15 @@
       "depends_on" : [ {
         "task_key" : "IngestData"
       } ],
-      "job_cluster_key" : "observability-job-for-cicd-prod_default_small",
+      "job_cluster_key" : "observability-job-for-cicd-all-env_default_small",
       "python_wheel_task" : {
         "package_name" : "Carts_RawBronze",
         "entry_point" : "main",
-        "parameters" : [ "-i", "prod", "-O", "{}" ]
+        "parameters" : [ "-i", "dev", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-ml-7.1.25"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.25"
         }
       }, {
         "pypi" : {
@@ -129,15 +122,15 @@
       "depends_on" : [ {
         "task_key" : "IngestData"
       } ],
-      "job_cluster_key" : "observability-job-for-cicd-prod_default_small",
+      "job_cluster_key" : "observability-job-for-cicd-all-env_default_small",
       "python_wheel_task" : {
         "package_name" : "Products_RawBronze",
         "entry_point" : "main",
-        "parameters" : [ "-i", "prod", "-O", "{}" ]
+        "parameters" : [ "-i", "dev", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-ml-7.1.25"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.25"
         }
       }, {
         "pypi" : {
@@ -153,15 +146,15 @@
       "depends_on" : [ {
         "task_key" : "IngestData"
       } ],
-      "job_cluster_key" : "observability-job-for-cicd-prod_default_small",
+      "job_cluster_key" : "observability-job-for-cicd-all-env_default_small",
       "python_wheel_task" : {
         "package_name" : "Users_RawBronze",
         "entry_point" : "main",
-        "parameters" : [ "-i", "prod", "-O", "{}" ]
+        "parameters" : [ "-i", "dev", "-O", "{}" ]
       },
       "libraries" : [ {
         "maven" : {
-          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-ml-7.1.25"
+          "coordinates" : "io.prophecy:prophecy-libs_2.12:3.3.0-7.1.25"
         }
       }, {
         "pypi" : {
@@ -173,20 +166,11 @@
       "email_notifications" : { },
       "max_retries" : 0
     } ],
-    "max_concurrent_runs" : 1,
-    "schedule" : {
-      "quartz_cron_expression" : "0 0 0 1/1 * ? *",
-      "timezone_id" : "UTC",
-      "pause_status" : "PAUSED"
-    },
-    "access_control_list" : [ {
-      "service_principal_name" : "5dbec94b-5487-42cc-81c9-e6ab816989d0",
-      "permission_level" : "IS_OWNER"
-    } ]
+    "max_concurrent_runs" : 1
   },
   "cluster_mode" : {
     "clusterMode" : "Single"
   },
   "secret_scope" : "prophecy_jobs_694",
-  "sorted_processes" : [ "YNwBY1Nrgnira999vrSee", "6KJ6_dvEZ4ehy646e7rFI", "har5YiC2SRYPNXl-Lu8qJ", "e3-IMx6cxJUpQ9DuI2rdX" ]
+  "sorted_processes" : [ "p1nCaV3ffdZ_2LBDtFu4L", "umuA_sX_EgaDL_6E0SCwx", "W3Y46FHxVggCBn-vLz3hZ", "McTvysWdeU7Rp4gnulUKT" ]
 }

@@ -2,9 +2,9 @@
   "metainfo" : {
     "type" : "Databricks",
     "fabricId" : "1174",
-    "jobId" : "jobs/observability-job-for-cicd-1",
-    "name" : "observability-job-for-cicd-dev",
-    "schedule" : "0 0 0 1 * ? *",
+    "jobId" : "jobs/newJob1",
+    "name" : "newJob1",
+    "schedule" : "0 0 5 ? * 1,4 *",
     "scheduleTimeZone" : "UTC",
     "jobClusterMode" : {
       "clusterMode" : "Single"
@@ -12,10 +12,10 @@
     "enabled" : true,
     "defaultClusterSize" : "small",
     "alerting" : {
-      "emails" : "",
+      "emails" : "richard@prophecy.io",
       "onStart" : false,
       "onSuccess" : false,
-      "onFailure" : false
+      "onFailure" : true
     },
     "maxConcurrentRuns" : 1,
     "processDefaultSettings" : {
@@ -184,194 +184,25 @@
       "scalalibsResolutionMode" : {
         "PublicCentral" : { }
       }
-    } ],
-    "accessControlList" : [ {
-      "servicePrincipalName" : "5dbec94b-5487-42cc-81c9-e6ab816989d0",
-      "permissionLevel" : "IS_OWNER"
     } ]
   },
   "processes" : {
-    "Leh1w7pKpFDEX_t2Jy9Jn$$KTe_tQyemquQLjBLEy8kF" : {
-      "id" : "Leh1w7pKpFDEX_t2Jy9Jn$$KTe_tQyemquQLjBLEy8kF",
-      "component" : "Pipeline",
-      "metadata" : {
-        "label" : "Carts_RawBronze",
-        "slug" : "Carts_RawBronze",
-        "x" : 320,
-        "y" : 120
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "hOKikL7yHv_5C3ZCYBfau$$2toWjjsx1W_kBJSIWdQQ_",
-          "slug" : ""
-        } ],
-        "outputs" : [ {
-          "id" : "lLELP8UMHhLKm8cFDwMIr$$WxJiyH-jEtSQGLybM2W_i",
-          "slug" : ""
-        } ]
-      },
-      "settings" : {
-        "type" : "Inherited",
-        "alerting" : {
-          "emails" : "",
-          "onStart" : false,
-          "onSuccess" : false,
-          "onFailure" : false
-        }
-      },
-      "properties" : {
-        "pipelineId" : "pipelines/Carts_RawBronze",
-        "configurations" : {
-          "schema" : [ {
-            "name" : "env",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "dev"
-            },
-            "isReferenced" : false,
-            "isWorkflowNodeConfiguration" : false
-          }, {
-            "name" : "table_name",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "Carts_Bronze_dev"
-            },
-            "isReferenced" : false,
-            "isWorkflowNodeConfiguration" : false
-          } ],
-          "instances" : {
-            "HelloCICD" : [ "default", "qa", "dev", "prod" ]
-          },
-          "overrides" : { },
-          "selectedInstance" : "dev"
-        }
-      }
-    },
-    "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1" : {
-      "id" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
-      "component" : "Pipeline",
-      "metadata" : {
-        "label" : "IngestData",
-        "slug" : "IngestData",
-        "x" : 120,
-        "y" : 320
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "xmJi6B1dSSqmLOD_tVwhe$$g6TJPBLhx0sMjDPkxfh1E",
-          "slug" : ""
-        } ],
-        "outputs" : [ {
-          "id" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
-          "slug" : ""
-        } ]
-      },
-      "settings" : {
-        "type" : "Inherited",
-        "alerting" : {
-          "emails" : "",
-          "onStart" : false,
-          "onSuccess" : false,
-          "onFailure" : false
-        }
-      },
-      "properties" : {
-        "pipelineId" : "pipelines/IngestData",
-        "configurations" : {
-          "schema" : [ {
-            "name" : "env",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "dev"
-            },
-            "isReferenced" : false,
-            "isWorkflowNodeConfiguration" : false
-          } ],
-          "instances" : {
-            "HelloCICD" : [ "default", "qa", "dev", "prod" ]
-          },
-          "overrides" : { },
-          "selectedInstance" : "dev"
-        }
-      }
-    },
-    "-E_B-l63HkUX47OPDkHqP$$4trQKSUV8mbK1e955lrfV" : {
-      "id" : "-E_B-l63HkUX47OPDkHqP$$4trQKSUV8mbK1e955lrfV",
-      "component" : "Pipeline",
-      "metadata" : {
-        "label" : "Products_RawBronze",
-        "slug" : "Products_RawBronze",
-        "x" : 320,
-        "y" : 320
-      },
-      "ports" : {
-        "inputs" : [ {
-          "id" : "o0tV0LgHewTLuwktPSMaW$$X2XbG6Klit0vMdsMwwMzw",
-          "slug" : ""
-        } ],
-        "outputs" : [ {
-          "id" : "LS1wWtywqvYPsYoncAK9n$$VQ6aeZInjt8HQfmZxjsKa",
-          "slug" : ""
-        } ]
-      },
-      "settings" : {
-        "type" : "Inherited",
-        "alerting" : {
-          "emails" : "",
-          "onStart" : false,
-          "onSuccess" : false,
-          "onFailure" : false
-        }
-      },
-      "properties" : {
-        "pipelineId" : "pipelines/Products_RawBronze",
-        "configurations" : {
-          "schema" : [ {
-            "name" : "env",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "dev"
-            },
-            "isReferenced" : false,
-            "isWorkflowNodeConfiguration" : false
-          }, {
-            "name" : "table_name",
-            "optional" : false,
-            "kind" : {
-              "type" : "string",
-              "value" : "Products_Bronze_dev"
-            },
-            "isReferenced" : false,
-            "isWorkflowNodeConfiguration" : false
-          } ],
-          "instances" : {
-            "HelloCICD" : [ "default", "qa", "dev", "prod" ]
-          },
-          "overrides" : { },
-          "selectedInstance" : "dev"
-        }
-      }
-    },
-    "2WAP7cqeQPQETzBu7NXBy$$uojKJnVJgfLS9TJeHT4Fk" : {
-      "id" : "2WAP7cqeQPQETzBu7NXBy$$uojKJnVJgfLS9TJeHT4Fk",
+    "wZyWArzl9KHZyj3xqiVSb$$ZDBFTzGoXPZhjI6FxPatE" : {
+      "id" : "wZyWArzl9KHZyj3xqiVSb$$ZDBFTzGoXPZhjI6FxPatE",
       "component" : "Pipeline",
       "metadata" : {
         "label" : "Users_RawBronze",
         "slug" : "Users_RawBronze",
-        "x" : 320,
-        "y" : 520
+        "x" : 120,
+        "y" : 60
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "eImlV1Q7Z9KIjLVZr2voX$$xzwnONkS82Pd6alT6O6xM",
+          "id" : "-jQt8XpPUgU8QOZ8UnbQj$$MfVR4aZD-hkx6Hrm7PHjp",
           "slug" : ""
         } ],
         "outputs" : [ {
-          "id" : "h09Ou56Rn-mxAW6rOL7Lq$$RgwMCPoRXHRwwDx9hU6sS",
+          "id" : "Oa5-n1nOpOP2YwKQ0GaPW$$8o-i0-cl02RlIasr5OlNY",
           "slug" : ""
         } ]
       },
@@ -392,7 +223,7 @@
             "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "dev"
+              "value" : "unspecified"
             },
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
@@ -401,7 +232,7 @@
             "optional" : false,
             "kind" : {
               "type" : "string",
-              "value" : "Users_Bronze_dev "
+              "value" : " "
             },
             "isReferenced" : false,
             "isWorkflowNodeConfiguration" : false
@@ -410,28 +241,193 @@
             "HelloCICD" : [ "default", "qa", "dev", "prod" ]
           },
           "overrides" : { },
-          "selectedInstance" : "dev"
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "DIdMtmScRYshVmNfuTII2$$Qnc044oJ5IufXRtXYKyQ2" : {
+      "id" : "DIdMtmScRYshVmNfuTII2$$Qnc044oJ5IufXRtXYKyQ2",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Carts_RawBronze",
+        "slug" : "Carts_RawBronze",
+        "x" : 120,
+        "y" : -260
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Rz0fyJBj_JkRGbXb3Mdwn$$jTJeC_BYjbQ7T_nw5YPHl",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "OykCHUajpxXVyEHDXtnlM$$tMm8J33oR6tFVisQy2X54",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/Carts_RawBronze",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "env",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "unspecified"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "table_name",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : ""
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "HelloCICD" : [ "default", "qa", "dev", "prod" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "m_OhGk89DpBIJuEfyQMWL$$1vSpJJlvjZ-dLF0Ig2utu" : {
+      "id" : "m_OhGk89DpBIJuEfyQMWL$$1vSpJJlvjZ-dLF0Ig2utu",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "Products_RawBronze",
+        "slug" : "Products_RawBronze",
+        "x" : 120,
+        "y" : -100
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "lKVsdk9PNKTtOYBbnSWsI$$dVdlbQQBbp0W6N3wWObtF",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "w5ScRf1boAyCNTlPBfZ6O$$Sg_8z-n4vjcwwgEdKfCCi",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/Products_RawBronze",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "env",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "unspecified"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          }, {
+            "name" : "table_name",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : " "
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "HelloCICD" : [ "default", "qa", "dev", "prod" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
+        }
+      }
+    },
+    "i9n6S7aXdVrMSAU22bWhn$$NUx-TwZLEP6midjYu8eoZ" : {
+      "id" : "i9n6S7aXdVrMSAU22bWhn$$NUx-TwZLEP6midjYu8eoZ",
+      "component" : "Pipeline",
+      "metadata" : {
+        "label" : "IngestData",
+        "slug" : "IngestData",
+        "x" : -360,
+        "y" : -120
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "iHLUFjN8yKsHTuN92OgWi$$a6KZMKYRX_EP3oN5ygZbm",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "FkpxEfHrpPoL1jcdhOmiy$$gYWhZDwi8Yul03elwLof1",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "pipelineId" : "pipelines/IngestData",
+        "configurations" : {
+          "schema" : [ {
+            "name" : "env",
+            "optional" : false,
+            "kind" : {
+              "type" : "string",
+              "value" : "unspecified"
+            },
+            "isReferenced" : false,
+            "isWorkflowNodeConfiguration" : false
+          } ],
+          "instances" : {
+            "HelloCICD" : [ "default", "qa", "dev", "prod" ]
+          },
+          "overrides" : { },
+          "selectedInstance" : "default"
         }
       }
     }
   },
   "connections" : [ {
-    "id" : "-JU9sz-WXkto7ZwOv8Vs2$$esiEDsS9F43OZ43eu5go0",
-    "source" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
-    "target" : "Leh1w7pKpFDEX_t2Jy9Jn$$KTe_tQyemquQLjBLEy8kF",
-    "sourcePort" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
-    "targetPort" : "hOKikL7yHv_5C3ZCYBfau$$2toWjjsx1W_kBJSIWdQQ_"
+    "id" : "B4ZIyu6Js3mamUdpu3pm9",
+    "source" : "i9n6S7aXdVrMSAU22bWhn$$NUx-TwZLEP6midjYu8eoZ",
+    "target" : "m_OhGk89DpBIJuEfyQMWL$$1vSpJJlvjZ-dLF0Ig2utu",
+    "sourcePort" : "FkpxEfHrpPoL1jcdhOmiy$$gYWhZDwi8Yul03elwLof1",
+    "targetPort" : "lKVsdk9PNKTtOYBbnSWsI$$dVdlbQQBbp0W6N3wWObtF"
   }, {
-    "id" : "YgzukT4g96RmiH7i4xC_z",
-    "source" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
-    "target" : "-E_B-l63HkUX47OPDkHqP$$4trQKSUV8mbK1e955lrfV",
-    "sourcePort" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
-    "targetPort" : "o0tV0LgHewTLuwktPSMaW$$X2XbG6Klit0vMdsMwwMzw"
+    "id" : "jXxt7WOJzp4CP6jijlo4Q",
+    "source" : "i9n6S7aXdVrMSAU22bWhn$$NUx-TwZLEP6midjYu8eoZ",
+    "target" : "DIdMtmScRYshVmNfuTII2$$Qnc044oJ5IufXRtXYKyQ2",
+    "sourcePort" : "FkpxEfHrpPoL1jcdhOmiy$$gYWhZDwi8Yul03elwLof1",
+    "targetPort" : "Rz0fyJBj_JkRGbXb3Mdwn$$jTJeC_BYjbQ7T_nw5YPHl"
   }, {
-    "id" : "wuund21AV1fSb_0mq6Iug",
-    "source" : "las8HId0WYEgDTDbiF6Dn$$YaK2SExgGr035h5Fb9qM1",
-    "target" : "2WAP7cqeQPQETzBu7NXBy$$uojKJnVJgfLS9TJeHT4Fk",
-    "sourcePort" : "PDUpw_msoTH5keBLz-8hG$$ge1qjjbG2De02X_v3zer8",
-    "targetPort" : "eImlV1Q7Z9KIjLVZr2voX$$xzwnONkS82Pd6alT6O6xM"
+    "id" : "blJwpr3atFaaD4m62BgaB",
+    "source" : "i9n6S7aXdVrMSAU22bWhn$$NUx-TwZLEP6midjYu8eoZ",
+    "target" : "wZyWArzl9KHZyj3xqiVSb$$ZDBFTzGoXPZhjI6FxPatE",
+    "sourcePort" : "FkpxEfHrpPoL1jcdhOmiy$$gYWhZDwi8Yul03elwLof1",
+    "targetPort" : "-jQt8XpPUgU8QOZ8UnbQj$$MfVR4aZD-hkx6Hrm7PHjp"
   } ]
 }

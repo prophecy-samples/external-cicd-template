@@ -81,6 +81,19 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "5584",
+      "name" : "testSharedRJ",
+      "clusterSizes" : {
+        "default" : "testShared1",
+        "availableClusterSizes" : [ "testShared1" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "4615",
       "name" : "product-workspace",
       "clusterSizes" : {
@@ -94,8 +107,34 @@
         "PublicCentral" : { }
       }
     }, {
+      "id" : "6072",
+      "name" : "product-workspace",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
       "id" : "4005",
       "name" : "demos-qa",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    }, {
+      "id" : "5537",
+      "name" : "test3",
       "clusterSizes" : {
         "default" : "small",
         "availableClusterSizes" : [ "small" ]
