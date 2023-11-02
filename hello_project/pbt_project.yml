@@ -1,6 +1,6 @@
 name: HelloCICD
 description: An example project that shows how to integrate with external CICD systems
-version: 0.0.1
+version: 2.0.0
 author: scott+data_eng@prophecy.io
 language: python
 buildSystem: ''
